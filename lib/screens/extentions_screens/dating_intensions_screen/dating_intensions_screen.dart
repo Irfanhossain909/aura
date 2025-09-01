@@ -1,6 +1,5 @@
 import 'package:aura/const/assets_icons_path.dart';
 import 'package:aura/screens/extentions_screens/dating_intensions_screen/controler/dating_intensions_controller.dart';
-import 'package:aura/screens/extentions_screens/member_prefference_screen/controler/member_prefference_controller.dart';
 import 'package:aura/utils/applog/app_print.dart';
 import 'package:aura/utils/applog/app_size.dart';
 import 'package:aura/utils/applog/gap.dart';
@@ -24,6 +23,7 @@ class DatingIntensionsScreen extends StatelessWidget {
             children: [
               // Fixed header section
               CustomAppBar(
+                logoUnderText: "DATING INTENTIONS",
                 title: "DATING INTENTIONS",
                 action: Row(
                   children: [

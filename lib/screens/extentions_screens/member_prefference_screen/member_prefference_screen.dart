@@ -145,6 +145,22 @@ class MemberPrefferenceScreen extends StatelessWidget {
                               ),
                               RowItemWithDivider(text: "POLITICS"),
                               RowItemWithDivider(text: "EDUCATION LEVEL"),
+                              RowItemWithDivider(
+                                onTap: () {
+                                  Get.toNamed(
+                                    AppRoutes.instance.ethnicityScreen,
+                                  );
+                                },
+                                text: "ETHNICITY",
+                              ),
+                              RowItemWithDivider(
+                                onTap: () {
+                                  Get.toNamed(
+                                    AppRoutes.instance.zoodiacPrefereanceScreen,
+                                  );
+                                },
+                                text: "ZODIAC PREFERENCE",
+                              ),
                             ],
                           );
                         }),
