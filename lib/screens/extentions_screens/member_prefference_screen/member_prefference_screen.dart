@@ -60,6 +60,13 @@ class MemberPrefferenceScreen extends StatelessWidget {
                                 children: [
                                   Expanded(
                                     child: AuraButton(
+                                      onTap: () {
+                                        Get.toNamed(
+                                          AppRoutes
+                                              .instance
+                                              .datingIntensionsScreen,
+                                        );
+                                      },
                                       text: "DATING INTENTIONS",
                                     ),
                                   ),
@@ -154,8 +161,6 @@ class MemberPrefferenceScreen extends StatelessWidget {
   }
 }
 
-
-
 class AuraButton extends StatelessWidget {
   final VoidCallback? onTap;
   final String? text;
@@ -182,7 +187,12 @@ class AuraButton extends StatelessWidget {
             ),
           ],
         ),
-        child: Center(child: AppText(data: text ?? "Not Text")),
+        child: Center(
+          child: AppText(
+            data: text ?? "Not Text",
+            fontSize: AppSize.width(value: 18),
+          ),
+        ),
       ),
     );
   }

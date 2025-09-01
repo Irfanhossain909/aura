@@ -5,4 +5,5 @@ class AppRoutes {
   /////////////  initial or splash screen
   final String memberPrefferenceScreen = "/member-prefference-screen";
   final String imInterestedInScreen = "/im-interested-in_screen";
+  final String datingIntensionsScreen = "/dating-intensions-screen";
 }

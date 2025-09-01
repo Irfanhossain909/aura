@@ -1,6 +1,7 @@
 
 import 'package:aura/routes/app_routes.dart';
 import 'package:aura/routes/bindings/app_binding.dart';
+import 'package:aura/screens/extentions_screens/dating_intensions_screen/dating_intensions_screen.dart';
 import 'package:aura/screens/extentions_screens/im_interested_in_screen/im_interested_in_screen.dart';
 import 'package:aura/screens/extentions_screens/member_prefference_screen/member_prefference_screen.dart';
 import 'package:get/get.dart';
@@ -34,6 +35,11 @@ List<GetPage> appRootRoutesFile = <GetPage>[
     name: AppRoutes.instance.imInterestedInScreen,
     binding: AppBinding(),
     page: () => const ImInterestedInScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.datingIntensionsScreen,
+    binding: AppBinding(),
+    page: () => const DatingIntensionsScreen(),
   ),
   
 ];
