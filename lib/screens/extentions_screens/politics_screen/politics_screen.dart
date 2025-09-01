@@ -1,4 +1,4 @@
-import 'package:aura/screens/extentions_screens/gender_selection_screen/controller/gender_selection_controller.dart';
+import 'package:aura/screens/extentions_screens/politics_screen/controller/politics_controller.dart';
 import 'package:aura/utils/applog/app_size.dart';
 import 'package:aura/widgets/app_bar/custom_appber.dart';
 import 'package:aura/widgets/app_images/scaffold_with_bg_image.dart';
@@ -6,34 +6,34 @@ import 'package:aura/widgets/app_row_item_with_checkbox/app_row_item_with_radio.
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 
-class GenderSelectionScreen extends StatelessWidget {
-  const GenderSelectionScreen({super.key});
+class PoliticsScreen extends StatelessWidget {
+  const PoliticsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ScaffoldWithBgImage(
-      body: GetBuilder<GenderSelectionController>(
-        init: GenderSelectionController(),
+      body: GetBuilder<PoliticsController>(
+        init: PoliticsController(),
         builder: (controller) {
           return Column(
             children: [
               CustomAppBar(
                 action: SizedBox(),
-                logoUnderText: "GENDER",
-                title: "GENDER",
+                logoUnderText: "POLITICS",
+                title: "POLITICS",
               ),
 
               Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: Column(
                   spacing: AppSize.size.height * 0.015,
-                  children: controller.genderOptions.map((gender) {
+                  children: controller.options.map((option) {
                     return RowItemWithDividerWithRadio(
-                      text: gender,
-                      isChecked: controller.isSelected(gender),
-                      onTap: () => controller.selectGender(gender),
+                      text: option,
+                      isChecked: controller.isSelected(option),
+                      onTap: () => controller.selectOption(option),
                       onRadioChanged: (value) =>
-                          controller.selectGender(gender),
+                          controller.selectOption(option),
                     );
                   }).toList(),
                 ),

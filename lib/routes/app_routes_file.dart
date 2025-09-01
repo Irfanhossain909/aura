@@ -3,6 +3,7 @@ import 'package:aura/routes/bindings/app_binding.dart';
 import 'package:aura/screens/extentions_screens/dating_intensions_screen/dating_intensions_screen.dart';
 import 'package:aura/screens/extentions_screens/ethnicity_screen/ethnicity_screen.dart';
 import 'package:aura/screens/extentions_screens/gender_selection_screen/gender_selection_screen.dart';
+import 'package:aura/screens/extentions_screens/politics_screen/politics_screen.dart';
 import 'package:aura/screens/extentions_screens/zoodiac_prefereance_screen/zoodiac_prefereance_screen.dart';
 import 'package:aura/screens/extentions_screens/im_interested_in_screen/im_interested_in_screen.dart';
 import 'package:aura/screens/extentions_screens/member_prefference_screen/member_prefference_screen.dart';
@@ -57,5 +58,10 @@ List<GetPage> appRootRoutesFile = <GetPage>[
     name: AppRoutes.instance.genderSelectionScreen,
     binding: AppBinding(),
     page: () => const GenderSelectionScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.politicsScreen,
+    binding: AppBinding(),
+    page: () => const PoliticsScreen(),
   ),
 ];

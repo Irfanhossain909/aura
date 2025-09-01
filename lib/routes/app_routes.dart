@@ -9,4 +9,5 @@ class AppRoutes {
   final String ethnicityScreen = "/ethnicity-screen";
   final String zoodiacPrefereanceScreen = "/zoodiac-prefereance-screen";
   final String genderSelectionScreen = "/gender-selection-screen";
+  final String politicsScreen = "/politics-screen";
 }

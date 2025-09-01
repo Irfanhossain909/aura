@@ -109,9 +109,12 @@ class MemberPrefferenceScreen extends StatelessWidget {
                               RowItemWithDivider(text: "HEIGHT"),
                               RowItemWithDivider(
                                 onTap: () {
-                                  Get.toNamed(AppRoutes.instance.genderSelectionScreen);
+                                  Get.toNamed(
+                                    AppRoutes.instance.genderSelectionScreen,
+                                  );
                                 },
-                                text: "GENDER"),
+                                text: "GENDER",
+                              ),
                               RowItemWithDividerWithCheckBox(
                                 text: "DRINKING",
                                 isChecked: controller.drinkingChecked.value,
@@ -148,7 +151,14 @@ class MemberPrefferenceScreen extends StatelessWidget {
                                   controller.toggleChildren();
                                 },
                               ),
-                              RowItemWithDivider(text: "POLITICS"),
+                              RowItemWithDivider(
+                                onTap: () {
+                                  Get.toNamed(
+                                    AppRoutes.instance.politicsScreen,
+                                  );
+                                },
+                                text: "POLITICS",
+                              ),
                               RowItemWithDivider(text: "EDUCATION LEVEL"),
                               RowItemWithDivider(
                                 onTap: () {
