@@ -17,4 +17,5 @@ class AppRoutes {
   final String signUpScreen = "/sign-up-screen";
   final String loginScreen = "/login-screen";
   final String verifyPhoneScreen = "/verify-phone-screen";
+  final String verifyCodeScreen = "/verify-code-screen";
 }
