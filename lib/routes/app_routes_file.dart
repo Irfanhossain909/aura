@@ -1,5 +1,6 @@
 import 'package:aura/routes/app_routes.dart';
 import 'package:aura/routes/bindings/app_binding.dart';
+import 'package:aura/screens/extentions_screens/about_me_screen/about_me_screen.dart';
 import 'package:aura/screens/extentions_screens/dating_intensions_screen/dating_intensions_screen.dart';
 import 'package:aura/screens/extentions_screens/ethnicity_screen/ethnicity_screen.dart';
 import 'package:aura/screens/extentions_screens/gender_selection_screen/gender_selection_screen.dart';
@@ -63,5 +64,10 @@ List<GetPage> appRootRoutesFile = <GetPage>[
     name: AppRoutes.instance.politicsScreen,
     binding: AppBinding(),
     page: () => const PoliticsScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.aboutMeScreen,
+    binding: AppBinding(),
+    page: () => const AboutMeScreen(),
   ),
 ];

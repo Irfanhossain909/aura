@@ -10,4 +10,5 @@ class AppRoutes {
   final String zoodiacPrefereanceScreen = "/zoodiac-prefereance-screen";
   final String genderSelectionScreen = "/gender-selection-screen";
   final String politicsScreen = "/politics-screen";
+  final String aboutMeScreen = "/about-me-screen";
 }

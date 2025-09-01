@@ -162,6 +162,11 @@ class MemberPrefferenceScreen extends StatelessWidget {
                               RowItemWithDivider(text: "EDUCATION LEVEL"),
                               RowItemWithDivider(
                                 onTap: () {
+                                  Get.toNamed(AppRoutes.instance.aboutMeScreen);
+                                },
+                                text: "ABOUT ME"),
+                              RowItemWithDivider(
+                                onTap: () {
                                   Get.toNamed(
                                     AppRoutes.instance.ethnicityScreen,
                                   );
