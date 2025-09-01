@@ -15,4 +15,5 @@ class AppRoutes {
 
   /////////////auth screens///////////////////////////////
   final String signUpScreen = "/sign-up-screen";
+  final String loginScreen = "/login-screen";
 }
