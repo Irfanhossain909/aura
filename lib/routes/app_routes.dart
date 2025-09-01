@@ -2,7 +2,7 @@ class AppRoutes {
   AppRoutes._privateConstructor();
   static final AppRoutes _instance = AppRoutes._privateConstructor();
   static AppRoutes get instance => _instance;
-  /////////////  initial or splash screen
+  /////////////  App Extention screens
   final String memberPrefferenceScreen = "/member-prefference-screen";
   final String imInterestedInScreen = "/im-interested-in_screen";
   final String datingIntensionsScreen = "/dating-intensions-screen";
@@ -12,4 +12,7 @@ class AppRoutes {
   final String politicsScreen = "/politics-screen";
   final String aboutMeScreen = "/about-me-screen";
   final String educationLevelScreen = "/education-level-screen";
+
+  /////////////auth screens///////////////////////////////
+  final String signUpScreen = "/sign-up-screen";
 }

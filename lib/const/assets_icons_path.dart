@@ -14,4 +14,6 @@ class AssetsIconsPath {
   //=================Images================================
 
   final String extentionBg = "assets/images/extention_bg.webp";
+  final String authBg = "assets/images/auth_bg.webp";
+  final String circleBg = "assets/images/circle.webp";
 }

@@ -7,6 +7,7 @@ import 'package:aura/utils/applog/app_print.dart';
 import 'package:aura/utils/applog/app_size.dart';
 import 'package:aura/utils/applog/gap.dart';
 import 'package:aura/widgets/app_bar/custom_appber.dart';
+import 'package:aura/widgets/app_button/aura_button.dart';
 import 'package:aura/widgets/app_images/app_image.dart';
 import 'package:aura/widgets/app_row_item_with_checkbox/app_row_item_with_checkbox.dart';
 import 'package:aura/widgets/app_row_item_with_checkbox/app_row_item_with_divider/app_row_item_with_divider.dart';
@@ -201,39 +202,3 @@ class MemberPrefferenceScreen extends StatelessWidget {
   }
 }
 
-class AuraButton extends StatelessWidget {
-  final VoidCallback? onTap;
-  final String? text;
-  const AuraButton({super.key, this.onTap, this.text});
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Container(
-        padding: EdgeInsets.symmetric(
-          horizontal: AppSize.width(value: 20),
-          vertical: AppSize.width(value: 12),
-        ),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.blue.withValues(alpha: 0.5),
-              spreadRadius: 1,
-              blurRadius: 3,
-              offset: Offset(0, 0), // This makes shadow equal on all sides
-            ),
-          ],
-        ),
-        child: Center(
-          child: AppText(
-            data: text ?? "Not Text",
-            fontSize: AppSize.width(value: 18),
-          ),
-        ),
-      ),
-    );
-  }
-}

@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // initialRoute: AppRoutes.instance.initial,
       
-      initialRoute: AppRoutes.instance.memberPrefferenceScreen,
+      initialRoute: AppRoutes.instance.signUpScreen,
       getPages: appRootRoutesFile,
       enableLog: true,
       themeMode: ThemeMode.light,
