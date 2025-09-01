@@ -4,6 +4,7 @@ import 'package:aura/utils/applog/app_size.dart';
 import 'package:aura/widgets/app_images/app_image.dart';
 import 'package:aura/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 
 class CustomAppBar extends StatelessWidget {
   final Widget? action;
@@ -67,7 +68,7 @@ class CustomAppBar extends StatelessWidget {
               children: [
                 // Back button
                 GestureDetector(
-                  onTap: () => Navigator.pop(context),
+                  onTap: () => Get.back(),
                   child: Icon(
                     Icons.arrow_back_ios_new,
                     color: AppColors.instance.white,

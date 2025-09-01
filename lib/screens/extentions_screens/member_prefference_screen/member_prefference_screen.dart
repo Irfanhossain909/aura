@@ -107,6 +107,11 @@ class MemberPrefferenceScreen extends StatelessWidget {
                               ),
                               Gap(height: 10),
                               RowItemWithDivider(text: "HEIGHT"),
+                              RowItemWithDivider(
+                                onTap: () {
+                                  Get.toNamed(AppRoutes.instance.genderSelectionScreen);
+                                },
+                                text: "GENDER"),
                               RowItemWithDividerWithCheckBox(
                                 text: "DRINKING",
                                 isChecked: controller.drinkingChecked.value,
