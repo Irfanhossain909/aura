@@ -4,6 +4,7 @@ import 'package:aura/screens/extentions_screens/about_me_screen/about_me_screen.
 import 'package:aura/screens/extentions_screens/dating_intensions_screen/dating_intensions_screen.dart';
 import 'package:aura/screens/extentions_screens/ethnicity_screen/ethnicity_screen.dart';
 import 'package:aura/screens/extentions_screens/gender_selection_screen/gender_selection_screen.dart';
+import 'package:aura/screens/extentions_screens/education_level_screen/education_level_screen.dart';
 import 'package:aura/screens/extentions_screens/politics_screen/politics_screen.dart';
 import 'package:aura/screens/extentions_screens/zoodiac_prefereance_screen/zoodiac_prefereance_screen.dart';
 import 'package:aura/screens/extentions_screens/im_interested_in_screen/im_interested_in_screen.dart';
@@ -69,5 +70,10 @@ List<GetPage> appRootRoutesFile = <GetPage>[
     name: AppRoutes.instance.aboutMeScreen,
     binding: AppBinding(),
     page: () => const AboutMeScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.educationLevelScreen,
+    binding: AppBinding(),
+    page: () => const EducationLevelScreen(),
   ),
 ];

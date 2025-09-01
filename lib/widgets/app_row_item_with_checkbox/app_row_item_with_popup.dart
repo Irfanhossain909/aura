@@ -1,6 +1,5 @@
 import 'package:aura/const/app_colors.dart';
 import 'package:aura/utils/applog/app_size.dart';
-import 'package:aura/utils/applog/gap.dart';
 import 'package:aura/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
 

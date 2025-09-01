@@ -11,4 +11,5 @@ class AppRoutes {
   final String genderSelectionScreen = "/gender-selection-screen";
   final String politicsScreen = "/politics-screen";
   final String aboutMeScreen = "/about-me-screen";
+  final String educationLevelScreen = "/education-level-screen";
 }
