@@ -1,4 +1,3 @@
-
 import 'package:aura/const/app_theme.dart';
 import 'package:aura/routes/app_routes.dart';
 import 'package:aura/routes/app_routes_file.dart';
@@ -16,9 +15,9 @@ class MyApp extends StatelessWidget {
     AppSize.size = MediaQuery.of(context).size;
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+
       // initialRoute: AppRoutes.instance.initial,
-      
-      initialRoute: AppRoutes.instance.loginScreen,
+      initialRoute: AppRoutes.instance.verifyPhoneScreen,
       getPages: appRootRoutesFile,
       enableLog: true,
       themeMode: ThemeMode.light,

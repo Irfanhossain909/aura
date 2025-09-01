@@ -3,6 +3,7 @@ import 'package:aura/routes/bindings/app_binding.dart';
 import 'package:aura/routes/bindings/auth_binding.dart';
 import 'package:aura/screens/auth_screens/login_screen/login_screen.dart';
 import 'package:aura/screens/auth_screens/signup_screen/signup_screen.dart';
+import 'package:aura/screens/auth_screens/verify_phone_screen/verify_prone_screen.dart';
 import 'package:aura/screens/extentions_screens/about_me_screen/about_me_screen.dart';
 import 'package:aura/screens/extentions_screens/dating_intensions_screen/dating_intensions_screen.dart';
 import 'package:aura/screens/extentions_screens/ethnicity_screen/ethnicity_screen.dart';
@@ -42,6 +43,11 @@ List<GetPage> appRootRoutesFile = <GetPage>[
     name: AppRoutes.instance.loginScreen,
     binding: AuthBinding(),
     page: () => const LoginScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.verifyPhoneScreen,
+    binding: AuthBinding(),
+    page: () => const VerifyProneScreen(),
   ),
   //////////=======================Extentions screen===================
   GetPage(
