@@ -27,12 +27,13 @@ class UploadIdScreen extends StatelessWidget {
             spacing: AppSize.size.height * 0.01,
             children: [
               CustomAppBarAuth(logoUnderText: "SIGNUP", progressValue: 1),
-              Gap(height: AppSize.size.height * 0.10),
+              Gap(height: AppSize.size.height * 0.02),
               AppText(
                 data: "VERIFY ID",
                 fontSize: AppSize.width(value: 24),
                 color: AppColors.instance.white,
               ),
+              Gap(height: AppSize.size.height * 0.05),
               AppImageCircular(
                 path: AssetsIconsPath.instance.idImg,
                 width: 100,
