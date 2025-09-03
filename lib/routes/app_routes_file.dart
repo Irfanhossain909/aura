@@ -4,6 +4,7 @@ import 'package:aura/routes/bindings/auth_binding.dart';
 import 'package:aura/screens/auth_screens/id_type_select_screen/id_type_select_screen.dart';
 import 'package:aura/screens/auth_screens/login_screen/login_screen.dart';
 import 'package:aura/screens/auth_screens/signup_screen/signup_screen.dart';
+import 'package:aura/screens/auth_screens/upload_id_screen/upload_id_screen.dart';
 import 'package:aura/screens/auth_screens/verify_code_screen/verify_code_screen.dart';
 import 'package:aura/screens/auth_screens/verify_phone_screen/verify_prone_screen.dart';
 import 'package:aura/screens/extentions_screens/about_me_screen/about_me_screen.dart';
@@ -60,6 +61,11 @@ List<GetPage> appRootRoutesFile = <GetPage>[
     name: AppRoutes.instance.idTypeSelectScreen,
     binding: AuthBinding(),
     page: () => const IdTypeSelectScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.uploadIdScreen,
+    binding: AuthBinding(),
+    page: () => const UploadIdScreen(),
   ),
   //////////=======================Extentions screen===================
   GetPage(

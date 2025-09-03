@@ -12,11 +12,12 @@ class AppRoutes {
   final String politicsScreen = "/politics-screen";
   final String aboutMeScreen = "/about-me-screen";
   final String educationLevelScreen = "/education-level-screen";
-  final String idTypeSelectScreen = "/idtype-select-screen";
 
   /////////////auth screens///////////////////////////////
   final String signUpScreen = "/sign-up-screen";
   final String loginScreen = "/login-screen";
   final String verifyPhoneScreen = "/verify-phone-screen";
   final String verifyCodeScreen = "/verify-code-screen";
+  final String idTypeSelectScreen = "/idtype-select-screen";
+  final String uploadIdScreen = "/upload-id-screen";
 }
