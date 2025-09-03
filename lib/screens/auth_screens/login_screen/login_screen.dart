@@ -1,8 +1,10 @@
 import 'package:aura/const/app_colors.dart';
+import 'package:aura/const/assets_icons_path.dart';
 import 'package:aura/utils/applog/app_size.dart';
 import 'package:aura/utils/applog/gap.dart';
 import 'package:aura/widgets/app_bar/custom_appbar_auth.dart';
 import 'package:aura/widgets/app_button/aura_button.dart';
+import 'package:aura/widgets/app_images/app_image.dart';
 import 'package:aura/widgets/app_images/scaffold_with_bg_image_for_auth.dart';
 import 'package:aura/widgets/input_text/app_input_widget_two.dart';
 import 'package:aura/widgets/text/app_text.dart';
@@ -17,19 +19,17 @@ class LoginScreen extends StatelessWidget {
       body: Column(
         children: [
           CustomAppBarAuth(logoUnderText: "LOGIN", progressValue: 1),
-          Gap(height: AppSize.size.height * 0.18),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 60),
             child: Column(
               spacing: AppSize.size.height * 0.01,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                AppText(
-                  data: "LOGIN",
-                  fontSize: AppSize.width(value: 34),
-                  color: AppColors.instance.white,
+                AppImage(
+                  width: AppSize.size.width * 0.35,
+                  path: AssetsIconsPath.instance.auraIcon,
                 ),
-                Gap(height: 12),
+                Gap(height: AppSize.size.height * 0.1),
                 AppInputWidgetTwo(
                   height: AppSize.width(value: 36),
                   contentPadding: EdgeInsets.symmetric(
@@ -50,24 +50,26 @@ class LoginScreen extends StatelessWidget {
                   hintText: "Password",
                   isPassWord: true,
                 ),
-
+                AppText(
+                  data: "FORGOT PASSWORD?",
+                  color: AppColors.instance.white,
+                ),
+                Gap(height: AppSize.size.height * 0.01),
+                AppText(
+                  data: "BY SIGNING UP, YOU AGREE TO OUR TERMS OF SERVICE",
+                  color: AppColors.instance.white,
+                ),
                 // Continue button
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: AppSize.width(value: 60),
-                    vertical: AppSize.width(value: 12),
-                  ),
-                  child: AuraButton(
-                    filColor: AppColors.instance.blue,
-                    textColor: AppColors.instance.white,
-                    text: "CONFIRM",
-                  ),
+                AuraButton(
+                  filColor: AppColors.instance.blue,
+                  textColor: AppColors.instance.white,
+                  text: "LOGIN",
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: AppSize.width(value: 90),
+                    horizontal: AppSize.width(value: 70),
                   ),
-                  child: AuraButton(text: "Back"),
+                  child: AuraButton(text: "SIGNUP"),
                 ),
 
                 // Back button

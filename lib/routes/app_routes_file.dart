@@ -17,7 +17,7 @@ import 'package:aura/screens/extentions_screens/politics_screen/politics_screen.
 import 'package:aura/screens/extentions_screens/zoodiac_prefereance_screen/zoodiac_prefereance_screen.dart';
 import 'package:aura/screens/extentions_screens/im_interested_in_screen/im_interested_in_screen.dart';
 import 'package:aura/screens/extentions_screens/member_prefference_screen/member_prefference_screen.dart';
-import 'package:aura/screens/user_waiting_screen/user_waiting_screen.dart';
+import 'package:aura/screens/auth_screens/user_waiting_screen/user_waiting_screen.dart';
 import 'package:get/get.dart';
 
 List<GetPage> appRootRoutesFile = <GetPage>[
