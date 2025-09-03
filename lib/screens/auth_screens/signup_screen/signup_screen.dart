@@ -81,7 +81,7 @@ class SignupScreen extends StatelessWidget {
                 // Continue button
                 Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: AppSize.width(value: 60),
+                    horizontal: AppSize.width(value: 120),
                     vertical: AppSize.width(value: 12),
                   ),
                   child: AuraButton(
@@ -92,7 +92,7 @@ class SignupScreen extends StatelessWidget {
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: AppSize.width(value: 90),
+                    horizontal: AppSize.width(value: 150),
                   ),
                   child: AuraButton(text: "Back"),
                 ),

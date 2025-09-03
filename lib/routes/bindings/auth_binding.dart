@@ -1,3 +1,4 @@
+import 'package:aura/screens/auth_screens/id_type_select_screen/controller/id_type_select_controller.dart';
 import 'package:aura/screens/auth_screens/signup_screen/controller/signup_controller.dart';
 import 'package:get/get.dart';
 
@@ -6,7 +7,7 @@ class AuthBinding extends Bindings {
   dependencies() {
 
     Get.lazyPut(() => SignupController());
-    // Get.lazyPut(() => SignUpController());
+    Get.lazyPut(() => IdTypeSelectController());
     // Get.lazyPut(() => ForgetPasswordController());
     // Get.lazyPut(() => OtpVerificationController());
     // Get.lazyPut(() => CreateNewPasswordController());
