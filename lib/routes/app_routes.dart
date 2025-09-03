@@ -20,4 +20,5 @@ class AppRoutes {
   final String verifyCodeScreen = "/verify-code-screen";
   final String idTypeSelectScreen = "/idtype-select-screen";
   final String uploadIdScreen = "/upload-id-screen";
+  final String selectProfileImgScreen = "/select-profile-img-screen";
 }
