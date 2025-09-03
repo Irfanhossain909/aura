@@ -3,7 +3,6 @@ import 'package:aura/routes/bindings/app_binding.dart';
 import 'package:aura/routes/bindings/auth_binding.dart';
 import 'package:aura/screens/auth_screens/id_type_select_screen/id_type_select_screen.dart';
 import 'package:aura/screens/auth_screens/login_screen/login_screen.dart';
-import 'package:aura/screens/auth_screens/select_profile_img/controller/upload_id_controller.dart';
 import 'package:aura/screens/auth_screens/select_profile_img/select_profile_img.dart';
 import 'package:aura/screens/auth_screens/signup_screen/signup_screen.dart';
 import 'package:aura/screens/auth_screens/upload_id_screen/upload_id_screen.dart';
@@ -18,6 +17,7 @@ import 'package:aura/screens/extentions_screens/politics_screen/politics_screen.
 import 'package:aura/screens/extentions_screens/zoodiac_prefereance_screen/zoodiac_prefereance_screen.dart';
 import 'package:aura/screens/extentions_screens/im_interested_in_screen/im_interested_in_screen.dart';
 import 'package:aura/screens/extentions_screens/member_prefference_screen/member_prefference_screen.dart';
+import 'package:aura/screens/user_waiting_screen/user_waiting_screen.dart';
 import 'package:get/get.dart';
 
 List<GetPage> appRootRoutesFile = <GetPage>[
@@ -73,6 +73,11 @@ List<GetPage> appRootRoutesFile = <GetPage>[
     name: AppRoutes.instance.selectProfileImgScreen,
     binding: AuthBinding(),
     page: () => const SelectProfileImg(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.userWaitingScreen,
+    binding: AuthBinding(),
+    page: () => const UserWaitingScreen(),
   ),
   //////////=======================Extentions screen===================
   GetPage(

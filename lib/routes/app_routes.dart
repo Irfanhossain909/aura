@@ -21,4 +21,5 @@ class AppRoutes {
   final String idTypeSelectScreen = "/idtype-select-screen";
   final String uploadIdScreen = "/upload-id-screen";
   final String selectProfileImgScreen = "/select-profile-img-screen";
+  final String userWaitingScreen = "/user-waiting-screen";
 }
