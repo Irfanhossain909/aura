@@ -13,6 +13,9 @@ class AppRoutes {
   final String aboutMeScreen = "/about-me-screen";
   final String educationLevelScreen = "/education-level-screen";
 
+  /////////////  Settings screens
+  final String pushNotificationScreen = "/push-notification-screen";
+
   /////////////auth screens///////////////////////////////
   final String signUpScreen = "/sign-up-screen";
   final String loginScreen = "/login-screen";
