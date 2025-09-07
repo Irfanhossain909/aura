@@ -18,6 +18,8 @@ class AppRoutes {
   final String prefrenceScreen = "/prefrence-screen";
   final String contactListScreen = "/contact-list-screen";
   final String deleteAndArciveAccountScreen = "/delete-and-arcive-screen";
+  final String accountArciveScreen = "/account-arcive-screen";
+  final String accountDeleteScreen = "/account-delete-screen";
 
   /////////////auth screens///////////////////////////////
   final String signUpScreen = "/sign-up-screen";

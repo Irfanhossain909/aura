@@ -19,6 +19,8 @@ import 'package:aura/screens/extentions_screens/zoodiac_prefereance_screen/zoodi
 import 'package:aura/screens/extentions_screens/im_interested_in_screen/im_interested_in_screen.dart';
 import 'package:aura/screens/extentions_screens/member_prefference_screen/member_prefference_screen.dart';
 import 'package:aura/screens/auth_screens/user_waiting_screen/user_waiting_screen.dart';
+import 'package:aura/screens/settings_screen/account_arcive_screen/account_arcive_screen.dart';
+import 'package:aura/screens/settings_screen/account_delete_screen/account_delete_screen.dart';
 import 'package:aura/screens/settings_screen/contact_list_screen/contact_list_screen.dart';
 import 'package:aura/screens/settings_screen/delete_and_arcive_screen/delete_and_arcive_screen.dart';
 import 'package:aura/screens/settings_screen/prefrerence_etarnity_screen.dart/prefrence_screen.dart';
@@ -155,5 +157,15 @@ List<GetPage> appRootRoutesFile = <GetPage>[
     name: AppRoutes.instance.deleteAndArciveAccountScreen,
     binding: AppBinding(),
     page: () => const DeleteAndArciveScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.accountArciveScreen,
+    binding: AppBinding(),
+    page: () => const AccountArciveScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.accountDeleteScreen,
+    binding: AppBinding(),
+    page: () => const AccountDeleteScreen(),
   ),
 ];
