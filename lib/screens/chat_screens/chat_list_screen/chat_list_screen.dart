@@ -21,24 +21,25 @@ class ChatListScreen extends StatelessWidget {
           CustomAppBarAuth(
             logoUnderText: "MATCHES",
             isProgressShown: false,
-            action: Row(
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    color: AppColors.instance.btnBg,
-                  ),
-                  padding: EdgeInsets.symmetric(
-                    horizontal: AppSize.width(value: 16),
-                    vertical: AppSize.width(value: 8),
-                  ),
-                  child: AppText(
-                    data: "RESTORE CHAT",
-                    fontSize: AppSize.width(value: 18),
-                    color: AppColors.instance.white,
-                  ),
+            action: GestureDetector(
+              onTap: () {
+                Get.toNamed(AppRoutes.instance.syncContactScreen);
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16),
+                  color: AppColors.instance.btnBg,
                 ),
-              ],
+                padding: EdgeInsets.symmetric(
+                  horizontal: AppSize.width(value: 16),
+                  vertical: AppSize.width(value: 8),
+                ),
+                child: AppText(
+                  data: "RESTORE CHAT",
+                  fontSize: AppSize.width(value: 18),
+                  color: AppColors.instance.white,
+                ),
+              ),
             ),
           ),
 

@@ -9,6 +9,7 @@ import 'package:get/route_manager.dart';
 class CustomAppBar extends StatelessWidget {
   final Widget? action;
   final Widget? action2;
+  final double? fontSize;
   final String? logoUnderText;
   final String? title;
   final bool isDividerShow;
@@ -19,6 +20,7 @@ class CustomAppBar extends StatelessWidget {
     this.action2,
     this.logoUnderText,
     this.title,
+    this.fontSize,
   });
 
   @override
@@ -90,7 +92,7 @@ class CustomAppBar extends StatelessWidget {
                   child: Center(
                     child: AppText(
                       data: title ?? "MEMBER PREFERENCE",
-                      fontSize: AppSize.width(value: 24.0),
+                      fontSize: AppSize.width(value: fontSize ?? 24.0),
                       fontWeight: FontWeight.w400,
                       color: AppColors.instance.white,
                     ),
