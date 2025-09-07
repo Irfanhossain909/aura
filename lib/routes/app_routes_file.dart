@@ -19,6 +19,7 @@ import 'package:aura/screens/extentions_screens/zoodiac_prefereance_screen/zoodi
 import 'package:aura/screens/extentions_screens/im_interested_in_screen/im_interested_in_screen.dart';
 import 'package:aura/screens/extentions_screens/member_prefference_screen/member_prefference_screen.dart';
 import 'package:aura/screens/auth_screens/user_waiting_screen/user_waiting_screen.dart';
+import 'package:aura/screens/settings_screen/contact_list_screen/contact_list_screen.dart';
 import 'package:aura/screens/settings_screen/prefrerence_etarnity_screen.dart/prefrence_screen.dart';
 import 'package:aura/screens/settings_screen/push_notification_screen/push_notification_screen.dart';
 import 'package:get/get.dart';
@@ -143,5 +144,10 @@ List<GetPage> appRootRoutesFile = <GetPage>[
     name: AppRoutes.instance.prefrenceScreen,
     // binding: AppBinding(),
     page: () => const PrefrenceScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.contactListScreen,
+    binding: AppBinding(),
+    page: () => const ContactListScreen(),
   ),
 ];

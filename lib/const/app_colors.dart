@@ -22,6 +22,7 @@ class AppColors {
   final Color black300 = Color(0xff0A0303);
   final Color black = Color(0xff000000);
   final Color offWhite = Color(0xff555656);
+  final Color btnBg = Color(0xffFCFCFC).withValues(alpha: .2);
 
 
 
