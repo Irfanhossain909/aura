@@ -54,7 +54,55 @@ class PrefrenceScreen extends StatelessWidget {
                         fontSize: AppSize.width(value: 24),
                         color: AppColors.instance.white,
                       ),
-                    ),                      
+                    ),
+                    SizedBox(height: AppSize.size.height * 0.01),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      spacing: AppSize.width(value: 12),
+                      children: [
+                        AppText(
+                          data: "(###) ###-###",
+                          fontSize: AppSize.width(value: 22),
+                          fontWeight: FontWeight.w600,
+                          color: AppColors.instance.white,
+                        ),
+                        AppText(
+                          data: "EDIT",
+                          fontSize: AppSize.width(value: 18),
+                          fontWeight: FontWeight.w500,
+                          color: AppColors.instance.blue,
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: AppSize.size.height * 0.01),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      spacing: AppSize.width(value: 12),
+                      children: [
+                        AppText(
+                          data: "test@email.com",
+                          fontSize: AppSize.width(value: 22),
+                          fontWeight: FontWeight.w600,
+                          color: AppColors.instance.white,
+                        ),
+                        AppText(
+                          data: "EDIT",
+                          fontSize: AppSize.width(value: 18),
+                          fontWeight: FontWeight.w500,
+                          color: AppColors.instance.blue,
+                        ),
+                      ],
+                    ),
+
+                    SizedBox(height: AppSize.size.height * 0.01),
+                    Container(
+                      width: double.infinity,
+                      height: 4,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(6),
+                        color: AppColors.instance.hexzaGreen,
+                      ),
+                    ),
                     Padding(
                       padding: EdgeInsets.symmetric(
                         vertical: AppSize.size.height * 0.01,
