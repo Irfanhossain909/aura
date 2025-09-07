@@ -1,4 +1,3 @@
-
 import 'package:aura/const/app_colors.dart';
 import 'package:aura/const/assets_icons_path.dart';
 import 'package:aura/utils/applog/app_size.dart';
@@ -10,7 +9,13 @@ import 'package:flutter/material.dart';
 class RowItemWithDivider extends StatelessWidget {
   final VoidCallback? onTap;
   final String? text;
-  const RowItemWithDivider({super.key, this.onTap, this.text});
+  final bool isDividerShow;
+  const RowItemWithDivider({
+    super.key,
+    this.onTap,
+    this.text,
+    this.isDividerShow = true,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +39,9 @@ class RowItemWithDivider extends StatelessWidget {
             ],
           ),
           Gap(height: 10),
-          Divider(height: 2, color: AppColors.instance.white),
+          isDividerShow
+              ? Divider(height: 2, color: AppColors.instance.white)
+              : SizedBox(),
         ],
       ),
     );

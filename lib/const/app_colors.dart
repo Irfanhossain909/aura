@@ -103,6 +103,7 @@ class AppColors {
   final Color red2 = Color(0xffD32F2F);
   final Color green1 = Color(0xff008000);
   final Color green2 = Color(0xff2E7D32);
+  final Color hexzaGreen = Color(0xffC0D9C0);
   final Color yellow1 = Color(0xffFFC107);
   final Color yellow2 = Color(0xffFBC02D);
   final Color blue = Color(0xff25C6FF);

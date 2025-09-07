@@ -15,6 +15,7 @@ class AppRoutes {
 
   /////////////  Settings screens
   final String pushNotificationScreen = "/push-notification-screen";
+  final String prefrenceScreen = "/prefrence-screen";
 
   /////////////auth screens///////////////////////////////
   final String signUpScreen = "/sign-up-screen";

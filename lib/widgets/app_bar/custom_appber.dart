@@ -10,7 +10,14 @@ class CustomAppBar extends StatelessWidget {
   final Widget? action;
   final String? logoUnderText;
   final String? title;
-  const CustomAppBar({super.key, this.action, this.logoUnderText, this.title});
+  final bool isDividerShow;
+  const CustomAppBar({
+    super.key,
+    this.isDividerShow = true,
+    this.action,
+    this.logoUnderText,
+    this.title,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +100,7 @@ class CustomAppBar extends StatelessWidget {
               ],
             ),
           ),
-          Divider(color: AppColors.instance.white),
+          isDividerShow ? Divider(color: AppColors.instance.white) : SizedBox(),
         ],
       ),
     );
