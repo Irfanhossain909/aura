@@ -1,21 +1,12 @@
 import 'package:aura/const/app_colors.dart';
 import 'package:flutter/material.dart';
 
-// To set an image as scaffold background, use this approach in your Scaffold:
-// Scaffold(
-//   body: Container(
-//     decoration: BoxDecoration(
-//       image: DecorationImage(
-//         image: AssetImage('assets/images/extention_bg.webp'),
-//         fit: BoxFit.cover,
-//       ),
-//     ),
-//     child: YourContent(),
-//   ),
-// )
-
 ThemeData appThemeData = ThemeData.light(useMaterial3: true).copyWith(
   scaffoldBackgroundColor: Colors.white,
+  bottomNavigationBarTheme: BottomNavigationBarThemeData(
+    backgroundColor: Colors.red,
+  ),
+  bottomSheetTheme: BottomSheetThemeData(backgroundColor: Colors.transparent),
   dividerColor: AppColors.instance.greyMedium,
   appBarTheme: AppBarTheme(
     backgroundColor: AppColors.instance.white,

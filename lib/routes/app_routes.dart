@@ -2,6 +2,9 @@ class AppRoutes {
   AppRoutes._privateConstructor();
   static final AppRoutes _instance = AppRoutes._privateConstructor();
   static AppRoutes get instance => _instance;
+
+  //////////////NAVIGATION SCREEN////////////////////////////////
+  final String navigationScreen = "/navigation-screen";
   /////////////  App Extention screens
   final String memberPrefferenceScreen = "/member-prefference-screen";
   final String imInterestedInScreen = "/im-interested-in_screen";
@@ -32,4 +35,7 @@ class AppRoutes {
   final String selectProfileImgScreen = "/select-profile-img-screen";
   final String userWaitingScreen = "/user-waiting-screen";
   final String selectionScreen = "/selection-screen";
+
+  //////////////Chat Screen//////////////////////////////////////
+  final String chatListScreen = "/chat-list-screen";
 }

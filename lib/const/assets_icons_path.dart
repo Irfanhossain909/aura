@@ -11,6 +11,9 @@ class AssetsIconsPath {
   final String icArrowBAck = "assets/icons/arrow_back.png";
   final String icArrowRight = "assets/icons/arrow_right.png";
   final String icOptions = "assets/icons/option_icon.png";
+  final String appLogo = "assets/icons/app_logo.png";
+  final String conversationIcon = "assets/icons/conversation_icon.png";
+  final String profileIcon = "assets/icons/profile_ic.png";
   //=================Images================================
 
   final String extentionBg = "assets/images/extention_bg.webp";

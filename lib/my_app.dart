@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
 
       // initialRoute: AppRoutes.instance.initial,
-      initialRoute: AppRoutes.instance.communityGuideLineScreen,
+      initialRoute: AppRoutes.instance.navigationScreen,
       getPages: appRootRoutesFile,
       enableLog: true,
       themeMode: ThemeMode.light,
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
 
       title: 'Aura',
       theme: appThemeData,
-      defaultTransition: Transition.fadeIn,
+      defaultTransition: Transition.fade,
       transitionDuration: Duration(milliseconds: 300),
     );
   }

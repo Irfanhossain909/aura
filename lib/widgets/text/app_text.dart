@@ -14,7 +14,7 @@ class AppText extends StatelessWidget {
     this.overflow,
     this.textAlign,
     this.height,
-    this.softWrap,
+    this.softWrap, this.letterSpacing,
   });
   final String data;
   final double? fontSize;
@@ -24,7 +24,8 @@ class AppText extends StatelessWidget {
   final int? maxLines;
   final TextOverflow? overflow;
   final TextAlign? textAlign;
-  final double? height;
+  final double? height;           
+  final double? letterSpacing;           
   final bool? softWrap;
   @override
   Widget build(BuildContext context) {
@@ -38,6 +39,7 @@ class AppText extends StatelessWidget {
             height: height,
             fontSize: fontSize,
             color: color,
+            letterSpacing: letterSpacing,
             fontWeight: fontWeight,
             fontFamily: AppConst.fontFamily1,
           ),

@@ -1,3 +1,4 @@
+import 'package:aura/screens/app_navigation_screen/controller/navigation_screen_controller.dart';
 import 'package:aura/screens/extentions_screens/about_me_screen/controller/about_me_controller.dart';
 import 'package:aura/screens/extentions_screens/dating_intensions_screen/controler/dating_intensions_controller.dart';
 import 'package:aura/screens/extentions_screens/ethnicity_screen/controller/ethnicity_controller.dart';
@@ -12,6 +13,9 @@ import 'package:get/get.dart';
 class AppBinding extends Bindings {
   @override
   dependencies() {
+    ///////////////////NAVIGATION//////////////////////
+    Get.lazyPut(() => NavigationScreenController());
+    //////===============================================
     Get.lazyPut(() => MemberPrefferenceController());
     Get.lazyPut(() => ImInterestedInController());
     Get.lazyPut(() => DatingIntensionsController());

@@ -9,12 +9,14 @@ class CustomAppBarAuth extends StatelessWidget {
   final int progressValue;
   final String? logoUnderText;
   final bool isProgressShown;
+  final Widget? action;
 
   const CustomAppBarAuth({
     super.key,
     this.progressValue = 1,
     this.logoUnderText,
     this.isProgressShown = true,
+    this.action,
   });
 
   @override
@@ -50,8 +52,10 @@ class CustomAppBarAuth extends StatelessWidget {
                       ),
                     ],
                   ),
+                  Spacer(),
 
                   // Actions section
+                  SizedBox(child: action),
                 ],
               ),
             ),
