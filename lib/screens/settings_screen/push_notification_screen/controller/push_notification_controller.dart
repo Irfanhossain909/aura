@@ -12,7 +12,6 @@ class PushNotificationController extends GetxController {
 
   void toggleNewMatches() {
     newMatchesNotification.value = !newMatchesNotification.value;
-    update();
   }
 
   void toggleNewMessages() {
