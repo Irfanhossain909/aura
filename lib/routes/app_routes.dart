@@ -38,4 +38,5 @@ class AppRoutes {
 
   //////////////Chat Screen//////////////////////////////////////
   final String chatListScreen = "/chat-list-screen";
+  final String messageScreen = "/message-screen";
 }

@@ -11,6 +11,7 @@ import 'package:aura/screens/auth_screens/upload_id_screen/upload_id_screen.dart
 import 'package:aura/screens/auth_screens/verify_code_screen/verify_code_screen.dart';
 import 'package:aura/screens/auth_screens/verify_phone_screen/verify_prone_screen.dart';
 import 'package:aura/screens/chat_screens/chat_list_screen/chat_list_screen.dart';
+import 'package:aura/screens/chat_screens/message_screen/message_screen.dart';
 import 'package:aura/screens/extentions_screens/about_me_screen/about_me_screen.dart';
 import 'package:aura/screens/extentions_screens/dating_intensions_screen/dating_intensions_screen.dart';
 import 'package:aura/screens/extentions_screens/ethnicity_screen/ethnicity_screen.dart';
@@ -189,5 +190,10 @@ List<GetPage> appRootRoutesFile = <GetPage>[
   GetPage(
     name: AppRoutes.instance.chatListScreen,
     page: () => const ChatListScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.messageScreen,
+    binding: AppBinding(),
+    page: () => const MessageScreen(),
   ),
 ];

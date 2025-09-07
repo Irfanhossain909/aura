@@ -8,6 +8,7 @@ import 'package:get/route_manager.dart';
 
 class CustomAppBar extends StatelessWidget {
   final Widget? action;
+  final Widget? action2;
   final String? logoUnderText;
   final String? title;
   final bool isDividerShow;
@@ -15,6 +16,7 @@ class CustomAppBar extends StatelessWidget {
     super.key,
     this.isDividerShow = true,
     this.action,
+    this.action2,
     this.logoUnderText,
     this.title,
   });
@@ -96,7 +98,10 @@ class CustomAppBar extends StatelessWidget {
                 ),
 
                 // Invisible spacer to balance the back button
-                SizedBox(width: AppSize.width(value: 24)),
+                SizedBox(
+                  child: action2,
+                  // width: AppSize.width(value: 24)
+                ),
               ],
             ),
           ),

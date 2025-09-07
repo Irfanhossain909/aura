@@ -8,6 +8,7 @@ import 'package:aura/screens/extentions_screens/member_prefference_screen/contro
 import 'package:aura/screens/extentions_screens/zoodiac_prefereance_screen/controller/zoodiac_prefereance_controller.dart';
 import 'package:aura/screens/settings_screen/push_notification_screen/controller/push_notification_controller.dart';
 import 'package:aura/screens/settings_screen/contact_list_screen/controller/contact_list_controller.dart';
+import 'package:aura/screens/chat_screens/message_screen/controller/message_controller.dart';
 import 'package:get/get.dart';
 
 class AppBinding extends Bindings {
@@ -25,5 +26,6 @@ class AppBinding extends Bindings {
     Get.lazyPut(() => AboutMeController());
     Get.lazyPut(() => PushNotificationController());
     Get.lazyPut(() => ContactListController());
+    Get.lazyPut(() => MessageController());
   }
 }
