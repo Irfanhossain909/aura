@@ -8,11 +8,13 @@ import 'package:flutter/material.dart';
 class CustomAppBarAuth extends StatelessWidget {
   final int progressValue;
   final String? logoUnderText;
+  final bool isProgressShown;
 
   const CustomAppBarAuth({
     super.key,
     this.progressValue = 1,
     this.logoUnderText,
+    this.isProgressShown = true,
   });
 
   @override
@@ -56,23 +58,29 @@ class CustomAppBarAuth extends StatelessWidget {
           ),
 
           // Progress Container
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: AppSize.width(value: 16)),
-            child: Container(
-              width: double.infinity,
-              height: AppSize.width(value: 5),
-              decoration: BoxDecoration(
-                color: AppColors.instance.black.withValues(alpha: 0.4),
-              ),
-              child: FractionallySizedBox(
-                alignment: Alignment.centerLeft,
-                widthFactor: progressValue / 10,
-                child: Container(
-                  decoration: BoxDecoration(color: AppColors.instance.blue),
-                ),
-              ),
-            ),
-          ),
+          isProgressShown
+              ? Padding(
+                  padding: EdgeInsets.symmetric(
+                    vertical: AppSize.width(value: 16),
+                  ),
+                  child: Container(
+                    width: double.infinity,
+                    height: AppSize.width(value: 5),
+                    decoration: BoxDecoration(
+                      color: AppColors.instance.black.withValues(alpha: 0.4),
+                    ),
+                    child: FractionallySizedBox(
+                      alignment: Alignment.centerLeft,
+                      widthFactor: progressValue / 10,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: AppColors.instance.blue,
+                        ),
+                      ),
+                    ),
+                  ),
+                )
+              : SizedBox(),
         ],
       ),
     );
