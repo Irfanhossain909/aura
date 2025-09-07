@@ -20,6 +20,7 @@ class AppRoutes {
   final String deleteAndArciveAccountScreen = "/delete-and-arcive-screen";
   final String accountArciveScreen = "/account-arcive-screen";
   final String accountDeleteScreen = "/account-delete-screen";
+  final String communityGuideLineScreen = "/community-guidelie-screen";
 
   /////////////auth screens///////////////////////////////
   final String signUpScreen = "/sign-up-screen";
