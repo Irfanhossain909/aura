@@ -24,4 +24,7 @@ class AssetsIconsPath {
   final String emptyImg = "assets/images/empty_img.webp";
   final String homeImg = "assets/images/home_img.webp";
   final String mapImg = "assets/images/image 8.webp";
+  final String auraCard = "assets/images/aura_card.png";
+  final String loveCard = "assets/images/love_card.png";
+  final String personImage = "assets/images/person_img.webp";
 }
