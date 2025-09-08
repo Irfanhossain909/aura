@@ -1,5 +1,6 @@
 import 'package:aura/const/app_colors.dart';
 import 'package:aura/const/assets_icons_path.dart';
+import 'package:aura/routes/app_routes.dart';
 import 'package:aura/utils/applog/app_size.dart';
 import 'package:aura/utils/applog/gap.dart';
 import 'package:aura/widgets/app_bar/custom_appber.dart';
@@ -172,10 +173,15 @@ class MessageScreen extends StatelessWidget {
                         ),
                       ),
                       Gap(width: AppSize.width(value: 8)),
-                      AppImage(
-                        path: AssetsIconsPath.instance.warningIc,
-                        width: AppSize.width(value: 28),
-                        height: AppSize.width(value: 28),
+                      InkWell(
+                        onTap: () {
+                          Get.toNamed(AppRoutes.instance.reportOptionScreen);
+                        },
+                        child: AppImage(
+                          path: AssetsIconsPath.instance.warningIc,
+                          width: AppSize.width(value: 28),
+                          height: AppSize.width(value: 28),
+                        ),
                       ),
                     ],
                   ),

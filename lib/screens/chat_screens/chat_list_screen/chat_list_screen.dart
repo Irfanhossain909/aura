@@ -134,8 +134,8 @@ class ChatListItem extends StatelessWidget {
             ),
           ),
           Positioned(
-            right: 0,
-            top: 0,
+            right: 20,
+            top: 10,
             child: Container(
               padding: EdgeInsets.all(8),
               decoration: BoxDecoration(
