@@ -1,13 +1,17 @@
 import 'package:aura/const/app_colors.dart';
 import 'package:aura/const/assets_icons_path.dart';
+import 'package:aura/screens/home_screens/home_main_screen/controller/home_main_controller.dart';
 import 'package:aura/utils/applog/app_print.dart';
 import 'package:aura/utils/applog/app_size.dart';
+import 'package:aura/utils/applog/gap.dart';
 import 'package:aura/widgets/app_button/app_button.dart';
 import 'package:aura/widgets/app_images/app_image.dart';
 import 'package:aura/widgets/app_images/scaffold_with_home_bg_image.dart';
 import 'package:aura/widgets/input_text/app_input_widget_two.dart';
 import 'package:aura/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/src/simple/get_state.dart';
+import 'package:get/state_manager.dart';
 
 class HomeMainScreen extends StatelessWidget {
   const HomeMainScreen({super.key});
@@ -19,222 +23,240 @@ class HomeMainScreen extends StatelessWidget {
       length: 3,
       child: ScaffoldWithHomeBgImage(
         body: SafeArea(
-          child: Column(
-            children: [
-              AppImage(width: 160, path: AssetsIconsPath.instance.auraIcon),
+          child: GetBuilder<HomeMainController>(
+            init: HomeMainController(),
+            builder: (controller) {
+              return Column(
+                children: [
+                  AppImage(width: 160, path: AssetsIconsPath.instance.auraIcon),
 
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        AppPrint.apiResponse("Clicked Local");
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            AppPrint.apiResponse("Clicked Local");
 
-                        showDialogForLocal(context);
-                      },
-                      child: Row(
-                        children: [
-                          AppText(
-                            data: "LOCAL",
-                            fontSize: AppSize.width(value: 18),
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.instance.white,
-                          ),
-                          Icon(
-                            Icons.arrow_drop_down,
-                            size: 50,
-                            color: AppColors.instance.white,
-                          ),
-                        ],
-                      ),
-                    ),
-                    InkWell(
-                      onTap: () {
-                        showDialog(
-                          context: context,
-                          builder: (context) {
-                            return Dialog(
-                              backgroundColor: Colors.transparent,
-                              insetPadding: EdgeInsets.symmetric(
-                                horizontal: 16,
-                                vertical: 24,
+                            showDialogForLocal(context);
+                          },
+                          child: Row(
+                            children: [
+                              AppText(
+                                data: "LOCAL",
+                                fontSize: AppSize.width(value: 18),
+                                fontWeight: FontWeight.w600,
+                                color: AppColors.instance.white,
                               ),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  // Search input like the screenshot
-                                  AppInputWidgetTwo(
-                                    contentPadding: EdgeInsets.symmetric(
-                                      vertical: 10,
-                                      horizontal: 12,
-                                    ),
-                                    fillColor: Colors.transparent,
-                                    hintText:
-                                        "ENTER YOUR ADDRESS, NEIGHBERHOOD, DR ZIP",
-                                  ),
-                                  SizedBox(height: 12),
-                                  // Map card with overlay panel
-                                  Stack(
-                                    children: [
-                                      Container(
-                                        width: AppSize.size.width * 0.88,
-                                        decoration: BoxDecoration(
-                                          color: const Color(0xFF46D7D8),
-                                          borderRadius: BorderRadius.circular(
-                                            28,
-                                          ),
-                                        ),
-                                        padding: EdgeInsets.all(12),
-                                        child: ClipRRect(
-                                          borderRadius: BorderRadius.circular(
-                                            20,
-                                          ),
-                                          child: AppImage(
-                                            width: AppSize.size.width * 0.88,
-                                            path:
-                                                AssetsIconsPath.instance.mapImg,
-                                          ),
-                                        ),
-                                      ),
-                                      // Right side panel
-                                      Positioned(
-                                        right: 10,
-                                        bottom: 10,
-                                        child: Container(
-                                          width: AppSize.width(value: 170),
-                                          decoration: BoxDecoration(
-                                            color: AppColors.instance.black
-                                                .withValues(alpha: 0.85),
-                                            borderRadius: BorderRadius.circular(
-                                              24,
-                                            ),
-                                            border: Border.all(
-                                              color: Colors.white24,
-                                              width: 1,
-                                            ),
-                                          ),
-                                          padding: EdgeInsets.symmetric(
-                                            horizontal: 16,
-                                            vertical: 14,
-                                          ),
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            mainAxisSize: MainAxisSize.min,
-                                            children: [
-                                              Row(
-                                                children: [
-                                                  AppText(
-                                                    data: "Most ",
-                                                    fontSize: AppSize.width(
-                                                      value: 12,
-                                                    ),
-                                                    color: AppColors
-                                                        .instance
-                                                        .white,
-                                                    fontWeight: FontWeight.w700,
-                                                  ),
-                                                  AppText(
-                                                    data: "ACTIVE",
-                                                    fontSize: AppSize.width(
-                                                      value: 12,
-                                                    ),
-                                                    color:
-                                                        AppColors.instance.blue,
-                                                    fontWeight: FontWeight.w800,
-                                                  ),
-                                                ],
-                                              ),
-                                              AppText(
-                                                data: "Cities",
-                                                fontSize: AppSize.width(
-                                                  value: 10,
-                                                ),
-                                                color: AppColors.instance.white,
-                                              ),
-                                              SizedBox(height: 8),
-                                              Container(
-                                                height: 1,
-                                                color: Colors.white24,
-                                              ),
-                                              SizedBox(height: 8),
-                                              ...[
-                                                "1. ATLANTA, GA",
-                                                "2. ATLANTA, GA",
-                                                "3. LOS ANGELES, CA",
-                                              ].map(
-                                                (city) => Padding(
-                                                  padding: EdgeInsets.symmetric(
-                                                    vertical: 6,
-                                                  ),
-                                                  child: AppText(
-                                                    data: city,
-                                                    fontSize: AppSize.width(
-                                                      value: 11,
-                                                    ),
-                                                    color: AppColors
-                                                        .instance
-                                                        .white,
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                    ],
+                              Icon(
+                                Icons.arrow_drop_down,
+                                size: 50,
+                                color: AppColors.instance.white,
+                              ),
+                            ],
+                          ),
+                        ),
+                        InkWell(
+                          onTap: () {
+                            showDialogForSelectCity(context);
+                          },
+                          child: Row(
+                            children: [
+                              AppText(
+                                data: "SELECT CITY",
+                                fontSize: AppSize.width(value: 18),
+                                fontWeight: FontWeight.w600,
+                                color: AppColors.instance.white,
+                              ),
+                              Icon(
+                                Icons.arrow_drop_down,
+                                size: 50,
+                                color: AppColors.instance.white,
+                              ),
+                            ],
+                          ),
+                        ),
+                        InkWell(
+                          onTap: () {
+                            AppPrint.apiResponse("Clicked Explore");
+                          },
+                          child: Row(
+                            children: [
+                              AppText(
+                                data: "EXPLORE",
+                                fontSize: AppSize.width(value: 18),
+                                fontWeight: FontWeight.w600,
+                                color: AppColors.instance.white,
+                              ),
+                              Icon(
+                                Icons.arrow_drop_down,
+                                size: 50,
+                                color: AppColors.instance.white,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Gap(height: AppSize.size.height * 0.4),
+                  GestureDetector(
+                    onTap: () {
+                      controller.delayedFunction();
+                    },
+                    child: Obx(() {
+                      return controller.isNAvigate.value
+                          ? Center(
+                              child: AppText(
+                                data: "Searching",
+                                fontSize: AppSize.width(value: 18),
+                                color: AppColors.instance.white,
+                              ),
+                            )
+                          : Container(
+                              padding: EdgeInsets.all(AppSize.width(value: 4)),
+                              decoration: BoxDecoration(
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.blue, // Shadow color
+                                    offset: Offset(
+                                      0,
+                                      0,
+                                    ), // Horizontal and vertical offset
+                                    blurRadius: 8, // Blur radius
+                                    spreadRadius:
+                                        2, // Spread radius (expands the shadow)
                                   ),
                                 ],
+                                color: AppColors.instance.greyMedium,
+                                borderRadius: BorderRadius.circular(40),
+                                border: Border.all(
+                                  color: AppColors.instance.white,
+                                ),
+                              ),
+                              child: AppImage(
+                                width: AppSize.width(value: 88),
+                                height: AppSize.width(value: 88),
+                                path: AssetsIconsPath.instance.appLogo,
                               ),
                             );
-                          },
-                        );
-                      },
-                      child: Row(
-                        children: [
-                          AppText(
-                            data: "SELECT CITY",
-                            fontSize: AppSize.width(value: 18),
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.instance.white,
-                          ),
-                          Icon(
-                            Icons.arrow_drop_down,
-                            size: 50,
-                            color: AppColors.instance.white,
-                          ),
-                        ],
-                      ),
-                    ),
-                    InkWell(
-                      onTap: () {
-                        AppPrint.apiResponse("Clicked Explore");
-                      },
-                      child: Row(
-                        children: [
-                          AppText(
-                            data: "EXPLORE",
-                            fontSize: AppSize.width(value: 18),
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.instance.white,
-                          ),
-                          Icon(
-                            Icons.arrow_drop_down,
-                            size: 50,
-                            color: AppColors.instance.white,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
+                    }),
+                  ),
+                ],
+              );
+            },
           ),
         ),
       ),
+    );
+  }
+
+  Future<dynamic> showDialogForSelectCity(BuildContext context) {
+    return showDialog(
+      context: context,
+      builder: (context) {
+        return Dialog(
+          backgroundColor: Colors.transparent,
+          insetPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              // Search input like the screenshot
+              AppInputWidgetTwo(
+                contentPadding: EdgeInsets.symmetric(
+                  vertical: 10,
+                  horizontal: 12,
+                ),
+                fillColor: Colors.transparent,
+                hintText: "ENTER YOUR ADDRESS, NEIGHBERHOOD, DR ZIP",
+              ),
+              SizedBox(height: 12),
+              // Map card with overlay panel
+              Stack(
+                children: [
+                  Container(
+                    width: AppSize.size.width * 0.88,
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF46D7D8),
+                      borderRadius: BorderRadius.circular(28),
+                    ),
+                    padding: EdgeInsets.all(12),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: AppImage(
+                        width: AppSize.size.width * 0.88,
+                        path: AssetsIconsPath.instance.mapImg,
+                      ),
+                    ),
+                  ),
+                  // Right side panel
+                  Positioned(
+                    right: 10,
+                    bottom: 10,
+                    child: Container(
+                      width: AppSize.width(value: 170),
+                      decoration: BoxDecoration(
+                        color: AppColors.instance.black.withValues(alpha: 0.85),
+                        borderRadius: BorderRadius.circular(24),
+                        border: Border.all(color: Colors.white24, width: 1),
+                      ),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 16,
+                        vertical: 14,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Row(
+                            children: [
+                              AppText(
+                                data: "Most ",
+                                fontSize: AppSize.width(value: 12),
+                                color: AppColors.instance.white,
+                                fontWeight: FontWeight.w700,
+                              ),
+                              AppText(
+                                data: "ACTIVE",
+                                fontSize: AppSize.width(value: 12),
+                                color: AppColors.instance.blue,
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ],
+                          ),
+                          AppText(
+                            data: "Cities",
+                            fontSize: AppSize.width(value: 10),
+                            color: AppColors.instance.white,
+                          ),
+                          SizedBox(height: 8),
+                          Container(height: 1, color: Colors.white24),
+                          SizedBox(height: 8),
+                          ...[
+                            "1. ATLANTA, GA",
+                            "2. ATLANTA, GA",
+                            "3. LOS ANGELES, CA",
+                          ].map(
+                            (city) => Padding(
+                              padding: EdgeInsets.symmetric(vertical: 6),
+                              child: AppText(
+                                data: city,
+                                fontSize: AppSize.width(value: 11),
+                                color: AppColors.instance.white,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 

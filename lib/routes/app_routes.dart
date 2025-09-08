@@ -48,4 +48,5 @@ class AppRoutes {
 
   ///////////////Home Screen//////////////////
   final String homeMainScreen = "/home-main-screen";
+  final String vedioCallingScreen = "/vedio-calling-screen";
 }
