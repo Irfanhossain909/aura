@@ -1,5 +1,6 @@
 import 'package:aura/const/app_colors.dart';
 import 'package:aura/const/assets_icons_path.dart';
+import 'package:aura/routes/app_routes.dart';
 import 'package:aura/screens/settings_screen/report_option_screen/controller/report_option_controller.dart';
 import 'package:aura/utils/applog/app_size.dart';
 import 'package:aura/utils/applog/gap.dart';
@@ -120,6 +121,11 @@ class ReportOptionScreen extends StatelessWidget {
                             horizontal: AppSize.width(value: 80),
                           ),
                           child: AppButton(
+                            onTap: () {
+                              Get.toNamed(
+                                AppRoutes.instance.reportSubmitScreen,
+                              );
+                            },
                             height: 38,
                             borderRadius: BorderRadius.circular(16),
                             title: "NEXT",

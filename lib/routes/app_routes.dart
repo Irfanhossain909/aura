@@ -24,6 +24,8 @@ class AppRoutes {
   final String accountArciveScreen = "/account-arcive-screen";
   final String accountDeleteScreen = "/account-delete-screen";
   final String communityGuideLineScreen = "/community-guidelie-screen";
+  final String reportOptionScreen = "/report-option-screen";
+  final String reportSubmitScreen = "/report-submit-screen";
 
   /////////////auth screens///////////////////////////////
   final String signUpScreen = "/sign-up-screen";
@@ -40,5 +42,5 @@ class AppRoutes {
   final String chatListScreen = "/chat-list-screen";
   final String messageScreen = "/message-screen";
   final String syncContactScreen = "/sync-contact-screen";
-  final String reportOptionScreen = "/report-option-screen";
+  
 }

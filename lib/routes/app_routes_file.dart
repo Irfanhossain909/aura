@@ -31,6 +31,7 @@ import 'package:aura/screens/settings_screen/delete_and_arcive_screen/delete_and
 import 'package:aura/screens/settings_screen/prefrerence_etarnity_screen.dart/prefrence_screen.dart';
 import 'package:aura/screens/settings_screen/push_notification_screen/push_notification_screen.dart';
 import 'package:aura/screens/settings_screen/report_option_screen/report_option_screen.dart';
+import 'package:aura/screens/settings_screen/report_submit_screen/report_submit_screen.dart';
 import 'package:get/get.dart';
 
 List<GetPage> appRootRoutesFile = <GetPage>[
@@ -187,6 +188,16 @@ List<GetPage> appRootRoutesFile = <GetPage>[
     binding: AppBinding(),
     page: () => const ComunityGuidelineScreen(),
   ),
+  GetPage(
+    name: AppRoutes.instance.reportOptionScreen,
+    binding: AppBinding(),
+    page: () => const ReportOptionScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.reportSubmitScreen,
+    binding: AppBinding(),
+    page: () => const ReportSubmitScreen(),
+  ),
 
   //////////////Chat Screen////////////////////
   GetPage(
@@ -202,10 +213,5 @@ List<GetPage> appRootRoutesFile = <GetPage>[
     name: AppRoutes.instance.syncContactScreen,
     binding: AppBinding(),
     page: () => const SyncContactScreen(),
-  ),
-  GetPage(
-    name: AppRoutes.instance.reportOptionScreen,
-    binding: AppBinding(),
-    page: () => const ReportOptionScreen(),
   ),
 ];
