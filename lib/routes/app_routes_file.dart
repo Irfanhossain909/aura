@@ -23,6 +23,8 @@ import 'package:aura/screens/extentions_screens/zoodiac_prefereance_screen/zoodi
 import 'package:aura/screens/extentions_screens/im_interested_in_screen/im_interested_in_screen.dart';
 import 'package:aura/screens/extentions_screens/member_prefference_screen/member_prefference_screen.dart';
 import 'package:aura/screens/auth_screens/user_waiting_screen/user_waiting_screen.dart';
+import 'package:aura/screens/profile_screens/profile_edit_screen/profile_edit_screen.dart';
+import 'package:aura/screens/profile_screens/profile_screen/profile_screen.dart';
 import 'package:aura/screens/settings_screen/account_arcive_screen/account_arcive_screen.dart';
 import 'package:aura/screens/settings_screen/account_delete_screen/account_delete_screen.dart';
 import 'package:aura/screens/settings_screen/comunity_guideline_screen/comunity_guideline_screen.dart';
@@ -213,5 +215,14 @@ List<GetPage> appRootRoutesFile = <GetPage>[
     name: AppRoutes.instance.syncContactScreen,
     binding: AppBinding(),
     page: () => const SyncContactScreen(),
+  ),
+  //////////////Chat Screen////////////////////
+  GetPage(
+    name: AppRoutes.instance.profileTypeScreen,
+    page: () => const ProfileScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.profileEditScreen,
+    page: () => const ProfileEditScreen(),
   ),
 ];

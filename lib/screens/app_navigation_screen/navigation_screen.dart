@@ -2,9 +2,8 @@ import 'package:aura/const/app_colors.dart';
 import 'package:aura/const/assets_icons_path.dart';
 import 'package:aura/screens/app_navigation_screen/controller/navigation_screen_controller.dart';
 import 'package:aura/screens/chat_screens/chat_list_screen/chat_list_screen.dart';
-import 'package:aura/screens/extentions_screens/member_prefference_screen/member_prefference_screen.dart';
+import 'package:aura/screens/profile_screens/profile_screen/profile_screen.dart';
 import 'package:aura/screens/settings_screen/delete_and_arcive_screen/delete_and_arcive_screen.dart';
-import 'package:aura/screens/settings_screen/prefrerence_etarnity_screen.dart/prefrence_screen.dart';
 import 'package:aura/utils/applog/app_size.dart';
 import 'package:aura/widgets/app_images/app_image.dart';
 import 'package:flutter/material.dart';
@@ -80,7 +79,7 @@ class NavigationScreen extends StatelessWidget {
               children: [
                 ChatListScreen(),
                 DeleteAndArciveScreen(),
-                MemberPrefferenceScreen(),
+                ProfileScreen(),
               ],
             ),
           ),
