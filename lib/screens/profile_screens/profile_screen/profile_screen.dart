@@ -1,4 +1,4 @@
-import 'package:aura/const/app_api_end_point.dart';
+
 import 'package:aura/const/app_colors.dart';
 import 'package:aura/const/assets_icons_path.dart';
 import 'package:aura/routes/app_routes.dart';
@@ -11,7 +11,6 @@ import 'package:aura/widgets/app_images/scaffold_with_bg_image.dart';
 import 'package:aura/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/utils.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -29,7 +28,7 @@ class ProfileScreen extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                    Get.toNamed(AppRoutes.instance.profileEditScreen);
+                    Get.toNamed(AppRoutes.instance.aboutMeScreen);
                   },
                   child: AppImage(
                     width: AppSize.width(value: 24),
@@ -57,16 +56,21 @@ class ProfileScreen extends StatelessWidget {
               Positioned(
                 bottom: 0,
                 right: 10,
-                child: Container(
-                  padding: EdgeInsets.all(4),
-                  decoration: BoxDecoration(
-                    color: AppColors.instance.blue,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Icon(
-                    Icons.edit,
-                    color: AppColors.instance.white,
-                    size: 12,
+                child: InkWell(
+                  onTap: () {
+                    Get.toNamed(AppRoutes.instance.profileEditScreen);
+                  },
+                  child: Container(
+                    padding: EdgeInsets.all(4),
+                    decoration: BoxDecoration(
+                      color: AppColors.instance.blue,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Icon(
+                      Icons.edit,
+                      color: AppColors.instance.white,
+                      size: 12,
+                    ),
                   ),
                 ),
               ),

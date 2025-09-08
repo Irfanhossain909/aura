@@ -6,10 +6,8 @@ import 'package:aura/utils/applog/gap.dart';
 import 'package:aura/widgets/app_bar/custom_appbar_auth.dart';
 import 'package:aura/widgets/app_images/app_image_circular.dart';
 import 'package:aura/widgets/app_images/scaffold_with_bg_image.dart';
-import 'package:aura/widgets/input_text/app_input_widget_two.dart';
 import 'package:aura/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 class ProfileEditScreen extends StatelessWidget {

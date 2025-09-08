@@ -6,7 +6,7 @@ class AssetsIconsPath {
 
   //=================Icon================================
 
-  final String auraIcon = "assets/icons/aura_icon.png";
+  final String auraIcon = "assets/icons/auraImage.png";
   final String icSetting = "assets/icons/setting_icon.png";
   final String icArrowBAck = "assets/icons/arrow_back.png";
   final String icArrowRight = "assets/icons/arrow_right.png";
@@ -22,4 +22,5 @@ class AssetsIconsPath {
   final String circleBg = "assets/images/circle.webp";
   final String idImg = "assets/images/id_img.webp";
   final String emptyImg = "assets/images/empty_img.webp";
+  final String homeImg = "assets/images/home_img.webp";
 }
