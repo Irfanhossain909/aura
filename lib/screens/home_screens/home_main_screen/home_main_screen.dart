@@ -10,7 +10,6 @@ import 'package:aura/widgets/app_images/scaffold_with_home_bg_image.dart';
 import 'package:aura/widgets/input_text/app_input_widget_two.dart';
 import 'package:aura/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:get/state_manager.dart';
 
 class HomeMainScreen extends StatelessWidget {

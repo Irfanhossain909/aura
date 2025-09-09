@@ -3,6 +3,7 @@ import 'package:aura/const/assets_icons_path.dart';
 import 'package:aura/utils/applog/app_size.dart';
 import 'package:aura/utils/applog/gap.dart';
 import 'package:aura/widgets/app_bar/custom_appber.dart';
+import 'package:aura/widgets/app_button/app_button.dart';
 import 'package:aura/widgets/app_images/app_image.dart';
 import 'package:aura/widgets/app_images/scaffold_with_bg_image.dart';
 import 'package:aura/widgets/text/app_text.dart';
@@ -65,7 +66,83 @@ class IceBreakScreen extends StatelessWidget {
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [ItemBuyCard(), ItemBuyCard(), ItemBuyCard()],
+                      children: [
+                        ItemBuyCard(
+                          onTap: () {
+                            showDialog(
+                              context: context,
+                              builder: (context) {
+                                return AlertDialog(
+                                  backgroundColor: AppColors.instance.black
+                                      .withValues(
+                                        alpha: 0.6,
+                                      ), // Set your background color
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(24),
+                                    ), // Optional: Adjust border radius
+                                    side: BorderSide(
+                                      color: Colors.blue,
+                                      width: 2,
+                                    ), // Blue border around the dialog
+                                  ),
+                                  title: Center(
+                                    child: AppText(
+                                      data: "CONFIRM PURCHASE",
+                                      fontSize: AppSize.width(value: 24),
+                                      fontWeight: FontWeight.w600,
+                                      color: AppColors.instance.blue,
+                                    ),
+                                  ), // Title centered
+                                  content: AppText(
+                                    data:
+                                        'PLEASE CONFIRM TO COMPLETE YOUR PURCHASE.',
+                                    textAlign: TextAlign
+                                        .center, // Ensure text is centered
+                                    fontSize: AppSize.width(value: 16),
+                                    color: AppColors.instance.white,
+                                  ),
+                                  // Content centered and adjusted height
+                                  actions: [
+                                    Row(
+                                      spacing: 16,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Center(
+                                          child: AppButton(
+                                            title: "CONFIRM",
+                                            filColor: AppColors.instance.blue,
+                                            width: AppSize.width(value: 100),
+                                            height: 30,
+                                            borderRadius: BorderRadius.circular(
+                                              16,
+                                            ),
+                                          ),
+                                        ),
+                                        Center(
+                                          child: AppButton(
+                                            title: "CENCEL",
+                                            filColor:
+                                                AppColors.instance.greyMedium,
+                                            width: AppSize.width(value: 100),
+                                            height: 30,
+                                            borderRadius: BorderRadius.circular(
+                                              16,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ], // Centered button
+                                );
+                              },
+                            );
+                          },
+                        ),
+                        ItemBuyCard(),
+                        ItemBuyCard(),
+                      ],
                     ),
                   ),
                   Gap(height: 100),
@@ -81,37 +158,41 @@ class IceBreakScreen extends StatelessWidget {
 }
 
 class ItemBuyCard extends StatelessWidget {
-  const ItemBuyCard({super.key});
+  final VoidCallback? onTap;
+  const ItemBuyCard({super.key, this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: AppSize.width(value: 20),
-        vertical: AppSize.width(value: 10),
-      ),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
-        color: AppColors.instance.white,
-      ),
-      child: Column(
-        spacing: 4,
-        children: [
-          AppText(data: "3", color: AppColors.instance.black),
-          AppText(data: "GAMES", color: AppColors.instance.black),
-          Container(
-            decoration: BoxDecoration(
-              color: AppColors.instance.blue,
-              borderRadius: BorderRadius.circular(12),
-            ),
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.symmetric(
+          horizontal: AppSize.width(value: 20),
+          vertical: AppSize.width(value: 10),
+        ),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16),
+          color: AppColors.instance.white,
+        ),
+        child: Column(
+          spacing: 4,
+          children: [
+            AppText(data: "3", color: AppColors.instance.black),
+            AppText(data: "GAMES", color: AppColors.instance.black),
+            Container(
+              decoration: BoxDecoration(
+                color: AppColors.instance.blue,
+                borderRadius: BorderRadius.circular(12),
+              ),
 
-            padding: EdgeInsets.symmetric(
-              horizontal: AppSize.width(value: 6),
-              vertical: AppSize.width(value: 2),
+              padding: EdgeInsets.symmetric(
+                horizontal: AppSize.width(value: 6),
+                vertical: AppSize.width(value: 2),
+              ),
+              child: AppText(data: "12 AP", color: AppColors.instance.white),
             ),
-            child: AppText(data: "12 AP", color: AppColors.instance.white),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
