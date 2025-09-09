@@ -15,6 +15,12 @@ class AssetsIconsPath {
   final String conversationIcon = "assets/icons/conversation_icon.png";
   final String profileIcon = "assets/icons/profile_ic.png";
   final String warningIc = "assets/icons/warning_ic.png";
+  final String currencyIc = "assets/icons/currency.png";
+  final String appPlus = "assets/icons/add_plus.png";
+  final String ice = "assets/icons/ice.png";
+  final String groth = "assets/icons/groth.png";
+  final String ap = "assets/icons/ap.png";
+  final String time = "assets/icons/time.png";
   //=================Images================================
 
   final String extentionBg = "assets/images/extention_bg.webp";

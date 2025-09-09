@@ -1,4 +1,3 @@
-
 import 'package:aura/const/app_colors.dart';
 import 'package:aura/const/assets_icons_path.dart';
 import 'package:aura/routes/app_routes.dart';
@@ -96,7 +95,12 @@ class ProfileScreen extends StatelessWidget {
               children: [
                 AuraButton(text: "MY PREFERENCES"),
                 AuraButton(text: "UNLOCK AURA+"),
-                AuraButton(text: "AURA SHOP"),
+                AuraButton(
+                  onTap: () {
+                    Get.toNamed(AppRoutes.instance.shopScreen);
+                  },
+                  text: "AURA SHOP",
+                ),
               ],
             ),
           ),

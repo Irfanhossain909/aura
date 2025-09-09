@@ -27,6 +27,7 @@ import 'package:aura/screens/home_screens/home_main_screen/home_main_screen.dart
 import 'package:aura/screens/home_screens/vedio_calling_screen/vedio_calling_screen.dart';
 import 'package:aura/screens/profile_screens/profile_edit_screen/profile_edit_screen.dart';
 import 'package:aura/screens/profile_screens/profile_screen/profile_screen.dart';
+import 'package:aura/screens/profile_screens/shop_screeen/shop_screen.dart';
 import 'package:aura/screens/settings_screen/account_arcive_screen/account_arcive_screen.dart';
 import 'package:aura/screens/settings_screen/account_delete_screen/account_delete_screen.dart';
 import 'package:aura/screens/settings_screen/comunity_guideline_screen/comunity_guideline_screen.dart';
@@ -218,7 +219,7 @@ List<GetPage> appRootRoutesFile = <GetPage>[
     binding: AppBinding(),
     page: () => const SyncContactScreen(),
   ),
-  //////////////Chat Screen////////////////////
+  //////////////profile Screen////////////////////
   GetPage(
     name: AppRoutes.instance.profileTypeScreen,
     page: () => const ProfileScreen(),
@@ -227,6 +228,7 @@ List<GetPage> appRootRoutesFile = <GetPage>[
     name: AppRoutes.instance.profileEditScreen,
     page: () => const ProfileEditScreen(),
   ),
+  GetPage(name: AppRoutes.instance.shopScreen, page: () => const ShopScreen()),
 
   ////////////////////Home Screens/////////////////////////
   GetPage(
