@@ -25,6 +25,7 @@ import 'package:aura/screens/extentions_screens/member_prefference_screen/member
 import 'package:aura/screens/auth_screens/user_waiting_screen/user_waiting_screen.dart';
 import 'package:aura/screens/home_screens/home_main_screen/home_main_screen.dart';
 import 'package:aura/screens/home_screens/vedio_calling_screen/vedio_calling_screen.dart';
+import 'package:aura/screens/profile_screens/ice_breack_screen/ice_break_screen.dart';
 import 'package:aura/screens/profile_screens/profile_edit_screen/profile_edit_screen.dart';
 import 'package:aura/screens/profile_screens/profile_screen/profile_screen.dart';
 import 'package:aura/screens/profile_screens/shop_screeen/shop_screen.dart';
@@ -229,6 +230,7 @@ List<GetPage> appRootRoutesFile = <GetPage>[
     page: () => const ProfileEditScreen(),
   ),
   GetPage(name: AppRoutes.instance.shopScreen, page: () => const ShopScreen()),
+  GetPage(name: AppRoutes.instance.iceBreakScreen, page: () => const IceBreakScreen()),
 
   ////////////////////Home Screens/////////////////////////
   GetPage(

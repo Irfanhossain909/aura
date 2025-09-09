@@ -46,6 +46,7 @@ class AppRoutes {
   final String profileTypeScreen = "/profile-type-screen";
   final String profileEditScreen = "/profile-edit-screen";
   final String shopScreen = "/shop-screen";
+  final String iceBreakScreen = "/ice-break-screen";
 
   ///////////////Home Screen//////////////////
   final String homeMainScreen = "/home-main-screen";

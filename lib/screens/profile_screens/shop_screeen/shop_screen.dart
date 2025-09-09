@@ -1,5 +1,6 @@
 import 'package:aura/const/app_colors.dart';
 import 'package:aura/const/assets_icons_path.dart';
+import 'package:aura/routes/app_routes.dart';
 import 'package:aura/utils/applog/app_size.dart';
 import 'package:aura/utils/applog/gap.dart';
 import 'package:aura/widgets/app_bar/custom_appbar_auth.dart';
@@ -8,6 +9,7 @@ import 'package:aura/widgets/app_images/app_image.dart';
 import 'package:aura/widgets/app_images/scaffold_with_bg_image_for_auth.dart';
 import 'package:aura/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ShopScreen extends StatelessWidget {
   const ShopScreen({super.key});
@@ -49,7 +51,9 @@ class ShopScreen extends StatelessWidget {
                 text1: "ICE",
                 text2: "BREAKERS",
                 text3: "GAME",
-                onTap: () {},
+                onTap: () {
+                  Get.toNamed(AppRoutes.instance.iceBreakScreen);
+                },
               ),
               ShowChad(
                 iconPath: AssetsIconsPath.instance.time,
