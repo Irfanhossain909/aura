@@ -27,4 +27,7 @@ class AssetsIconsPath {
   final String auraCard = "assets/images/aura_card.png";
   final String loveCard = "assets/images/love_card.png";
   final String personImage = "assets/images/person_img.webp";
+  final String game1 = "assets/images/game1.webp";
+  final String game2 = "assets/images/game2.webp";
+  final String game3 = "assets/images/game3.webp";
 }

@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 class VedioCallController extends GetxController {
   /// Whether the match switch is active (matched)
   final RxBool isMatched = false.obs;
+  final RxBool isIceBrekarShow = false.obs;
+  final RxBool isAuraCardShow = false.obs;
 
   /// Knob horizontal alignment from -1.0 (left) to 1.0 (right)
   final RxDouble knobAlignX = (-1.0).obs;
@@ -14,6 +16,24 @@ class VedioCallController extends GetxController {
 
   void toggleMatched() {
     setMatched(!isMatched.value);
+  }
+
+  void toggleIceBrekar() {
+    // isIceBrekarShow.value = !isIceBrekarShow.value;
+    isAuraCardShow.value = false;
+    isIceBrekarShow.value = true;
+    Future.delayed(Duration(seconds: 3), () {
+      isIceBrekarShow.value = false;
+    });
+  }
+
+  void toggleAuraCard() {
+    isIceBrekarShow.value = false;
+    isAuraCardShow.value = true;
+  }
+
+  void removeAuraCard() {
+    isAuraCardShow.value = false;
   }
 
   /// Update knob position during drag
