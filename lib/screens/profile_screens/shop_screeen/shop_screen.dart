@@ -60,7 +60,9 @@ class ShopScreen extends StatelessWidget {
                 text1: "ADD",
                 text2: "TIME",
                 text3: "BUNDLES",
-                onTap: () {},
+                onTap: () {
+                  Get.toNamed(AppRoutes.instance.unlimitedRelocationScreen);
+                },
               ),
             ],
           ),

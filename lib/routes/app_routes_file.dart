@@ -29,6 +29,7 @@ import 'package:aura/screens/profile_screens/ice_breack_screen/ice_break_screen.
 import 'package:aura/screens/profile_screens/profile_edit_screen/profile_edit_screen.dart';
 import 'package:aura/screens/profile_screens/profile_screen/profile_screen.dart';
 import 'package:aura/screens/profile_screens/shop_screeen/shop_screen.dart';
+import 'package:aura/screens/profile_screens/unlimited_relocation/unlimited_relocation.dart';
 import 'package:aura/screens/settings_screen/account_arcive_screen/account_arcive_screen.dart';
 import 'package:aura/screens/settings_screen/account_delete_screen/account_delete_screen.dart';
 import 'package:aura/screens/settings_screen/comunity_guideline_screen/comunity_guideline_screen.dart';
@@ -231,6 +232,7 @@ List<GetPage> appRootRoutesFile = <GetPage>[
   ),
   GetPage(name: AppRoutes.instance.shopScreen, page: () => const ShopScreen()),
   GetPage(name: AppRoutes.instance.iceBreakScreen, page: () => const IceBreakScreen()),
+  GetPage(name: AppRoutes.instance.unlimitedRelocationScreen, page: () => const UnlimitedRelocation()),
 
   ////////////////////Home Screens/////////////////////////
   GetPage(
