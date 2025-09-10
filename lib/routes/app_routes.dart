@@ -4,6 +4,7 @@ class AppRoutes {
   static AppRoutes get instance => _instance;
 
   //////////////NAVIGATION SCREEN////////////////////////////////
+  final String initial = "/";
   final String navigationScreen = "/navigation-screen";
   /////////////  App Extention screens
   final String memberPrefferenceScreen = "/member-prefference-screen";

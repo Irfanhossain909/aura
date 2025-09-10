@@ -7,6 +7,7 @@ import 'package:aura/screens/auth_screens/login_screen/login_screen.dart';
 import 'package:aura/screens/auth_screens/select_profile_img/select_profile_img.dart';
 import 'package:aura/screens/auth_screens/selection_screen/selection_screen.dart';
 import 'package:aura/screens/auth_screens/signup_screen/signup_screen.dart';
+import 'package:aura/screens/auth_screens/splash_screen/controller/splash_screen.dart';
 import 'package:aura/screens/auth_screens/upload_id_screen/upload_id_screen.dart';
 import 'package:aura/screens/auth_screens/verify_code_screen/verify_code_screen.dart';
 import 'package:aura/screens/auth_screens/verify_phone_screen/verify_prone_screen.dart';
@@ -43,13 +44,13 @@ import 'package:get/get.dart';
 
 List<GetPage> appRootRoutesFile = <GetPage>[
   //   /////////////////  splash screen start
-  // GetPage(
-  //   name: AppRoutes.instance.initial,
-  //   binding: SplashScreenBinding(),
-  //   page: () => const SplashScreen(),
-  //   transitionDuration: Duration(milliseconds: 800),
-  //   opaque: false,
-  // ),
+  GetPage(
+    name: AppRoutes.instance.initial,
+    // binding: SplashScreenBinding(),
+    page: () => const SplashScreen(),
+    transitionDuration: Duration(milliseconds: 800),
+    opaque: false,
+  ),
   // GetPage(
   //   name: AppRoutes.instance.onBoardingScreen,
   //   page: () => const OnboadingScreen(),
@@ -231,8 +232,14 @@ List<GetPage> appRootRoutesFile = <GetPage>[
     page: () => const ProfileEditScreen(),
   ),
   GetPage(name: AppRoutes.instance.shopScreen, page: () => const ShopScreen()),
-  GetPage(name: AppRoutes.instance.iceBreakScreen, page: () => const IceBreakScreen()),
-  GetPage(name: AppRoutes.instance.unlimitedRelocationScreen, page: () => const UnlimitedRelocation()),
+  GetPage(
+    name: AppRoutes.instance.iceBreakScreen,
+    page: () => const IceBreakScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.unlimitedRelocationScreen,
+    page: () => const UnlimitedRelocation(),
+  ),
 
   ////////////////////Home Screens/////////////////////////
   GetPage(
