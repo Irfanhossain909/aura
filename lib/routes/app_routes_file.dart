@@ -2,6 +2,7 @@ import 'package:aura/routes/app_routes.dart';
 import 'package:aura/routes/bindings/app_binding.dart';
 import 'package:aura/routes/bindings/auth_binding.dart';
 import 'package:aura/screens/app_navigation_screen/navigation_screen.dart';
+import 'package:aura/screens/auth_screens/enter_phone_screen/enter_phone_screen.dart';
 import 'package:aura/screens/auth_screens/id_type_select_screen/id_type_select_screen.dart';
 import 'package:aura/screens/auth_screens/login_screen/login_screen.dart';
 import 'package:aura/screens/auth_screens/select_profile_img/select_profile_img.dart';
@@ -73,6 +74,11 @@ List<GetPage> appRootRoutesFile = <GetPage>[
     name: AppRoutes.instance.signUpScreen,
     binding: AuthBinding(),
     page: () => const SignupScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.enterPhoneScreen,
+    binding: AuthBinding(),
+    page: () => const EnterPhoneScreen(),
   ),
   GetPage(
     name: AppRoutes.instance.loginScreen,

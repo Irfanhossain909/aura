@@ -100,7 +100,7 @@ class _AppInputWidgetTwoState extends State<AppInputWidgetTwo> {
                   widget.title!,
                   style: TextStyle(
                     fontSize: AppSize.width(value: 14),
-                    color: Colors.black,
+                    color: Colors.white,
                     fontWeight: FontWeight.w500,
                     fontFamily: AppConst.fontFamily1,
                   ),
@@ -121,7 +121,7 @@ class _AppInputWidgetTwoState extends State<AppInputWidgetTwo> {
             SizedBox(
               height: widget.height,
               child: TextFormField(
-                cursorColor: AppColors.instance.black,
+                cursorColor: AppColors.instance.white,
                 onChanged: widget.onChanged,
                 onTap: widget.onTap,
                 onFieldSubmitted: widget.onFieldSubmitted,
@@ -144,12 +144,12 @@ class _AppInputWidgetTwoState extends State<AppInputWidgetTwo> {
                       height: 2,
                       fontFamily: AppConst.fontFamily1,
                       fontWeight: FontWeight.w500,
-                      color: AppColors.instance.black,
+                      color: AppColors.instance.white,
                     ),
                 decoration: InputDecoration(
                   hintText: widget.hintText,
                   hintStyle: Theme.of(context).textTheme.titleSmall?.copyWith(
-                    color: AppColors.instance.black.withValues(alpha: .7),
+                    color: AppColors.instance.white.withValues(alpha: .7),
                   ),
                   filled: widget.filled, // Use the filled property
                   fillColor:

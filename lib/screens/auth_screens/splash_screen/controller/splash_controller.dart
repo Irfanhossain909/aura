@@ -18,7 +18,7 @@ class SplashController extends GetxController {
       Future.delayed(Duration(seconds: 3), () {
         Get.delete<SplashController>();
 
-        // Get.toNamed(AppRoutes.instance.onBoardingScreen);
+        Get.toNamed(AppRoutes.instance.selectionScreen);
         // // final String token = storageServices.getToken();
         // if (token.isNotEmpty) {
         //   Get.offAllNamed(AppRoutes.instance.navigationScreen);

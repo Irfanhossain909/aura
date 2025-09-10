@@ -1,4 +1,5 @@
 import 'package:aura/const/app_colors.dart';
+import 'package:aura/routes/app_routes.dart';
 import 'package:aura/screens/auth_screens/id_type_select_screen/controller/id_type_select_controller.dart';
 import 'package:aura/utils/applog/app_size.dart';
 import 'package:aura/utils/applog/gap.dart';
@@ -7,7 +8,9 @@ import 'package:aura/widgets/app_button/aura_button.dart';
 import 'package:aura/widgets/app_images/scaffold_with_bg_image_for_auth.dart';
 import 'package:aura/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/state_manager.dart';
 
 class IdTypeSelectScreen extends StatelessWidget {
   const IdTypeSelectScreen({super.key});
@@ -53,6 +56,9 @@ class IdTypeSelectScreen extends StatelessWidget {
                   vertical: AppSize.width(value: 12),
                 ),
                 child: AuraButton(
+                  onTap: () {
+                    Get.toNamed(AppRoutes.instance.uploadIdScreen);
+                  },
                   filColor: AppColors.instance.blue,
                   textColor: AppColors.instance.white,
                   text: "CONFIRM",

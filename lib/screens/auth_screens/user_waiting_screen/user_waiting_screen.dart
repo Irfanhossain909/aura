@@ -1,4 +1,5 @@
 import 'package:aura/const/app_colors.dart';
+import 'package:aura/routes/app_routes.dart';
 import 'package:aura/screens/auth_screens/select_profile_img/controller/upload_id_controller.dart';
 import 'package:aura/utils/applog/app_size.dart';
 import 'package:aura/utils/applog/gap.dart';
@@ -7,7 +8,9 @@ import 'package:aura/widgets/app_button/aura_button.dart';
 import 'package:aura/widgets/app_images/scaffold_with_bg_image_for_auth.dart';
 import 'package:aura/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/state_manager.dart';
 
 class UserWaitingScreen extends StatelessWidget {
   const UserWaitingScreen({super.key});
@@ -54,6 +57,7 @@ class UserWaitingScreen extends StatelessWidget {
                     ],
                   ),
                   child: AppText(
+                    textAlign: TextAlign.center,
                     data:
                         "Your I.D should take about 5 minutes to get verified until then please continue to set up your account.",
                     color: AppColors.instance.white,
@@ -67,16 +71,13 @@ class UserWaitingScreen extends StatelessWidget {
                   vertical: AppSize.width(value: 12),
                 ),
                 child: AuraButton(
+                  onTap: () {
+                    Get.toNamed(AppRoutes.instance.navigationScreen);
+                  },
                   filColor: AppColors.instance.blue,
                   textColor: AppColors.instance.white,
                   text: "CONFIRM",
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: AppSize.width(value: 150),
-                ),
-                child: AuraButton(text: "Back"),
               ),
             ],
           );

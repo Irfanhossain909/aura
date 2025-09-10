@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
 
       title: 'Aura',
       theme: appThemeData,
-      defaultTransition: Transition.fade,
+      defaultTransition: Transition.fadeIn,
       transitionDuration: Duration(milliseconds: 300),
     );
   }

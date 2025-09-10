@@ -21,6 +21,8 @@ class AssetsIconsPath {
   final String groth = "assets/icons/groth.png";
   final String ap = "assets/icons/ap.png";
   final String time = "assets/icons/time.png";
+  final String apple = "assets/icons/apple.png";
+  final String google = "assets/icons/google.png";
   //=================Images================================
 
   final String extentionBg = "assets/images/extention_bg.webp";

@@ -10,8 +10,8 @@ import 'package:aura/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class VerifyProneScreen extends StatelessWidget {
-  const VerifyProneScreen({super.key});
+class EnterPhoneScreen extends StatelessWidget {
+  const EnterPhoneScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,18 +26,12 @@ class VerifyProneScreen extends StatelessWidget {
               spacing: AppSize.size.height * 0.02,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                AppText(
-                  textAlign: TextAlign.center,
-                  data: "VERIFICATION CODE",
-                  fontSize: AppSize.width(value: 24),
-                  color: AppColors.instance.white,
-                ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  padding: EdgeInsets.symmetric(horizontal: 40),
                   child: AppText(
                     textAlign: TextAlign.center,
-                    data: "ENTER THE VERIFICATION CODE SENT TO YOUR PHONE",
-                    fontSize: AppSize.width(value: 18),
+                    data: "Let’s verify your phone number",
+                    fontSize: AppSize.width(value: 24),
                     color: AppColors.instance.white,
                   ),
                 ),
@@ -45,48 +39,37 @@ class VerifyProneScreen extends StatelessWidget {
                   // height: AppSize.width(value: 36),
                   contentPadding: EdgeInsets.symmetric(
                     vertical: 0,
-                    horizontal: AppSize.width(value: 12),
+                    horizontal: AppSize.width(value: 16),
                   ),
                   fillColor: Colors.transparent,
-                  hintText: "Enter Code",
+                  hintText: "Enter your phone number",
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: AppText(
+                    textAlign: TextAlign.center,
+                    data:
+                        "we will send a text to your phone to verify your number. Please make sure it’s correct. message and data rates may apply",
+                    fontSize: AppSize.width(value: 18),
+                    color: AppColors.instance.white,
+                  ),
                 ),
 
                 // Continue button
                 Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: AppSize.width(value: 20),
+                    horizontal: AppSize.width(value: 40),
                   ),
                   child: AuraButton(
                     onTap: () {
-                      Get.toNamed(AppRoutes.instance.idTypeSelectScreen);
+                      Get.toNamed(AppRoutes.instance.verifyPhoneScreen);
                     },
                     filColor: AppColors.instance.blue,
                     textColor: AppColors.instance.white,
-                    text: "SUBMIT",
+                    text: "CONFIRM",
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: RichText(
-                    textAlign: TextAlign.center,
-                    text: TextSpan(
-                      style: TextStyle(
-                        fontSize: AppSize.width(value: 16),
-                        color: AppColors.instance.white.withValues(alpha: 0.5),
-                      ),
-                      children: [
-                        const TextSpan(
-                          text: "Didn’t receive the code? click here to ",
-                        ),
-                        TextSpan(
-                          text: "resend",
-                          style: TextStyle(color: AppColors.instance.blue),
-                        ),
-                        const TextSpan(text: " phone "),
-                      ],
-                    ),
-                  ),
-                ),
+
                 Padding(
                   padding: EdgeInsets.symmetric(
                     horizontal: AppSize.width(value: 90),

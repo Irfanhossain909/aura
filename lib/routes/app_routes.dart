@@ -38,6 +38,7 @@ class AppRoutes {
   final String selectProfileImgScreen = "/select-profile-img-screen";
   final String userWaitingScreen = "/user-waiting-screen";
   final String selectionScreen = "/selection-screen";
+  final String enterPhoneScreen = "/enter-phone-screen";
 
   //////////////Chat Screen//////////////////////////////////////
   final String chatListScreen = "/chat-list-screen";

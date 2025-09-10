@@ -1,4 +1,5 @@
 import 'package:aura/const/app_colors.dart';
+import 'package:aura/routes/app_routes.dart';
 import 'package:aura/utils/applog/app_size.dart';
 import 'package:aura/utils/applog/gap.dart';
 import 'package:aura/widgets/app_bar/custom_appbar_auth.dart';
@@ -7,6 +8,7 @@ import 'package:aura/widgets/app_images/scaffold_with_bg_image_for_auth.dart';
 import 'package:aura/widgets/input_text/app_input_widget_two.dart';
 import 'package:aura/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
@@ -75,16 +77,20 @@ class SignupScreen extends StatelessWidget {
                   ),
                   fillColor: Colors.transparent,
                   hintText: "Confirm Password",
+
                   isPassWord: true,
                 ),
 
                 // Continue button
                 Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: AppSize.width(value: 120),
+                    horizontal: AppSize.width(value: 72),
                     vertical: AppSize.width(value: 12),
                   ),
                   child: AuraButton(
+                    onTap: () {
+                      Get.toNamed(AppRoutes.instance.verifyCodeScreen);
+                    },
                     filColor: AppColors.instance.blue,
                     textColor: AppColors.instance.white,
                     text: "CONFIRM",
@@ -92,9 +98,14 @@ class SignupScreen extends StatelessWidget {
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: AppSize.width(value: 150),
+                    horizontal: AppSize.width(value: 88),
                   ),
-                  child: AuraButton(text: "Back"),
+                  child: AuraButton(
+                    onTap: () {
+                      Get.back();
+                    },
+                    text: "Back",
+                  ),
                 ),
 
                 // Back button
