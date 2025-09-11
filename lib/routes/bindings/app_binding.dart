@@ -14,6 +14,7 @@ import 'package:aura/screens/chat_screens/message_screen/controller/message_cont
 import 'package:aura/screens/settings_screen/report_option_screen/controller/report_option_controller.dart';
 import 'package:aura/screens/profile_screens/profile_edit_screen/controller/profile_edit_controller.dart';
 import 'package:aura/screens/home_screens/vedio_calling_screen/controller/vedio_call_controller.dart';
+import 'package:aura/screens/home_screens/start_calling_screen/controller/start_calling_controller.dart';
 import 'package:get/get.dart';
 
 class AppBinding extends Bindings {
@@ -37,5 +38,6 @@ class AppBinding extends Bindings {
     Get.lazyPut(() => ProfileEditController());
     Get.lazyPut(() => HomeMainController());
     Get.lazyPut(() => VedioCallController());
+    Get.lazyPut(() => StartCallingController());
   }
 }

@@ -16,8 +16,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
 
-      // initialRoute: AppRoutes.instance.initial,
-      initialRoute: AppRoutes.instance.communityExpectionScreen,
+      initialRoute: AppRoutes.instance.initial,
       getPages: appRootRoutesFile,
       enableLog: true,
       themeMode: ThemeMode.light,

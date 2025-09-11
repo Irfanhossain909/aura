@@ -9,7 +9,9 @@ class HomeMainController extends GetxController {
     Future.delayed(Duration(seconds: 2), () {
       isNAvigate.value = false;
       // Navigate to the next screen after 10 seconds
-      Get.toNamed(AppRoutes.instance.vedioCallingScreen);  // Replace with your target screen widget
+      Get.toNamed(
+        AppRoutes.instance.startCallingScreen,
+      ); // Replace with your target screen widget
     });
   }
 }

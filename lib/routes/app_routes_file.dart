@@ -27,6 +27,7 @@ import 'package:aura/screens/extentions_screens/im_interested_in_screen/im_inter
 import 'package:aura/screens/extentions_screens/member_prefference_screen/member_prefference_screen.dart';
 import 'package:aura/screens/auth_screens/user_waiting_screen/user_waiting_screen.dart';
 import 'package:aura/screens/home_screens/home_main_screen/home_main_screen.dart';
+import 'package:aura/screens/home_screens/start_calling_screen/start_calling_screen.dart';
 import 'package:aura/screens/home_screens/vedio_calling_screen/vedio_calling_screen.dart';
 import 'package:aura/screens/profile_screens/community_expection_screen/community_expection_screen.dart';
 import 'package:aura/screens/profile_screens/get_time_screen/get_time_screen.dart';
@@ -286,5 +287,10 @@ List<GetPage> appRootRoutesFile = <GetPage>[
     name: AppRoutes.instance.vedioCallingScreen,
     binding: AppBinding(),
     page: () => const VedioCallingScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.startCallingScreen,
+    binding: AppBinding(),
+    page: () => const StartCallingScreen(),
   ),
 ];

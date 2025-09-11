@@ -23,6 +23,7 @@ class AssetsIconsPath {
   final String time = "assets/icons/time.png";
   final String apple = "assets/icons/apple.png";
   final String google = "assets/icons/google.png";
+  final String closeIc = "assets/icons/close_ic.png";
   //=================Images================================
 
   final String extentionBg = "assets/images/extention_bg.webp";
@@ -44,4 +45,5 @@ class AssetsIconsPath {
   final String offer2 = "assets/images/offer2.webp";
   final String offer3 = "assets/images/offer3.webp";
   final String comExpectionImg = "assets/images/home.webp";
+  final String person2 = "assets/images/person2.webp";
 }
