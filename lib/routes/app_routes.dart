@@ -52,6 +52,7 @@ class AppRoutes {
   final String unlimitedRelocationScreen = "/unlimited-relocation-screen";
   final String getTImeScreen = "/get-time-screen";
   final String giftScreen = "/gift-screen";
+  final String unlockAuraScreen = "/unlock-aura-screen";
 
   ///////////////Home Screen//////////////////
   final String homeMainScreen = "/home-main-screen";

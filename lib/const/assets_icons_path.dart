@@ -39,4 +39,8 @@ class AssetsIconsPath {
   final String game1 = "assets/images/game1.webp";
   final String game2 = "assets/images/game2.webp";
   final String game3 = "assets/images/game3.webp";
+  final String auraPlus = "assets/images/aura_plus.webp";
+  final String offer1 = "assets/images/offer1.webp";
+  final String offer2 = "assets/images/offer2.webp";
+  final String offer3 = "assets/images/offer3.webp";
 }

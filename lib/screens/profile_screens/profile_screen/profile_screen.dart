@@ -94,7 +94,12 @@ class ProfileScreen extends StatelessWidget {
               spacing: AppSize.size.height * 0.02,
               children: [
                 AuraButton(text: "MY PREFERENCES"),
-                AuraButton(text: "UNLOCK AURA+"),
+                AuraButton(
+                  onTap: () {
+                    Get.toNamed(AppRoutes.instance.unlockAuraScreen);
+                  },
+                  text: "UNLOCK AURA+",
+                ),
                 AuraButton(
                   onTap: () {
                     Get.toNamed(AppRoutes.instance.shopScreen);

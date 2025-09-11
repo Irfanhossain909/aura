@@ -34,6 +34,7 @@ import 'package:aura/screens/profile_screens/profile_edit_screen/profile_edit_sc
 import 'package:aura/screens/profile_screens/profile_screen/profile_screen.dart';
 import 'package:aura/screens/profile_screens/shop_screeen/shop_screen.dart';
 import 'package:aura/screens/profile_screens/unlimited_relocation/unlimited_relocation.dart';
+import 'package:aura/screens/profile_screens/unlock_aura_screen/unlock_aura_screen.dart';
 import 'package:aura/screens/settings_screen/account_arcive_screen/account_arcive_screen.dart';
 import 'package:aura/screens/settings_screen/account_delete_screen/account_delete_screen.dart';
 import 'package:aura/screens/settings_screen/comunity_guideline_screen/comunity_guideline_screen.dart';
@@ -252,9 +253,10 @@ List<GetPage> appRootRoutesFile = <GetPage>[
     name: AppRoutes.instance.getTImeScreen,
     page: () => const GetTimeScreen(),
   ),
+  GetPage(name: AppRoutes.instance.giftScreen, page: () => const GiftScreen()),
   GetPage(
-    name: AppRoutes.instance.giftScreen,
-    page: () => const GiftScreen(),
+    name: AppRoutes.instance.unlockAuraScreen,
+    page: () => const UnlockAuraScreen(),
   ),
 
   ////////////////////Home Screens/////////////////////////
