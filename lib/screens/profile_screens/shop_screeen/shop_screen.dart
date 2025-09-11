@@ -61,7 +61,7 @@ class ShopScreen extends StatelessWidget {
                 text2: "TIME",
                 text3: "BUNDLES",
                 onTap: () {
-                  Get.toNamed(AppRoutes.instance.unlimitedRelocationScreen);
+                  Get.toNamed(AppRoutes.instance.getTImeScreen);
                 },
               ),
             ],
@@ -75,14 +75,18 @@ class ShopScreen extends StatelessWidget {
                 text1: "PROFILE",
                 text2: "BOOSTS",
                 text3: "BUNDLES",
-                onTap: () {},
+                onTap: () {
+                  Get.toNamed(AppRoutes.instance.unlimitedRelocationScreen);
+                },
               ),
               ShowChad(
                 iconPath: AssetsIconsPath.instance.ap,
                 text1: "GET MORE",
                 text2: "AURA",
                 text3: "POINTS",
-                onTap: () {},
+                onTap: () {
+                  Get.toNamed(AppRoutes.instance.giftScreen);
+                },
               ),
             ],
           ),

@@ -50,6 +50,8 @@ class AppRoutes {
   final String shopScreen = "/shop-screen";
   final String iceBreakScreen = "/ice-break-screen";
   final String unlimitedRelocationScreen = "/unlimited-relocation-screen";
+  final String getTImeScreen = "/get-time-screen";
+  final String giftScreen = "/gift-screen";
 
   ///////////////Home Screen//////////////////
   final String homeMainScreen = "/home-main-screen";

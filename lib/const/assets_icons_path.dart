@@ -28,6 +28,7 @@ class AssetsIconsPath {
   final String extentionBg = "assets/images/extention_bg.webp";
   final String authBg = "assets/images/auth_bg.webp";
   final String circleBg = "assets/images/circle.webp";
+  final String circleBg2 = "assets/icons/app_circl2.png";
   final String idImg = "assets/images/id_img.webp";
   final String emptyImg = "assets/images/empty_img.webp";
   final String homeImg = "assets/images/home_img.webp";
