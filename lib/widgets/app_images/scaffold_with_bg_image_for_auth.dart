@@ -24,6 +24,7 @@ class ScaffoldWithBgImageForAuth extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: appBar,
       body: Container(
         width: double.infinity,
