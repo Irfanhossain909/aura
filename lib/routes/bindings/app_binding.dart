@@ -1,5 +1,6 @@
 import 'package:aura/screens/app_navigation_screen/controller/navigation_screen_controller.dart';
 import 'package:aura/screens/extentions_screens/about_me_screen/controller/about_me_controller.dart';
+import 'package:aura/screens/extentions_screens/my_about_me_screen/controller/my_about_me_controller.dart';
 import 'package:aura/screens/extentions_screens/dating_intensions_screen/controler/dating_intensions_controller.dart';
 import 'package:aura/screens/extentions_screens/ethnicity_screen/controller/ethnicity_controller.dart';
 import 'package:aura/screens/extentions_screens/gender_selection_screen/controller/gender_selection_controller.dart';
@@ -28,6 +29,7 @@ class AppBinding extends Bindings {
     Get.lazyPut(() => ZoodiacPrefereanceController());
     Get.lazyPut(() => GenderSelectionController());
     Get.lazyPut(() => AboutMeController());
+    Get.lazyPut(() => MyAboutMeController());
     Get.lazyPut(() => PushNotificationController());
     Get.lazyPut(() => ContactListController());
     Get.lazyPut(() => MessageController());

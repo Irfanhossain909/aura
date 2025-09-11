@@ -27,7 +27,7 @@ class ContactListScreen extends StatelessWidget {
               children: [
                 CustomAppBar(
                   logoUnderText: "CONTACT & BLOCK",
-                  title: "CONTACT LIST",
+                  title: "",
                   isDividerShow: false,
                   action: Container(
                     padding: EdgeInsets.symmetric(vertical: 6, horizontal: 12),

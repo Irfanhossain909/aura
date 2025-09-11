@@ -46,7 +46,7 @@ class NavigationScreen extends StatelessWidget {
                         padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
                           color: isSelected
-                              ? AppColors.instance.blue.withOpacity(0.1)
+                              ? AppColors.instance.blue.withValues(alpha: .1)
                               : Colors.transparent,
                           border: Border.all(
                             color: isSelected
@@ -76,11 +76,7 @@ class NavigationScreen extends StatelessWidget {
           body: Obx(
             () => IndexedStack(
               index: controller.selectedIndex.value,
-              children: [
-                ChatListScreen(),
-                HomeMainScreen(),
-                ProfileScreen(),
-              ],
+              children: [ChatListScreen(), HomeMainScreen(), ProfileScreen()],
             ),
           ),
         );

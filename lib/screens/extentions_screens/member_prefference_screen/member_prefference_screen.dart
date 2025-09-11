@@ -107,15 +107,13 @@ class MemberPrefferenceScreen extends StatelessWidget {
                                 ),
                               ),
                               Gap(height: 10),
-                              RowItemWithDivider(text: "HEIGHT"),
                               RowItemWithDivider(
                                 onTap: () {
-                                  Get.toNamed(
-                                    AppRoutes.instance.genderSelectionScreen,
-                                  );
+                                  Get.toNamed(AppRoutes.instance.aboutMeScreen);
                                 },
-                                text: "GENDER",
+                                text: "HEIGHT",
                               ),
+
                               RowItemWithDividerWithCheckBox(
                                 text: "DRINKING",
                                 isChecked: controller.drinkingChecked.value,
@@ -162,14 +160,20 @@ class MemberPrefferenceScreen extends StatelessWidget {
                               ),
                               RowItemWithDivider(
                                 onTap: () {
-                                  Get.toNamed(AppRoutes.instance.educationLevelScreen);
+                                  Get.toNamed(
+                                    AppRoutes.instance.educationLevelScreen,
+                                  );
                                 },
-                                text: "EDUCATION LEVEL"),
+                                text: "EDUCATION LEVEL",
+                              ),
                               RowItemWithDivider(
                                 onTap: () {
-                                  Get.toNamed(AppRoutes.instance.aboutMeScreen);
+                                  Get.toNamed(
+                                    AppRoutes.instance.genderSelectionScreen,
+                                  );
                                 },
-                                text: "ABOUT ME"),
+                                text: "GENDER",
+                              ),
                               RowItemWithDivider(
                                 onTap: () {
                                   Get.toNamed(
@@ -201,4 +205,3 @@ class MemberPrefferenceScreen extends StatelessWidget {
     );
   }
 }
-

@@ -9,8 +9,6 @@ import 'package:aura/widgets/app_images/scaffold_with_bg_image_for_auth.dart';
 import 'package:aura/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/state_manager.dart';
 
 class IdTypeSelectScreen extends StatelessWidget {
   const IdTypeSelectScreen({super.key});
@@ -24,8 +22,8 @@ class IdTypeSelectScreen extends StatelessWidget {
           return Column(
             spacing: AppSize.size.height * 0.01,
             children: [
-              CustomAppBarAuth(logoUnderText: "SIGNUP", progressValue: 1),
-              Gap(height: AppSize.size.height * 0.14),
+              CustomAppBarAuth(logoUnderText: "SIGNUP", progressValue: 4),
+              Gap(height: AppSize.size.height * 0.17),
               AppText(
                 data: "SELECT VERIFICATION METHOD",
                 fontSize: AppSize.width(value: 24),
@@ -68,7 +66,12 @@ class IdTypeSelectScreen extends StatelessWidget {
                 padding: EdgeInsets.symmetric(
                   horizontal: AppSize.width(value: 150),
                 ),
-                child: AuraButton(text: "Back"),
+                child: AuraButton(
+                  onTap: () {
+                    Get.back();
+                  },
+                  text: "Back",
+                ),
               ),
             ],
           );

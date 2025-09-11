@@ -18,8 +18,8 @@ class AboutMeScreen extends StatelessWidget {
             children: [
               CustomAppBar(
                 action: SizedBox(),
-                logoUnderText: "ABOUT ME",
-                title: "ABOUT ME",
+                logoUnderText: "height preference",
+                title: "height preference",
               ),
 
               Builder(

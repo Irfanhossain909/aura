@@ -1,9 +1,11 @@
 import 'package:aura/const/app_colors.dart';
 import 'package:aura/const/assets_icons_path.dart';
+import 'package:aura/routes/app_routes.dart';
 import 'package:aura/screens/profile_screens/profile_edit_screen/controller/profile_edit_controller.dart';
 import 'package:aura/utils/applog/app_size.dart';
 import 'package:aura/utils/applog/gap.dart';
 import 'package:aura/widgets/app_bar/custom_appbar_auth.dart';
+import 'package:aura/widgets/app_button/app_button.dart';
 import 'package:aura/widgets/app_images/app_image_circular.dart';
 import 'package:aura/widgets/app_images/scaffold_with_bg_image.dart';
 import 'package:aura/widgets/text/app_text.dart';
@@ -18,14 +20,6 @@ class ProfileEditScreen extends StatelessWidget {
     // Get screen width and height
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
-
-    // Calculate the childAspectRatio based on both width and height
-    // For example, using width/height ratio for more flexibility
-    double childAspectRatio = screenWidth / screenHeight;
-
-    // Alternatively, adjust the ratio to fit the grid's intended appearance
-    // Here we consider that the grid items should take up around 1/3 of the screen's width
-    // and maintain the height-to-width proportion accordingly
     double adjustedChildAspectRatio = (screenWidth / 1) / (screenHeight / 6);
 
     return GetBuilder<ProfileEditController>(
@@ -125,8 +119,8 @@ class ProfileEditScreen extends StatelessWidget {
                             max: 65,
                             divisions: 47,
                             activeColor: AppColors.instance.blue,
-                            inactiveColor: AppColors.instance.blue.withOpacity(
-                              0.3,
+                            inactiveColor: AppColors.instance.blue.withValues(
+                              alpha: 0.3,
                             ),
                             onChanged: (RangeValues values) {
                               controller.updateMinAge(values.start);
@@ -172,17 +166,6 @@ class ProfileEditScreen extends StatelessWidget {
                       ),
                       Gap(height: AppSize.width(value: 16)),
 
-                      // SizedBox(
-                      //   height: 34,
-                      //   child: ListView.builder(
-                      //     scrollDirection: Axis.horizontal,
-                      //     shrinkWrap: true,
-                      //     itemCount: 10,
-                      //     itemBuilder: (context, index) {
-                      //       return HorizontalList();
-                      //     },
-                      //   ),
-                      // ),
                       Container(
                         height: 7,
                         width: AppSize.size.width * 0.7,
@@ -249,6 +232,25 @@ class ProfileEditScreen extends StatelessWidget {
                     ],
                   ),
                 ),
+              ),
+              AppButton(
+                onTap: () {
+                  Get.toNamed(AppRoutes.instance.myAboutMeScreen);
+                },
+                width: AppSize.size.width * 0.3,
+                height: AppSize.width(value: 34),
+                title: "CONFIRM",
+                filColor: AppColors.instance.blue,
+              ),
+              AppButton(
+                onTap: () {
+                  Get.back();
+                },
+                width: AppSize.size.width * 0.2,
+                height: AppSize.width(value: 34),
+                title: "BACk",
+                titleColor: AppColors.instance.black,
+                filColor: AppColors.instance.white,
               ),
             ],
           ),

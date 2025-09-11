@@ -9,8 +9,6 @@ import 'package:aura/widgets/app_images/scaffold_with_bg_image_for_auth.dart';
 import 'package:aura/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/state_manager.dart';
 
 class UserWaitingScreen extends StatelessWidget {
   const UserWaitingScreen({super.key});
@@ -24,8 +22,8 @@ class UserWaitingScreen extends StatelessWidget {
           return Column(
             spacing: AppSize.size.height * 0.01,
             children: [
-              CustomAppBarAuth(logoUnderText: "SIGNUP", progressValue: 1),
-              Gap(height: AppSize.size.height * 0.14),
+              CustomAppBarAuth(logoUnderText: "SIGNUP", progressValue: 6),
+              Gap(height: AppSize.size.height * 0.18),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 100),
                 child: AppText(
@@ -72,7 +70,7 @@ class UserWaitingScreen extends StatelessWidget {
                 ),
                 child: AuraButton(
                   onTap: () {
-                    Get.toNamed(AppRoutes.instance.navigationScreen);
+                    Get.toNamed(AppRoutes.instance.enterPhoneScreen);
                   },
                   filColor: AppColors.instance.blue,
                   textColor: AppColors.instance.white,

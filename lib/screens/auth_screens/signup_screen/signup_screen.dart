@@ -18,8 +18,8 @@ class SignupScreen extends StatelessWidget {
     return ScaffoldWithBgImageForAuth(
       body: Column(
         children: [
-          CustomAppBarAuth(logoUnderText: "SIGNUP", progressValue: 1),
-          Gap(height: AppSize.size.height * 0.14),
+          CustomAppBarAuth(logoUnderText: "SIGNUP", progressValue: 2),
+          Gap(height: AppSize.size.height * 0.17),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 60),
             child: Column(

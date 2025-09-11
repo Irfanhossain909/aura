@@ -7,7 +7,6 @@ import 'package:aura/widgets/app_images/scaffold_with_bg_image.dart';
 import 'package:aura/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-import 'package:get/utils.dart';
 
 class UnlockAuraScreen extends StatelessWidget {
   const UnlockAuraScreen({super.key});

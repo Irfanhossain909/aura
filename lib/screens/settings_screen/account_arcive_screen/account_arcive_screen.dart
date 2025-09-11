@@ -6,6 +6,8 @@ import 'package:aura/widgets/app_button/app_button.dart';
 import 'package:aura/widgets/app_images/scaffold_with_bg_image_for_auth.dart';
 import 'package:aura/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/utils.dart';
 
 class AccountArciveScreen extends StatelessWidget {
   const AccountArciveScreen({super.key});
@@ -49,6 +51,9 @@ class AccountArciveScreen extends StatelessWidget {
                   color: AppColors.instance.black,
                 ),
                 AppButton(
+                  onTap: () {
+                    Get.close(2);
+                  },
                   width: AppSize.size.width * 0.4,
                   borderRadius: BorderRadius.circular(16),
                   height: AppSize.width(value: 36),

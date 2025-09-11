@@ -43,4 +43,5 @@ class AssetsIconsPath {
   final String offer1 = "assets/images/offer1.webp";
   final String offer2 = "assets/images/offer2.webp";
   final String offer3 = "assets/images/offer3.webp";
+  final String comExpectionImg = "assets/images/home.webp";
 }

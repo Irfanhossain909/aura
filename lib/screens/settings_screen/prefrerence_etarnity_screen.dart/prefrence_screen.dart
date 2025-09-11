@@ -1,10 +1,13 @@
 import 'package:aura/const/app_colors.dart';
+import 'package:aura/routes/app_routes.dart';
 import 'package:aura/utils/applog/app_size.dart';
 import 'package:aura/widgets/app_bar/custom_appber.dart';
+import 'package:aura/widgets/app_button/app_button.dart';
 import 'package:aura/widgets/app_images/scaffold_with_bg_image.dart';
 import 'package:aura/widgets/app_row_item_with_checkbox/app_row_item_with_divider/app_row_item_with_divider.dart';
 import 'package:aura/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class PrefrenceScreen extends StatelessWidget {
   const PrefrenceScreen({super.key});
@@ -28,11 +31,19 @@ class PrefrenceScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     RowItemWithDivider(
+                      onTap: () {
+                        Get.toNamed(AppRoutes.instance.contactListScreen);
+                      },
                       text: "BLOCKED LIST",
                       isDividerShow: false,
                     ),
                     SizedBox(height: AppSize.size.height * 0.01),
                     RowItemWithDivider(
+                      onTap: () {
+                        Get.toNamed(
+                          AppRoutes.instance.communityGuideLineScreen,
+                        );
+                      },
                       text: "COMMUNITY GUIDELINES",
                       isDividerShow: false,
                     ),
@@ -63,13 +74,13 @@ class PrefrenceScreen extends StatelessWidget {
                         AppText(
                           data: "(###) ###-###",
                           fontSize: AppSize.width(value: 22),
-                          fontWeight: FontWeight.w600,
+                          fontWeight: FontWeight.w500,
                           color: AppColors.instance.white,
                         ),
                         AppText(
                           data: "EDIT",
-                          fontSize: AppSize.width(value: 18),
-                          fontWeight: FontWeight.w500,
+                          fontSize: AppSize.width(value: 16),
+                          fontWeight: FontWeight.w400,
                           color: AppColors.instance.blue,
                         ),
                       ],
@@ -82,13 +93,13 @@ class PrefrenceScreen extends StatelessWidget {
                         AppText(
                           data: "test@email.com",
                           fontSize: AppSize.width(value: 22),
-                          fontWeight: FontWeight.w600,
+                          fontWeight: FontWeight.w500,
                           color: AppColors.instance.white,
                         ),
                         AppText(
                           data: "EDIT",
-                          fontSize: AppSize.width(value: 18),
-                          fontWeight: FontWeight.w500,
+                          fontSize: AppSize.width(value: 16),
+                          fontWeight: FontWeight.w400,
                           color: AppColors.instance.blue,
                         ),
                       ],
@@ -115,11 +126,17 @@ class PrefrenceScreen extends StatelessWidget {
                     ),
                     SizedBox(height: AppSize.size.height * 0.01),
                     RowItemWithDivider(
+                      onTap: () {
+                        Get.toNamed(AppRoutes.instance.unlockAuraScreen);
+                      },
                       text: "GET AURA +",
                       isDividerShow: false,
                     ),
                     SizedBox(height: AppSize.size.height * 0.01),
                     RowItemWithDivider(
+                      onTap: () {
+                        Get.toNamed(AppRoutes.instance.unlockAuraScreen);
+                      },
                       text: "RESTORE AURA +",
                       isDividerShow: false,
                     ),
@@ -149,11 +166,20 @@ class PrefrenceScreen extends StatelessWidget {
                     ),
                     SizedBox(height: AppSize.size.height * 0.01),
                     RowItemWithDivider(
+                      onTap: () {
+                        Get.toNamed(AppRoutes.instance.pushNotificationScreen);
+                      },
                       text: "PUSH NOTIFICATION",
                       isDividerShow: false,
                     ),
                     SizedBox(height: AppSize.size.height * 0.01),
-                    RowItemWithDivider(text: "E-MAIL", isDividerShow: false),
+                    RowItemWithDivider(
+                      onTap: () {
+                        Get.toNamed(AppRoutes.instance.emailNotificationScreen);
+                      },
+                      text: "E-MAIL",
+                      isDividerShow: false,
+                    ),
                     SizedBox(height: AppSize.size.height * 0.01),
                     Container(
                       width: double.infinity,
@@ -174,12 +200,44 @@ class PrefrenceScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: AppSize.size.height * 0.01),
-                    RowItemWithDivider(text: "LANGUAGE", isDividerShow: false),
-                    SizedBox(height: AppSize.size.height * 0.01),
-                    RowItemWithDivider(
-                      text: "MEASUREMENT UNIT",
-                      isDividerShow: false,
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      spacing: AppSize.width(value: 12),
+                      children: [
+                        AppText(
+                          data: "LANGUAGE",
+                          fontSize: AppSize.width(value: 22),
+                          fontWeight: FontWeight.w500,
+                          color: AppColors.instance.white,
+                        ),
+                        AppText(
+                          data: "EDIT",
+                          fontSize: AppSize.width(value: 16),
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.instance.blue,
+                        ),
+                      ],
                     ),
+                    SizedBox(height: AppSize.size.height * 0.01),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      spacing: AppSize.width(value: 12),
+                      children: [
+                        AppText(
+                          data: "MEASUREMENT UNIT",
+                          fontSize: AppSize.width(value: 22),
+                          fontWeight: FontWeight.w500,
+                          color: AppColors.instance.white,
+                        ),
+                        AppText(
+                          data: "EDIT",
+                          fontSize: AppSize.width(value: 16),
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.instance.blue,
+                        ),
+                      ],
+                    ),
+
                     SizedBox(height: AppSize.size.height * 0.01),
                     Container(
                       width: double.infinity,
@@ -218,6 +276,49 @@ class PrefrenceScreen extends StatelessWidget {
                     RowItemWithDivider(
                       text: "DOWNLOAD MY DATA",
                       isDividerShow: false,
+                    ),
+                    SizedBox(height: AppSize.size.height * 0.01),
+                    Container(
+                      width: double.infinity,
+                      height: 4,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(6),
+                        color: AppColors.instance.hexzaGreen,
+                      ),
+                    ),
+                    SizedBox(height: AppSize.size.height * 0.01),
+                    AppButton(
+                      onTap: () {
+                        Get.offAllNamed(AppRoutes.instance.selectionScreen);
+                      },
+                      height: AppSize.height(value: 40),
+                      title: "LOGOUT",
+                      filColor: AppColors.instance.white,
+                      titleColor: AppColors.instance.blue,
+                      width: AppSize.size.width * 0.5,
+                    ),
+                    SizedBox(height: AppSize.size.height * 0.01),
+                    InkWell(
+                      onTap: () {
+                        Get.toNamed(
+                          AppRoutes.instance.deleteAndArciveAccountScreen,
+                        );
+                      },
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: AppSize.width(value: 20),
+                          vertical: AppSize.width(value: 12),
+                        ),
+                        decoration: BoxDecoration(
+                          color: AppColors.instance.btnBg,
+                          borderRadius: BorderRadius.circular(16),
+                          border: Border.all(color: AppColors.instance.white),
+                        ),
+                        child: AppText(
+                          data: "DELETE ACCOUNT",
+                          color: AppColors.instance.white,
+                        ),
+                      ),
                     ),
                   ],
                 ),

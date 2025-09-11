@@ -41,8 +41,8 @@ class ScaffoldWithBgImage extends StatelessWidget {
               // Apply overlay color directly to the image if provided
               colorFilter: overlayColor != null
                   ? ColorFilter.mode(
-                      overlayColor!.withOpacity(
-                        0.5,
+                      overlayColor!.withValues(
+                        alpha: 0.5,
                       ), // Adjust opacity as needed
                       BlendMode.darken,
                     )

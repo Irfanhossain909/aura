@@ -12,8 +12,6 @@ import 'package:aura/widgets/app_images/scaffold_with_bg_image_for_auth.dart';
 import 'package:aura/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/state_manager.dart';
 
 class UploadIdScreen extends StatelessWidget {
   const UploadIdScreen({super.key});
@@ -27,7 +25,7 @@ class UploadIdScreen extends StatelessWidget {
           return Column(
             spacing: AppSize.size.height * 0.01,
             children: [
-              CustomAppBarAuth(logoUnderText: "SIGNUP", progressValue: 1),
+              CustomAppBarAuth(logoUnderText: "SIGNUP", progressValue: 5),
               Gap(height: AppSize.size.height * 0.02),
               AppText(
                 data: "VERIFY ID",
@@ -66,7 +64,7 @@ class UploadIdScreen extends StatelessWidget {
                 ),
                 child: AuraButton(
                   onTap: () {
-                    Get.toNamed(AppRoutes.instance.selectProfileImgScreen);
+                    Get.toNamed(AppRoutes.instance.userWaitingScreen);
                   },
                   filColor: AppColors.instance.blue,
                   textColor: AppColors.instance.white,

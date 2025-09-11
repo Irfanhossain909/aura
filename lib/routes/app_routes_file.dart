@@ -17,6 +17,7 @@ import 'package:aura/screens/chat_screens/message_screen/message_screen.dart';
 import 'package:aura/screens/chat_screens/sync_contact_screen/sync_contact_screen.dart';
 import 'package:aura/screens/extentions_screens/about_me_screen/about_me_screen.dart';
 import 'package:aura/screens/extentions_screens/dating_intensions_screen/dating_intensions_screen.dart';
+import 'package:aura/screens/extentions_screens/my_about_me_screen/my_about_me_screen.dart';
 import 'package:aura/screens/extentions_screens/ethnicity_screen/ethnicity_screen.dart';
 import 'package:aura/screens/extentions_screens/gender_selection_screen/gender_selection_screen.dart';
 import 'package:aura/screens/extentions_screens/education_level_screen/education_level_screen.dart';
@@ -27,6 +28,7 @@ import 'package:aura/screens/extentions_screens/member_prefference_screen/member
 import 'package:aura/screens/auth_screens/user_waiting_screen/user_waiting_screen.dart';
 import 'package:aura/screens/home_screens/home_main_screen/home_main_screen.dart';
 import 'package:aura/screens/home_screens/vedio_calling_screen/vedio_calling_screen.dart';
+import 'package:aura/screens/profile_screens/community_expection_screen/community_expection_screen.dart';
 import 'package:aura/screens/profile_screens/get_time_screen/get_time_screen.dart';
 import 'package:aura/screens/profile_screens/gift_screnn/gift_screen.dart';
 import 'package:aura/screens/profile_screens/ice_breack_screen/ice_break_screen.dart';
@@ -42,6 +44,7 @@ import 'package:aura/screens/settings_screen/contact_list_screen/contact_list_sc
 import 'package:aura/screens/settings_screen/delete_and_arcive_screen/delete_and_arcive_screen.dart';
 import 'package:aura/screens/settings_screen/prefrerence_etarnity_screen.dart/prefrence_screen.dart';
 import 'package:aura/screens/settings_screen/push_notification_screen/push_notification_screen.dart';
+import 'package:aura/screens/settings_screen/email_notification_screen/email_notification_screen.dart';
 import 'package:aura/screens/settings_screen/report_option_screen/report_option_screen.dart';
 import 'package:aura/screens/settings_screen/report_submit_screen/report_submit_screen.dart';
 import 'package:get/get.dart';
@@ -165,6 +168,11 @@ List<GetPage> appRootRoutesFile = <GetPage>[
     page: () => const AboutMeScreen(),
   ),
   GetPage(
+    name: AppRoutes.instance.myAboutMeScreen,
+    binding: AppBinding(),
+    page: () => const MyAboutMeScreen(),
+  ),
+  GetPage(
     name: AppRoutes.instance.educationLevelScreen,
     binding: AppBinding(),
     page: () => const EducationLevelScreen(),
@@ -174,6 +182,11 @@ List<GetPage> appRootRoutesFile = <GetPage>[
     name: AppRoutes.instance.pushNotificationScreen,
     binding: AppBinding(),
     page: () => const PushNotificationScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.emailNotificationScreen,
+    binding: AppBinding(),
+    page: () => const EmailNotificationScreen(),
   ),
   GetPage(
     name: AppRoutes.instance.prefrenceScreen,
@@ -235,6 +248,10 @@ List<GetPage> appRootRoutesFile = <GetPage>[
   GetPage(
     name: AppRoutes.instance.profileTypeScreen,
     page: () => const ProfileScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.communityExpectionScreen,
+    page: () => const CommunityExpectionScreen(),
   ),
   GetPage(
     name: AppRoutes.instance.profileEditScreen,

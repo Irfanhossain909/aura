@@ -36,7 +36,7 @@ class ProfileScreen extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () {
-                    Get.toNamed(AppRoutes.instance.memberPrefferenceScreen);
+                    Get.toNamed(AppRoutes.instance.prefrenceScreen);
                   },
                   child: AppImage(
                     width: AppSize.width(value: 24),
@@ -93,7 +93,12 @@ class ProfileScreen extends StatelessWidget {
             child: Column(
               spacing: AppSize.size.height * 0.02,
               children: [
-                AuraButton(text: "MY PREFERENCES"),
+                AuraButton(
+                  onTap: () {
+                    Get.toNamed(AppRoutes.instance.memberPrefferenceScreen);
+                  },
+                  text: "MY PREFERENCES",
+                ),
                 AuraButton(
                   onTap: () {
                     Get.toNamed(AppRoutes.instance.unlockAuraScreen);

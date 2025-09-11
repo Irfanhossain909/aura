@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 ThemeData appThemeData = ThemeData.light(useMaterial3: true).copyWith(
   scaffoldBackgroundColor: Colors.white,
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
-    backgroundColor: Colors.red,
+    backgroundColor: Colors.white,
   ),
   bottomSheetTheme: BottomSheetThemeData(backgroundColor: Colors.transparent),
   dividerColor: AppColors.instance.greyMedium,

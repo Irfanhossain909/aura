@@ -18,8 +18,8 @@ class VerifyCodeScreen extends StatelessWidget {
     return ScaffoldWithBgImageForAuth(
       body: Column(
         children: [
-          CustomAppBarAuth(logoUnderText: "VERIFY", progressValue: 1),
-          Gap(height: AppSize.size.height * 0.16),
+          CustomAppBarAuth(logoUnderText: "VERIFY", progressValue: 3),
+          Gap(height: AppSize.size.height * 0.17),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 60),
             child: Column(
@@ -58,7 +58,7 @@ class VerifyCodeScreen extends StatelessWidget {
                   ),
                   child: AuraButton(
                     onTap: () {
-                      Get.toNamed(AppRoutes.instance.enterPhoneScreen);
+                      Get.toNamed(AppRoutes.instance.idTypeSelectScreen);
                     },
                     filColor: AppColors.instance.blue,
                     textColor: AppColors.instance.white,
@@ -91,7 +91,12 @@ class VerifyCodeScreen extends StatelessWidget {
                   padding: EdgeInsets.symmetric(
                     horizontal: AppSize.width(value: 90),
                   ),
-                  child: AuraButton(text: "Back"),
+                  child: AuraButton(
+                    onTap: () {
+                      Get.back();
+                    },
+                    text: "Back",
+                  ),
                 ),
 
                 // Back button

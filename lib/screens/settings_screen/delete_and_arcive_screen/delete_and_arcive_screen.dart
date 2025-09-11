@@ -1,4 +1,5 @@
 import 'package:aura/const/app_colors.dart';
+import 'package:aura/routes/app_routes.dart';
 import 'package:aura/utils/applog/app_size.dart';
 import 'package:aura/utils/applog/gap.dart';
 import 'package:aura/widgets/app_bar/custom_appber.dart';
@@ -6,6 +7,8 @@ import 'package:aura/widgets/app_button/app_button.dart';
 import 'package:aura/widgets/app_images/scaffold_with_bg_image_for_auth.dart';
 import 'package:aura/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/utils.dart';
 
 class DeleteAndArciveScreen extends StatelessWidget {
   const DeleteAndArciveScreen({super.key});
@@ -46,6 +49,9 @@ class DeleteAndArciveScreen extends StatelessWidget {
               horizontal: AppSize.width(value: 110),
             ),
             child: AppButton(
+              onTap: () {
+                Get.toNamed(AppRoutes.instance.accountDeleteScreen);
+              },
               borderRadius: BorderRadius.circular(16),
               height: AppSize.width(value: 36),
               title: "DELETE ACCOUNT",
@@ -58,6 +64,9 @@ class DeleteAndArciveScreen extends StatelessWidget {
               horizontal: AppSize.width(value: 110),
             ),
             child: AppButton(
+              onTap: () {
+                Get.toNamed(AppRoutes.instance.accountArciveScreen);
+              },
               borderRadius: BorderRadius.circular(16),
               height: AppSize.width(value: 36),
               title: "ARCHIVE ACCOUNT",

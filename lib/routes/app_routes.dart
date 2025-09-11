@@ -15,10 +15,12 @@ class AppRoutes {
   final String genderSelectionScreen = "/gender-selection-screen";
   final String politicsScreen = "/politics-screen";
   final String aboutMeScreen = "/about-me-screen";
+  final String myAboutMeScreen = "/my-about-me-screen";
   final String educationLevelScreen = "/education-level-screen";
 
   /////////////  Settings screens
   final String pushNotificationScreen = "/push-notification-screen";
+  final String emailNotificationScreen = "/email-notification-screen";
   final String prefrenceScreen = "/prefrence-screen";
   final String contactListScreen = "/contact-list-screen";
   final String deleteAndArciveAccountScreen = "/delete-and-arcive-screen";
@@ -53,6 +55,7 @@ class AppRoutes {
   final String getTImeScreen = "/get-time-screen";
   final String giftScreen = "/gift-screen";
   final String unlockAuraScreen = "/unlock-aura-screen";
+  final String communityExpectionScreen = "/community-expection-screen";
 
   ///////////////Home Screen//////////////////
   final String homeMainScreen = "/home-main-screen";

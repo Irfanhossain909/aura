@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
 
       // initialRoute: AppRoutes.instance.initial,
-      initialRoute: AppRoutes.instance.initial,
+      initialRoute: AppRoutes.instance.communityExpectionScreen,
       getPages: appRootRoutesFile,
       enableLog: true,
       themeMode: ThemeMode.light,

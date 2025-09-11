@@ -18,8 +18,8 @@ class EnterPhoneScreen extends StatelessWidget {
     return ScaffoldWithBgImageForAuth(
       body: Column(
         children: [
-          CustomAppBarAuth(logoUnderText: "VERIFY", progressValue: 1),
-          Gap(height: AppSize.size.height * 0.16),
+          CustomAppBarAuth(logoUnderText: "VERIFY", progressValue: 7),
+          Gap(height: AppSize.size.height * 0.17),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 60),
             child: Column(

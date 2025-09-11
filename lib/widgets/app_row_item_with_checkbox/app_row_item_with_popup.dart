@@ -94,7 +94,9 @@ class RowItemWithDividerWithHeightSelector extends StatelessWidget {
                             fontSize: AppSize.size != Size.zero
                                 ? AppSize.width(value: 18)
                                 : 18,
-                            color: AppColors.instance.white.withOpacity(0.7),
+                            color: AppColors.instance.white.withValues(
+                              alpha: .7,
+                            ),
                           ),
                         )
                       : ListView.separated(
@@ -137,8 +139,8 @@ class RowItemWithDividerWithHeightSelector extends StatelessWidget {
                                   ),
                                   decoration: BoxDecoration(
                                     color: isSelected
-                                        ? AppColors.instance.blue.withOpacity(
-                                            0.2,
+                                        ? AppColors.instance.blue.withValues(
+                                            alpha: 0.2,
                                           )
                                         : Colors.transparent,
                                     borderRadius: BorderRadius.circular(8),
@@ -237,7 +239,7 @@ class RowItemWithDividerWithHeightSelector extends StatelessWidget {
                     ),
                     decoration: BoxDecoration(
                       border: Border.all(
-                        color: AppColors.instance.white.withOpacity(0.5),
+                        color: AppColors.instance.white.withValues(alpha: .5),
                         width: 1,
                       ),
                       borderRadius: BorderRadius.circular(6),
@@ -252,7 +254,7 @@ class RowItemWithDividerWithHeightSelector extends StatelessWidget {
                               : 18,
                           color: selectedValue != null
                               ? AppColors.instance.blue
-                              : AppColors.instance.white.withOpacity(0.7),
+                              : AppColors.instance.white.withValues(alpha: .7),
                         ),
                         SizedBox(
                           width: AppSize.size != Size.zero
@@ -261,7 +263,7 @@ class RowItemWithDividerWithHeightSelector extends StatelessWidget {
                         ),
                         Icon(
                           Icons.keyboard_arrow_down,
-                          color: AppColors.instance.white.withOpacity(0.7),
+                          color: AppColors.instance.white.withValues(alpha: .7),
                           size: AppSize.size != Size.zero
                               ? AppSize.width(value: 20)
                               : 20,
@@ -280,4 +282,4 @@ class RowItemWithDividerWithHeightSelector extends StatelessWidget {
   }
 }
 
-// 
+//

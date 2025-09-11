@@ -13,9 +13,11 @@ class CustomAppBar extends StatelessWidget {
   final String? logoUnderText;
   final String? title;
   final bool isDividerShow;
+  final bool isLeadingShow;
   const CustomAppBar({
     super.key,
     this.isDividerShow = true,
+    this.isLeadingShow = true,
     this.action,
     this.action2,
     this.logoUnderText,
@@ -78,14 +80,16 @@ class CustomAppBar extends StatelessWidget {
             child: Row(
               children: [
                 // Back button
-                GestureDetector(
-                  onTap: () => Get.back(),
-                  child: Icon(
-                    Icons.arrow_back_ios_new,
-                    color: AppColors.instance.white,
-                    size: AppSize.width(value: 24),
-                  ),
-                ),
+                isLeadingShow
+                    ? GestureDetector(
+                        onTap: () => Get.back(),
+                        child: Icon(
+                          Icons.arrow_back_ios_new,
+                          color: AppColors.instance.white,
+                          size: AppSize.width(value: 24),
+                        ),
+                      )
+                    : SizedBox(),
 
                 // Title
                 Expanded(

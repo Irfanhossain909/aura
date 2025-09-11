@@ -18,8 +18,8 @@ class VerifyProneScreen extends StatelessWidget {
     return ScaffoldWithBgImageForAuth(
       body: Column(
         children: [
-          CustomAppBarAuth(logoUnderText: "VERIFY", progressValue: 1),
-          Gap(height: AppSize.size.height * 0.16),
+          CustomAppBarAuth(logoUnderText: "VERIFY", progressValue: 8),
+          Gap(height: AppSize.size.height * 0.17),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 60),
             child: Column(
@@ -58,7 +58,7 @@ class VerifyProneScreen extends StatelessWidget {
                   ),
                   child: AuraButton(
                     onTap: () {
-                      Get.toNamed(AppRoutes.instance.idTypeSelectScreen);
+                      Get.toNamed(AppRoutes.instance.communityExpectionScreen);
                     },
                     filColor: AppColors.instance.blue,
                     textColor: AppColors.instance.white,
