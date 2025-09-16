@@ -27,7 +27,7 @@ class ProfileScreen extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                    Get.toNamed(AppRoutes.instance.aboutMeScreen);
+                    Get.toNamed(AppRoutes.instance.myAboutMeScreen);
                   },
                   child: AppImage(
                     width: AppSize.width(value: 24),
