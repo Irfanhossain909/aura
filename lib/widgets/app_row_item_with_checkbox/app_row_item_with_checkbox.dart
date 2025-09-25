@@ -1,4 +1,3 @@
-
 import 'package:aura/const/app_colors.dart';
 import 'package:aura/utils/applog/app_size.dart';
 import 'package:aura/utils/applog/gap.dart';
@@ -30,7 +29,7 @@ class RowItemWithDividerWithCheckBox extends StatelessWidget {
             children: [
               AppText(
                 data: text ?? "No Text",
-                fontSize: AppSize.width(value: 22),
+                fontSize: AppSize.width(value: 20),
                 color: AppColors.instance.white,
               ),
 

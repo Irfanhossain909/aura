@@ -1,6 +1,8 @@
+import 'package:aura/const/app_colors.dart';
 import 'package:aura/screens/extentions_screens/education_level_screen/controller/education_level_controller.dart';
 import 'package:aura/utils/applog/app_size.dart';
 import 'package:aura/widgets/app_bar/custom_appber.dart';
+import 'package:aura/widgets/app_button/aura_button.dart';
 import 'package:aura/widgets/app_images/scaffold_with_bg_image.dart';
 import 'package:aura/widgets/app_row_item_with_checkbox/app_row_item_with_radio.dart';
 import 'package:flutter/material.dart';
@@ -39,6 +41,21 @@ class EducationLevelScreen extends StatelessWidget {
                           controller.selectEducationLevel(educationLevel),
                     );
                   }).toList(),
+                ),
+              ),
+              Spacer(),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: AppSize.width(value: 120),
+                  vertical: AppSize.width(value: 40),
+                ),
+                child: AuraButton(
+                  onTap: () {
+                    // Get.toNamed(AppRoutes.instance.verifyCodeScreen);
+                  },
+                  filColor: AppColors.instance.blue,
+                  textColor: AppColors.instance.white,
+                  text: "DONE",
                 ),
               ),
             ],

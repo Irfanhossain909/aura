@@ -29,172 +29,183 @@ class ProfileEditScreen extends StatelessWidget {
           end: Alignment(0.89, 1.00),
           colors: [Color(0xFF6D8590), Color(0xFF2D373E)],
         ),
-        body: SingleChildScrollView(
-          child: Column(
-            spacing: AppSize.size.height * 0.03,
-            children: [
-              CustomAppBarAuth(
-                logoUnderText: "PROFILE EDIT",
-                isProgressShown: false,
-              ),
-              Stack(
-                children: [
-                  AppImageCircular(
-                    width: AppSize.width(value: 120),
-                    path: AssetsIconsPath.instance.profileIcon,
-                  ),
-                  Positioned(
-                    bottom: 0,
-                    right: 10,
-                    child: Container(
-                      padding: EdgeInsets.all(4),
-                      decoration: BoxDecoration(
-                        color: AppColors.instance.blue,
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Icon(
-                        Icons.edit,
-                        color: AppColors.instance.white,
-                        size: 12,
-                      ),
+        body: Column(
+          spacing: AppSize.size.height * 0.02,
+          children: [
+            CustomAppBarAuth(
+              logoUnderText: "PROFILE EDIT",
+              isProgressShown: false,
+            ),
+            Stack(
+              children: [
+                AppImageCircular(
+                  width: AppSize.width(value: 120),
+                  path: AssetsIconsPath.instance.profileIcon,
+                ),
+                Positioned(
+                  bottom: 0,
+                  right: 10,
+                  child: Container(
+                    padding: EdgeInsets.all(4),
+                    decoration: BoxDecoration(
+                      color: AppColors.instance.blue,
+                      borderRadius: BorderRadius.circular(12),
                     ),
+                    child: Icon(
+                      Icons.edit,
+                      color: AppColors.instance.white,
+                      size: 12,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+
+            Obx(
+              () => Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.edit, color: AppColors.instance.blue, size: 18),
+                  Gap(width: AppSize.width(value: 12)),
+                  AppText(
+                    data: controller.userName.value,
+                    fontSize: AppSize.width(value: 18),
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.instance.white,
                   ),
                 ],
               ),
-
-              Obx(
-                () => Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.edit, color: AppColors.instance.blue, size: 18),
-                    Gap(width: AppSize.width(value: 12)),
-                    AppText(
-                      data: controller.userName.value,
-                      fontSize: AppSize.width(value: 18),
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.instance.white,
-                    ),
-                  ],
-                ),
+            ),
+            Obx(
+              () => Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.edit, color: AppColors.instance.blue, size: 18),
+                  Gap(width: AppSize.width(value: 12)),
+                  AppText(
+                    data: controller.currentAge.value.toInt().toString(),
+                    fontSize: AppSize.width(value: 18),
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.instance.white,
+                  ),
+                ],
               ),
-              Obx(
-                () => Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.edit, color: AppColors.instance.blue, size: 18),
-                    Gap(width: AppSize.width(value: 12)),
-                    AppText(
-                      data: controller.currentAge.value.toInt().toString(),
-                      fontSize: AppSize.width(value: 18),
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.instance.white,
-                    ),
-                  ],
-                ),
+            ),
+            AppText(
+              data: "SELECT AGE RANGE",
+              fontSize: AppSize.width(value: 18),
+              fontWeight: FontWeight.w600,
+              color: AppColors.instance.white,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: AppSize.width(value: 20),
               ),
-              AppText(
-                data: "SELECT AGE RANGE",
-                fontSize: AppSize.width(value: 18),
-                fontWeight: FontWeight.w600,
-                color: AppColors.instance.white,
-              ),
-              Padding(
+              child: Container(
                 padding: EdgeInsets.symmetric(
-                  horizontal: AppSize.width(value: 20),
+                  horizontal: AppSize.width(value: 16),
                 ),
-                child: Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: AppSize.width(value: 16),
-                  ),
-                  decoration: BoxDecoration(
-                    color: AppColors.instance.white,
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: Obx(
-                    () => Row(
-                      children: [
-                        AppText(data: "${controller.minAge.value.toInt()}"),
-                        Expanded(
-                          child: RangeSlider(
-                            values: RangeValues(
-                              controller.minAge.value,
-                              controller.maxAge.value,
-                            ),
-                            min: 18,
-                            max: 65,
-                            divisions: 47,
-                            activeColor: AppColors.instance.blue,
-                            inactiveColor: AppColors.instance.blue.withValues(
-                              alpha: 0.3,
-                            ),
-                            onChanged: (RangeValues values) {
-                              controller.updateMinAge(values.start);
-                              controller.updateMaxAge(values.end);
-                            },
+                decoration: BoxDecoration(
+                  color: AppColors.instance.white,
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                child: Obx(
+                  () => Row(
+                    children: [
+                      AppText(data: "${controller.minAge.value.toInt()}"),
+                      Expanded(
+                        child: RangeSlider(
+                          values: RangeValues(
+                            controller.minAge.value,
+                            controller.maxAge.value,
                           ),
+                          min: 18,
+                          max: 99,
+                          divisions: 47,
+                          activeColor: AppColors.instance.blue,
+                          inactiveColor: AppColors.instance.blue.withValues(
+                            alpha: 0.3,
+                          ),
+                          onChanged: (RangeValues values) {
+                            controller.updateMinAge(values.start);
+                            controller.updateMaxAge(values.end);
+                          },
                         ),
-                        AppText(data: "${controller.maxAge.value.toInt()}"),
-                      ],
-                    ),
+                      ),
+                      AppText(data: "${controller.maxAge.value.toInt()}"),
+                    ],
                   ),
                 ),
               ),
+            ),
 
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                child: Container(
-                  padding: EdgeInsets.all(16),
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Container(
+                padding: EdgeInsets.all(16),
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
 
-                    color: AppColors.instance.white,
-                  ),
-                  child: Column(
-                    children: [
-                      AppText(
-                        data: "FIND INTEREST",
-                        fontSize: AppSize.width(value: 20),
+                  color: AppColors.instance.white,
+                ),
+                child: Column(
+                  children: [
+                    AppText(
+                      data: "FIND INTEREST",
+                      fontSize: AppSize.width(value: 20),
+                    ),
+                    Gap(height: 6),
+                    Container(
+                      width: 200,
+                      padding: EdgeInsets.symmetric(
+                        horizontal: AppSize.width(value: 12),
+                        vertical: AppSize.width(value: 6),
                       ),
-                      Gap(height: 6),
-                      Container(
-                        width: 200,
-                        padding: EdgeInsets.symmetric(
-                          horizontal: AppSize.width(value: 12),
-                          vertical: AppSize.width(value: 6),
-                        ),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(16),
-                          border: Border.all(color: AppColors.instance.black),
-                        ),
-                        child: AppText(data: "Search..."),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        border: Border.all(color: AppColors.instance.black),
                       ),
-                      Gap(height: AppSize.width(value: 16)),
+                      child: AppText(data: "Search..."),
+                    ),
+                    Gap(height: AppSize.width(value: 16)),
 
-                      Container(
-                        height: 7,
-                        width: AppSize.size.width * 0.7,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(6),
-                          color: AppColors.instance.black,
-                        ),
+                    Container(
+                      height: 7,
+                      width: AppSize.size.width * 0.7,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(6),
+                        color: AppColors.instance.black,
                       ),
-                      Gap(height: AppSize.width(value: 16)),
-                      SizedBox(
-                        height: AppSize.size.height * 0.15,
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 16.0),
-                          child: GridView.builder(
-                            padding: EdgeInsets.zero,
-                            shrinkWrap: true,
-                            gridDelegate:
-                                SliverGridDelegateWithFixedCrossAxisCount(
-                                  childAspectRatio: adjustedChildAspectRatio,
-                                  crossAxisCount: 3, // 3 items per row
-                                  crossAxisSpacing: 1.0, // horizontal spacing
-                                  mainAxisSpacing: 0, // vertical spacing
-                                ),
-                            itemCount: [
+                    ),
+                    Gap(height: AppSize.width(value: 16)),
+                    SizedBox(
+                      height: AppSize.size.height * 0.15,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.0),
+                        child: GridView.builder(
+                          padding: EdgeInsets.zero,
+                          shrinkWrap: true,
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                                childAspectRatio: adjustedChildAspectRatio,
+                                crossAxisCount: 3, // 3 items per row
+                                crossAxisSpacing: 1.0, // horizontal spacing
+                                mainAxisSpacing: 0, // vertical spacing
+                              ),
+                          itemCount: [
+                            "VIDEO GAMES",
+                            "VIDEO GAMES",
+                            "TRAINING",
+                            "POOL DAYS",
+                            "POOL DAYS",
+                            "READING",
+                            "GYM",
+                            "GYM",
+                            "HIP-HOP",
+                          ].length, // total number of items
+                          itemBuilder: (BuildContext context, int index) {
+                            final interests = [
                               "VIDEO GAMES",
                               "VIDEO GAMES",
                               "TRAINING",
@@ -204,61 +215,48 @@ class ProfileEditScreen extends StatelessWidget {
                               "GYM",
                               "GYM",
                               "HIP-HOP",
-                            ].length, // total number of items
-                            itemBuilder: (BuildContext context, int index) {
-                              final interests = [
-                                "VIDEO GAMES",
-                                "VIDEO GAMES",
-                                "TRAINING",
-                                "POOL DAYS",
-                                "POOL DAYS",
-                                "READING",
-                                "GYM",
-                                "GYM",
-                                "HIP-HOP",
-                              ];
-                              return Wrap(
-                                alignment: WrapAlignment
-                                    .start, // Align items in the row
-                                // spacing: 1.0, // horizontal spacing
-                                // runSpacing: 1.0, // vertical spacing between lines
-                                children: [
-                                  HorizontalList(
-                                    text: interests[index],
-                                    fillColor: AppColors.instance.greyMedium,
-                                    textSize: 14,
-                                  ),
-                                ],
-                              );
-                            },
-                          ),
+                            ];
+                            return Wrap(
+                              alignment:
+                                  WrapAlignment.start, // Align items in the row
+                              // spacing: 1.0, // horizontal spacing
+                              // runSpacing: 1.0, // vertical spacing between lines
+                              children: [
+                                HorizontalList(
+                                  text: interests[index],
+                                  fillColor: AppColors.instance.greyMedium,
+                                  textSize: 14,
+                                ),
+                              ],
+                            );
+                          },
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
-              AppButton(
-                onTap: () {
-                  Get.toNamed(AppRoutes.instance.myAboutMeScreen);
-                },
-                width: AppSize.size.width * 0.3,
-                height: AppSize.width(value: 34),
-                title: "CONFIRM",
-                filColor: AppColors.instance.blue,
-              ),
-              AppButton(
-                onTap: () {
-                  Get.back();
-                },
-                width: AppSize.size.width * 0.2,
-                height: AppSize.width(value: 34),
-                title: "BACk",
-                titleColor: AppColors.instance.black,
-                filColor: AppColors.instance.white,
-              ),
-            ],
-          ),
+            ),
+            AppButton(
+              onTap: () {
+                Get.toNamed(AppRoutes.instance.myAboutMeScreen);
+              },
+              width: AppSize.size.width * 0.3,
+              height: AppSize.width(value: 34),
+              title: "CONFIRM",
+              filColor: AppColors.instance.blue,
+            ),
+            AppButton(
+              onTap: () {
+                Get.back();
+              },
+              width: AppSize.size.width * 0.2,
+              height: AppSize.width(value: 34),
+              title: "BACk",
+              titleColor: AppColors.instance.black,
+              filColor: AppColors.instance.white,
+            ),
+          ],
         ),
       ),
     );

@@ -221,7 +221,7 @@ class RowItemWithDividerWithHeightSelector extends StatelessWidget {
                     child: AppText(
                       data: text ?? "No Text",
                       fontSize: AppSize.size != Size.zero
-                          ? AppSize.width(value: 22)
+                          ? AppSize.width(value: 20)
                           : 22,
                       color: AppColors.instance.white,
                     ),

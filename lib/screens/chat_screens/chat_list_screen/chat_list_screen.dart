@@ -19,6 +19,7 @@ class ChatListScreen extends StatelessWidget {
       body: Column(
         children: [
           CustomAppBarAuth(
+            
             logoUnderText: "MATCHES",
             isProgressShown: false,
             action: GestureDetector(
@@ -36,7 +37,7 @@ class ChatListScreen extends StatelessWidget {
                 ),
                 child: AppText(
                   data: "RESTORE CHAT",
-                  fontSize: AppSize.width(value: 18),
+                  fontSize: AppSize.width(value: 16),
                   color: AppColors.instance.white,
                 ),
               ),
@@ -76,14 +77,26 @@ class ChatListScreen extends StatelessWidget {
   }
 }
 
-class ChatListItem extends StatelessWidget {
+class ChatListItem extends StatefulWidget {
   final Function()? onTap;
   const ChatListItem({super.key, this.onTap});
 
   @override
+  State<ChatListItem> createState() => _ChatListItemState();
+}
+
+class _ChatListItemState extends State<ChatListItem> {
+  bool _showClose = false; // initially x icon hidden
+
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: widget.onTap,
+      onLongPress: () {
+        setState(() {
+          _showClose = true; // show icon when long pressed
+        });
+      },
       child: Stack(
         children: [
           Container(
@@ -98,10 +111,10 @@ class ChatListItem extends StatelessWidget {
                     borderRadius: BorderRadius.circular(100),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.blue, // Set the shadow color to blue
-                        spreadRadius: 0.3, // Adjust the spread radius as needed
-                        blurRadius: 5, // Set the blur radius
-                        offset: Offset(0, 0), // Shadow position (centered)
+                        color: Colors.blue,
+                        spreadRadius: 0.3,
+                        blurRadius: 5,
+                        offset: Offset(0, 0),
                       ),
                     ],
                   ),
@@ -133,6 +146,8 @@ class ChatListItem extends StatelessWidget {
               ],
             ),
           ),
+
+          // time badge
           Positioned(
             right: 20,
             top: 10,
@@ -151,18 +166,28 @@ class ChatListItem extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-            left: 10,
-            top: 10,
-            child: Container(
-              padding: EdgeInsets.all(2),
-              decoration: BoxDecoration(
-                color: AppColors.instance.white,
-                borderRadius: BorderRadius.circular(16),
+
+          // close icon (show only if _showClose == true)
+          if (_showClose)
+            Positioned(
+              left: 10,
+              top: 10,
+              child: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    _showClose = false; // hide again on tap
+                  });
+                },
+                child: Container(
+                  padding: EdgeInsets.all(2),
+                  decoration: BoxDecoration(
+                    color: AppColors.instance.white,
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Icon(size: 12, Icons.close),
+                ),
               ),
-              child: Icon(size: 12, Icons.close),
             ),
-          ),
         ],
       ),
     );

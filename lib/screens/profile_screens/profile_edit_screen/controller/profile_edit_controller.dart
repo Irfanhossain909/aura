@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 class ProfileEditController extends GetxController {
   // Age range values
   RxDouble minAge = 18.0.obs;
-  RxDouble maxAge = 65.0.obs;
+  RxDouble maxAge = 99.0.obs;
 
   // Current age value
   RxDouble currentAge = 23.0.obs;
@@ -37,4 +37,17 @@ class ProfileEditController extends GetxController {
 
   // Get age range text
   String get ageRangeText => "${minAge.value.toInt()}-${maxAge.value.toInt()}";
+
+  @override
+  void onInit() {
+    minAge = 18.0.obs;
+    maxAge = 99.0.obs;
+
+    // Current age value
+    currentAge = 23.0.obs;
+
+    // Name value
+    userName = "SARAH".obs;
+    super.onInit();
+  }
 }

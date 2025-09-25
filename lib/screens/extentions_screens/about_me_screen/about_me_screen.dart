@@ -1,5 +1,8 @@
+import 'package:aura/const/app_colors.dart';
 import 'package:aura/screens/extentions_screens/about_me_screen/controller/about_me_controller.dart';
+import 'package:aura/utils/applog/app_size.dart';
 import 'package:aura/widgets/app_bar/custom_appber.dart';
+import 'package:aura/widgets/app_button/aura_button.dart';
 import 'package:aura/widgets/app_images/scaffold_with_bg_image.dart';
 import 'package:aura/widgets/app_row_item_with_checkbox/app_row_item_with_popup.dart';
 import 'package:flutter/material.dart';
@@ -46,6 +49,21 @@ class AboutMeScreen extends StatelessWidget {
                           onValueChanged: (String value) {
                             controller.selectMaxHeight(value);
                           },
+                        ),
+
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: AppSize.width(value: 120),
+                            vertical: AppSize.width(value: 100),
+                          ),
+                          child: AuraButton(
+                            onTap: () {
+                              // Get.toNamed(AppRoutes.instance.verifyCodeScreen);
+                            },
+                            filColor: AppColors.instance.blue,
+                            textColor: AppColors.instance.white,
+                            text: "DONE",
+                          ),
                         ),
                       ],
                     ),

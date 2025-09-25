@@ -61,6 +61,7 @@ class MemberPrefferenceScreen extends StatelessWidget {
                                 children: [
                                   Expanded(
                                     child: AuraButton(
+                                      fontSize: 16,
                                       onTap: () {
                                         Get.toNamed(
                                           AppRoutes
@@ -73,6 +74,7 @@ class MemberPrefferenceScreen extends StatelessWidget {
                                   ),
                                   Expanded(
                                     child: AuraButton(
+                                      fontSize: 16,
                                       onTap: () {
                                         Get.toNamed(
                                           AppRoutes
@@ -89,7 +91,10 @@ class MemberPrefferenceScreen extends StatelessWidget {
                                 padding: const EdgeInsets.symmetric(
                                   horizontal: 90,
                                 ),
-                                child: AuraButton(text: "LANGUAGE"),
+                                child: AuraButton(
+                                  fontSize: 16,
+                                  text: "LANGUAGE",
+                                ),
                               ),
 
                               AppText(

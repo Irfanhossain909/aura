@@ -35,7 +35,11 @@ class ScaffoldWithBgImage extends StatelessWidget {
           width: screenSize.width,
           height: screenSize.height,
           decoration: BoxDecoration(
-            gradient: gradient, // gradient priority নেবে
+            gradient: const LinearGradient(
+              begin: Alignment(0.00, 0.00),
+              end: Alignment(0.89, 1.00),
+              colors: [Color(0xFF6D8590), Color(0xFF2D373E)],
+            ), // gradient priority নেবে
             image: gradient == null && imagePath != null
                 ? DecorationImage(
                     image: AssetImage(imagePath!),
