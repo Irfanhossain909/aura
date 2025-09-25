@@ -28,7 +28,7 @@ class RowItemWithDivider extends StatelessWidget {
             children: [
               AppText(
                 data: text ?? "No Text",
-                fontSize: AppSize.width(value: 22),
+                fontSize: AppSize.width(value: 20),
                 color: AppColors.instance.white,
               ),
               AppImage(
