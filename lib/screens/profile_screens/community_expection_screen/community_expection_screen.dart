@@ -9,7 +9,6 @@ import 'package:aura/widgets/app_images/scaffold_with_bg_image.dart';
 import 'package:aura/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/utils.dart';
 
 class CommunityExpectionScreen extends StatelessWidget {
   const CommunityExpectionScreen({super.key});
@@ -17,6 +16,11 @@ class CommunityExpectionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScaffoldWithBgImage(
+      gradient: const LinearGradient(
+        begin: Alignment(0.00, 0.00),
+        end: Alignment(0.89, 1.00),
+        colors: [Color(0xFF6D8590), Color(0xFF2D373E)],
+      ),
       body: SafeArea(
         child: Column(
           children: [

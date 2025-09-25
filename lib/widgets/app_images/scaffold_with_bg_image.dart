@@ -5,9 +5,10 @@ class ScaffoldWithBgImage extends StatelessWidget {
   final PreferredSizeWidget? appBar;
   final Widget? floatingActionButton;
   final Widget? bottomNavigationBar;
-  final String imagePath;
+  final String? imagePath; // এখন optional করলাম
   final BoxFit fit;
   final Color? overlayColor;
+  final Gradient? gradient; // নতুন property gradient
 
   const ScaffoldWithBgImage({
     super.key,
@@ -15,39 +16,38 @@ class ScaffoldWithBgImage extends StatelessWidget {
     this.appBar,
     this.floatingActionButton,
     this.bottomNavigationBar,
-    this.imagePath = 'assets/images/extention_bg.webp',
+    this.imagePath, // default বাদ দিলাম
     this.fit = BoxFit.cover,
     this.overlayColor,
+    this.gradient, // constructor এ যুক্ত করলাম
   });
 
   @override
   Widget build(BuildContext context) {
-    // Get the full screen size
     final screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: appBar,
-      // Optional: Extend the body behind the app bar for full-screen effect
-      extendBodyBehindAppBar: overlayColor == null, // Only extend if no overlay
+      extendBodyBehindAppBar: overlayColor == null && gradient == null,
       body: SizedBox.expand(
         child: Container(
           width: screenSize.width,
           height: screenSize.height,
           decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(imagePath),
-              fit: fit,
-              // Apply overlay color directly to the image if provided
-              colorFilter: overlayColor != null
-                  ? ColorFilter.mode(
-                      overlayColor!.withValues(
-                        alpha: 0.5,
-                      ), // Adjust opacity as needed
-                      BlendMode.darken,
-                    )
-                  : null,
-            ),
+            gradient: gradient, // gradient priority নেবে
+            image: gradient == null && imagePath != null
+                ? DecorationImage(
+                    image: AssetImage(imagePath!),
+                    fit: fit,
+                    colorFilter: overlayColor != null
+                        ? ColorFilter.mode(
+                            overlayColor!.withValues(alpha: 0.5),
+                            BlendMode.darken,
+                          )
+                        : null,
+                  )
+                : null,
           ),
           child: body,
         ),
@@ -82,16 +82,35 @@ class ScaffoldWithBgImage extends StatelessWidget {
 
 //   @override
 //   Widget build(BuildContext context) {
+//     // Get the full screen size
+//     final screenSize = MediaQuery.of(context).size;
+
 //     return Scaffold(
 //       resizeToAvoidBottomInset: false,
 //       appBar: appBar,
-//       body: Container(
-//         decoration: BoxDecoration(
-//           image: DecorationImage(image: AssetImage(imagePath), fit: fit),
+//       // Optional: Extend the body behind the app bar for full-screen effect
+//       extendBodyBehindAppBar: overlayColor == null, // Only extend if no overlay
+//       body: SizedBox.expand(
+//         child: Container(
+//           width: screenSize.width,
+//           height: screenSize.height,
+//           decoration: BoxDecoration(
+//             image: DecorationImage(
+//               image: AssetImage(imagePath),
+//               fit: fit,
+//               // Apply overlay color directly to the image if provided
+//               colorFilter: overlayColor != null
+//                   ? ColorFilter.mode(
+//                       overlayColor!.withValues(
+//                         alpha: 0.5,
+//                       ), // Adjust opacity as needed
+//                       BlendMode.darken,
+//                     )
+//                   : null,
+//             ),
+//           ),
+//           child: body,
 //         ),
-//         child: overlayColor != null
-//             ? Container(color: overlayColor, child: body)
-//             : body,
 //       ),
 //       floatingActionButton: floatingActionButton,
 //       bottomNavigationBar: bottomNavigationBar,

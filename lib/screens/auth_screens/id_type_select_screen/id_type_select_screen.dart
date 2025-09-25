@@ -23,16 +23,16 @@ class IdTypeSelectScreen extends StatelessWidget {
             spacing: AppSize.size.height * 0.01,
             children: [
               CustomAppBarAuth(logoUnderText: "SIGNUP", progressValue: 4),
-              Gap(height: AppSize.size.height * 0.17),
+              Gap(height: AppSize.size.height * 0.16),
               AppText(
                 data: "SELECT VERIFICATION METHOD",
                 fontSize: AppSize.width(value: 24),
                 color: AppColors.instance.white,
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 70.0),
+                padding: const EdgeInsets.symmetric(horizontal: 50.0),
                 child: Column(
-                  spacing: AppSize.size.height * 0.01,
+                  spacing: AppSize.size.height * 0.02,
                   children: controller.educationLevelOptions.map((
                     educationLevel,
                   ) {
@@ -70,6 +70,8 @@ class IdTypeSelectScreen extends StatelessWidget {
                   onTap: () {
                     Get.back();
                   },
+                  height: 28,
+                  fontSize: 12,
                   text: "Back",
                 ),
               ),
@@ -132,7 +134,7 @@ class RowItemContainer extends StatelessWidget {
                 if (states.contains(MaterialState.selected)) {
                   return AppColors.instance.blue;
                 }
-                return AppColors.instance.white;
+                return Colors.transparent;
               }),
               materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
               visualDensity: VisualDensity.compact,

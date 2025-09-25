@@ -60,9 +60,14 @@ class LoginScreen extends StatelessWidget {
                   textColor: AppColors.instance.white,
                   text: "LOGIN",
                 ),
-                AppText(
-                  data: "FORGOT PASSWORD?",
-                  color: AppColors.instance.white,
+                InkWell(
+                  onTap: () {
+                    Get.toNamed(AppRoutes.instance.forgetPasswordScreen);
+                  },
+                  child: AppText(
+                    data: "FORGOT PASSWORD?",
+                    color: AppColors.instance.white,
+                  ),
                 ),
                 // Gap(height: AppSize.size.height * 0.01),
                 Row(

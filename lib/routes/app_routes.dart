@@ -33,6 +33,7 @@ class AppRoutes {
   /////////////auth screens///////////////////////////////
   final String signUpScreen = "/sign-up-screen";
   final String loginScreen = "/login-screen";
+  final String forgetPasswordScreen = "/forget-password-screen";
   final String verifyPhoneScreen = "/verify-phone-screen";
   final String verifyCodeScreen = "/verify-code-screen";
   final String idTypeSelectScreen = "/idtype-select-screen";
@@ -41,6 +42,7 @@ class AppRoutes {
   final String userWaitingScreen = "/user-waiting-screen";
   final String selectionScreen = "/selection-screen";
   final String enterPhoneScreen = "/enter-phone-screen";
+  final String resetingPasswordScreen = "/reseting-password-screen";
 
   //////////////Chat Screen//////////////////////////////////////
   final String chatListScreen = "/chat-list-screen";

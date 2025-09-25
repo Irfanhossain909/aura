@@ -95,6 +95,8 @@ class VerifyProneScreen extends StatelessWidget {
                     onTap: () {
                       Get.back();
                     },
+                    height: 28,
+                    fontSize: 12,
                     text: "Back",
                   ),
                 ),

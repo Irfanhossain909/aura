@@ -19,18 +19,19 @@ class SignupScreen extends StatelessWidget {
       body: Column(
         children: [
           CustomAppBarAuth(logoUnderText: "SIGNUP", progressValue: 2),
-          Gap(height: AppSize.size.height * 0.17),
+          Gap(height: AppSize.size.height * 0.04),
+          AppText(
+            data: "GET SETUP",
+            fontSize: AppSize.width(value: 34),
+            color: AppColors.instance.white,
+          ),
+          Gap(height: AppSize.size.height * 0.11),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 60),
             child: Column(
               spacing: AppSize.size.height * 0.006,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                AppText(
-                  data: "GET SETUP",
-                  fontSize: AppSize.width(value: 24),
-                  color: AppColors.instance.white,
-                ),
                 AppInputWidgetTwo(
                   height: AppSize.width(value: 36),
                   contentPadding: EdgeInsets.symmetric(
@@ -80,7 +81,7 @@ class SignupScreen extends StatelessWidget {
 
                   isPassWord: true,
                 ),
-
+                Gap(height: AppSize.size.height * 0.08),
                 // Continue button
                 Padding(
                   padding: EdgeInsets.symmetric(
@@ -98,14 +99,9 @@ class SignupScreen extends StatelessWidget {
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: AppSize.width(value: 88),
+                    horizontal: AppSize.width(value: 90),
                   ),
-                  child: AuraButton(
-                    onTap: () {
-                      Get.back();
-                    },
-                    text: "Back",
-                  ),
+                  child: AuraButton(height: 28, fontSize: 12, text: "Back"),
                 ),
 
                 // Back button

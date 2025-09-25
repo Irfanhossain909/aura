@@ -10,8 +10,8 @@ import 'package:aura/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class VerifyCodeScreen extends StatelessWidget {
-  const VerifyCodeScreen({super.key});
+class ForgetPasswordScreen extends StatelessWidget {
+  const ForgetPasswordScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class VerifyCodeScreen extends StatelessWidget {
       body: Column(
         children: [
           CustomAppBarAuth(logoUnderText: "VERIFY", progressValue: 3),
-          Gap(height: AppSize.size.height * 0.17),
+          Gap(height: AppSize.size.height * 0.22),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 60),
             child: Column(
@@ -28,19 +28,19 @@ class VerifyCodeScreen extends StatelessWidget {
               children: [
                 AppText(
                   textAlign: TextAlign.center,
-                  data: "VERIFICATION CODE",
+                  data: "FORGET PASSWORD",
                   fontSize: AppSize.width(value: 24),
                   color: AppColors.instance.white,
                 ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: AppText(
-                    textAlign: TextAlign.center,
-                    data: "ENTER THE VERIFICATION CODE SENT TO YOUR EMAIL",
-                    fontSize: AppSize.width(value: 18),
-                    color: AppColors.instance.white.withValues(alpha: 0.5),
-                  ),
-                ),
+                // Padding(
+                //   padding: EdgeInsets.symmetric(horizontal: 20),
+                //   child: AppText(
+                //     textAlign: TextAlign.center,
+                //     data: "ENTER THE VERIFICATION CODE SENT TO YOUR EMAIL",
+                //     fontSize: AppSize.width(value: 18),
+                //     color: AppColors.instance.white.withValues(alpha: 0.5),
+                //   ),
+                // ),
                 AppInputWidgetTwo(
                   // height: AppSize.width(value: 36),
                   contentPadding: EdgeInsets.symmetric(
@@ -48,7 +48,7 @@ class VerifyCodeScreen extends StatelessWidget {
                     horizontal: AppSize.width(value: 12),
                   ),
                   fillColor: Colors.transparent,
-                  hintText: "Enter Code",
+                  hintText: "Enter Tour Email",
                 ),
 
                 // Continue button
@@ -58,35 +58,35 @@ class VerifyCodeScreen extends StatelessWidget {
                   ),
                   child: AuraButton(
                     onTap: () {
-                      Get.toNamed(AppRoutes.instance.idTypeSelectScreen);
+                      Get.toNamed(AppRoutes.instance.resetingPasswordScreen);
                     },
                     filColor: AppColors.instance.blue,
                     textColor: AppColors.instance.white,
-                    text: "SUBMIT",
+                    text: "SEND CODE",
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: RichText(
-                    textAlign: TextAlign.center,
-                    text: TextSpan(
-                      style: TextStyle(
-                        fontSize: AppSize.width(value: 16),
-                        color: AppColors.instance.white.withValues(alpha: 0.5),
-                      ),
-                      children: [
-                        const TextSpan(
-                          text: "Didn’t receive the code? click here to ",
-                        ),
-                        TextSpan(
-                          text: "resend",
-                          style: TextStyle(color: AppColors.instance.blue),
-                        ),
-                        const TextSpan(text: " email "),
-                      ],
-                    ),
-                  ),
-                ),
+                // Padding(
+                //   padding: EdgeInsets.symmetric(horizontal: 20),
+                //   child: RichText(
+                //     textAlign: TextAlign.center,
+                //     text: TextSpan(
+                //       style: TextStyle(
+                //         fontSize: AppSize.width(value: 16),
+                //         color: AppColors.instance.white.withValues(alpha: 0.5),
+                //       ),
+                //       children: [
+                //         const TextSpan(
+                //           text: "Didn’t receive the code? click here to ",
+                //         ),
+                //         TextSpan(
+                //           text: "resend",
+                //           style: TextStyle(color: AppColors.instance.blue),
+                //         ),
+                //         const TextSpan(text: " email "),
+                //       ],
+                //     ),
+                //   ),
+                // ),
                 Padding(
                   padding: EdgeInsets.symmetric(
                     horizontal: AppSize.width(value: 90),

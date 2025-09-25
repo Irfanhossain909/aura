@@ -32,12 +32,12 @@ class UploadIdScreen extends StatelessWidget {
                 fontSize: AppSize.width(value: 24),
                 color: AppColors.instance.white,
               ),
-              Gap(height: AppSize.size.height * 0.05),
-              AppImageCircular(
-                path: AssetsIconsPath.instance.idImg,
-                width: 100,
-                height: 100,
-              ),
+              Gap(height: AppSize.size.height * 0.15),
+              // AppImageCircular(
+              //   path: AssetsIconsPath.instance.idImg,
+              //   width: 100,
+              //   height: 100,
+              // ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 70.0),
                 child: Column(
@@ -79,6 +79,8 @@ class UploadIdScreen extends StatelessWidget {
                   onTap: () {
                     Get.back();
                   },
+                  height: 28,
+                  fontSize: 12,
                   text: "Back",
                 ),
               ),

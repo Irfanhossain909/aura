@@ -3,8 +3,10 @@ import 'package:aura/routes/bindings/app_binding.dart';
 import 'package:aura/routes/bindings/auth_binding.dart';
 import 'package:aura/screens/app_navigation_screen/navigation_screen.dart';
 import 'package:aura/screens/auth_screens/enter_phone_screen/enter_phone_screen.dart';
+import 'package:aura/screens/auth_screens/forget_password_screen/forget_password_screen.dart';
 import 'package:aura/screens/auth_screens/id_type_select_screen/id_type_select_screen.dart';
 import 'package:aura/screens/auth_screens/login_screen/login_screen.dart';
+import 'package:aura/screens/auth_screens/reseting_password_screen/reseting_password_screen.dart';
 import 'package:aura/screens/auth_screens/select_profile_img/select_profile_img.dart';
 import 'package:aura/screens/auth_screens/selection_screen/selection_screen.dart';
 import 'package:aura/screens/auth_screens/signup_screen/signup_screen.dart';
@@ -78,6 +80,11 @@ List<GetPage> appRootRoutesFile = <GetPage>[
 
   //////////=======================Auth screen===================
   GetPage(
+    name: AppRoutes.instance.resetingPasswordScreen,
+    binding: AuthBinding(),
+    page: () => const ResetingPasswordScreen(),
+  ),
+  GetPage(
     name: AppRoutes.instance.signUpScreen,
     binding: AuthBinding(),
     page: () => const SignupScreen(),
@@ -126,6 +133,11 @@ List<GetPage> appRootRoutesFile = <GetPage>[
     name: AppRoutes.instance.selectionScreen,
     // binding: AuthBinding(),
     page: () => const SelectionScreen(),
+  ),
+  GetPage(
+    name: AppRoutes.instance.forgetPasswordScreen,
+    // binding: AuthBinding(),
+    page: () => const ForgetPasswordScreen(),
   ),
   //////////=======================Extentions screen===================
   GetPage(

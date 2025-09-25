@@ -17,6 +17,12 @@ class SplashScreen extends StatelessWidget {
       init: SplashController(),
       builder: (controller) {
         return ScaffoldWithBgImage(
+          // imagePath:'assets/images/extention_bg.webp' ,
+          gradient: const LinearGradient(
+            begin: Alignment(0.00, 0.00),
+            end: Alignment(0.89, 1.00),
+            colors: [Color(0xFF6D8590), Color(0xFF2D373E)],
+          ),
           body: Obx(
             () => Center(
               child: Padding(

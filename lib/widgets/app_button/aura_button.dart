@@ -8,12 +8,18 @@ class AuraButton extends StatelessWidget {
   final String? text;
   final Color? filColor;
   final Color? textColor;
+  final double? fontSize;
+  final double? weidth;
+  final double? height;
   const AuraButton({
     super.key,
     this.onTap,
     this.text,
     this.filColor,
     this.textColor,
+    this.fontSize,
+    this.weidth,
+    this.height,
   });
 
   @override
@@ -21,9 +27,11 @@ class AuraButton extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
+        width: weidth,
+        height: height,
         padding: EdgeInsets.symmetric(
-          horizontal: AppSize.width(value: 20),
-          vertical: AppSize.width(value: 12),
+          horizontal: AppSize.width(value: 12),
+          vertical: AppSize.width(value: 8),
         ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
@@ -40,7 +48,7 @@ class AuraButton extends StatelessWidget {
         child: Center(
           child: AppText(
             data: text ?? "Not Text",
-            fontSize: AppSize.width(value: 18),
+            fontSize: fontSize ?? AppSize.width(value: 18),
             color: textColor ?? AppColors.instance.black,
           ),
         ),
