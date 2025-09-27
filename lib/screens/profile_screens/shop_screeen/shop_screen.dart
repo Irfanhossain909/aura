@@ -3,7 +3,6 @@ import 'package:aura/const/assets_icons_path.dart';
 import 'package:aura/routes/app_routes.dart';
 import 'package:aura/utils/applog/app_size.dart';
 import 'package:aura/utils/applog/gap.dart';
-import 'package:aura/widgets/app_bar/custom_appbar_auth.dart';
 import 'package:aura/widgets/app_bar/custom_appber.dart';
 import 'package:aura/widgets/app_button/app_button.dart';
 import 'package:aura/widgets/app_images/app_image.dart';

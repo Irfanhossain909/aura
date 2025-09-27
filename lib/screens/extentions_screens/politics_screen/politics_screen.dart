@@ -2,7 +2,6 @@ import 'package:aura/const/app_colors.dart';
 import 'package:aura/screens/extentions_screens/politics_screen/controller/politics_controller.dart';
 import 'package:aura/utils/applog/app_size.dart';
 import 'package:aura/widgets/app_bar/custom_appber.dart';
-import 'package:aura/widgets/app_button/app_button.dart';
 import 'package:aura/widgets/app_button/aura_button.dart';
 import 'package:aura/widgets/app_images/scaffold_with_bg_image.dart';
 import 'package:aura/widgets/app_row_item_with_checkbox/app_row_item_with_radio.dart';

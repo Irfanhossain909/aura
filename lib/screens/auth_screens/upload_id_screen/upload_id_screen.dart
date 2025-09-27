@@ -1,5 +1,4 @@
 import 'package:aura/const/app_colors.dart';
-import 'package:aura/const/assets_icons_path.dart';
 import 'package:aura/routes/app_routes.dart';
 import 'package:aura/screens/auth_screens/id_type_select_screen/id_type_select_screen.dart';
 import 'package:aura/screens/auth_screens/upload_id_screen/controller/upload_id_controller.dart';
@@ -7,7 +6,6 @@ import 'package:aura/utils/applog/app_size.dart';
 import 'package:aura/utils/applog/gap.dart';
 import 'package:aura/widgets/app_bar/custom_appbar_auth.dart';
 import 'package:aura/widgets/app_button/aura_button.dart';
-import 'package:aura/widgets/app_images/app_image_circular.dart';
 import 'package:aura/widgets/app_images/scaffold_with_bg_image_for_auth.dart';
 import 'package:aura/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
