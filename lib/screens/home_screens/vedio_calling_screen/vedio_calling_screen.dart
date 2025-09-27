@@ -70,12 +70,16 @@ class VedioCallingScreen extends StatelessWidget {
                               onTap: () {
                                 controller.toggleIceBrekar();
                               },
-                              child: controller.isIceBrekarShow.value
-                                  ? Icon(Icons.ice_skating)
-                                  : AppImage(
-                                      path: AssetsIconsPath.instance.loveCard,
-                                      width: AppSize.width(value: 52),
-                                    ),
+                              child: AppImage(
+                                path: AssetsIconsPath.instance.loveCard,
+                                width: AppSize.width(value: 52),
+                              ),
+                              // child: controller.isIceBrekarShow.value
+                              //     ? Icon(Icons.ice_skating)
+                              // : AppImage(
+                              //     path: AssetsIconsPath.instance.loveCard,
+                              //     width: AppSize.width(value: 52),
+                              //   ),
                             ),
                             InkWell(
                               onTap: () {
@@ -337,6 +341,7 @@ class _MatchSwipeSwitch extends StatelessWidget {
             children: [
               Center(
                 child: AppText(
+                  fontSize: AppSize.width(value: 20),
                   data: isActive ? 'Matched' : 'Match',
                   color: AppColors.instance.white,
                 ),

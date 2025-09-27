@@ -19,7 +19,6 @@ class ChatListScreen extends StatelessWidget {
       body: Column(
         children: [
           CustomAppBarAuth(
-            
             logoUnderText: "MATCHES",
             isProgressShown: false,
             action: GestureDetector(
@@ -99,73 +98,79 @@ class _ChatListItemState extends State<ChatListItem> {
       },
       child: Stack(
         children: [
-          Container(
-            padding: EdgeInsets.symmetric(
-              vertical: AppSize.width(value: 14),
-              horizontal: AppSize.width(value: 14),
-            ),
-            child: Column(
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(100),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.blue,
-                        spreadRadius: 0.3,
-                        blurRadius: 5,
-                        offset: Offset(0, 0),
-                      ),
-                    ],
-                  ),
-                  child: Container(
+          Center(
+            child: Container(
+              padding: EdgeInsets.symmetric(
+                vertical: AppSize.width(value: 14),
+                horizontal: AppSize.width(value: 14),
+              ),
+              child: Column(
+                children: [
+                  Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(100),
-                      border: Border.all(
-                        width: 2,
-                        color: AppColors.instance.white,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.blue,
+                          spreadRadius: 0.3,
+                          blurRadius: 5,
+                          offset: Offset(0, 0),
+                        ),
+                      ],
+                    ),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        border: Border.all(
+                          width: 2,
+                          color: AppColors.instance.white,
+                        ),
+                      ),
+                      padding: EdgeInsets.all(3),
+                      child: AppImageCircular(
+                        width: 88,
+                        height: 88,
+                        path: AssetsIconsPath.instance.profileIcon,
                       ),
                     ),
-                    padding: EdgeInsets.all(3),
-                    child: AppImageCircular(
-                      width: 100,
-                      height: 100,
-                      path: AssetsIconsPath.instance.profileIcon,
-                    ),
                   ),
-                ),
-                Gap(height: AppSize.size.height * 0.01),
-                AppText(
-                  data: "LEE",
-                  maxLines: 1,
-                  fontSize: AppSize.width(value: 18),
-                  color: AppColors.instance.white,
-                  fontWeight: FontWeight.w600,
-                  letterSpacing: .3,
-                ),
-              ],
+                  Gap(height: AppSize.size.height * 0.01),
+                  AppText(
+                    data: "LEE",
+                    maxLines: 1,
+                    fontSize: AppSize.width(value: 18),
+                    color: AppColors.instance.white,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: .3,
+                  ),
+                ],
+              ),
             ),
           ),
 
           // time badge
           Positioned(
-            right: 20,
+            right: 25,
             top: 10,
-            child: Container(
-              padding: EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                color: AppColors.instance.greyMedium.withValues(alpha: .9),
-                border: Border.all(color: Colors.green, width: 2),
-                borderRadius: BorderRadius.circular(30),
-              ),
-              child: AppText(
-                data: "23 H",
-                fontSize: AppSize.width(value: 12),
-                fontWeight: FontWeight.w500,
-                color: AppColors.instance.white,
+            child: CustomPaint(
+              painter: DashedBorderPainter(),
+              child: Container(
+                padding: EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: AppColors.instance.greyMedium.withValues(alpha: .9),
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                child: AppText(
+                  data: "23 H",
+                  fontSize: AppSize.width(value: 12),
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.instance.white,
+                ),
               ),
             ),
           ),
+
+          
 
           // close icon (show only if _showClose == true)
           if (_showClose)
@@ -193,3 +198,53 @@ class _ChatListItemState extends State<ChatListItem> {
     );
   }
 }
+
+class DashedBorderPainter extends CustomPainter {
+  final Color color;
+  final double strokeWidth;
+  final double dashWidth;
+  final double dashSpace;
+  final double radius;
+
+  DashedBorderPainter({
+    this.color = Colors.green,
+    this.strokeWidth = 2.0,
+    this.dashWidth = 5.0,
+    this.dashSpace = 3.0,
+    this.radius = 30.0,
+  });
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color = color
+      ..strokeWidth = strokeWidth
+      ..style = PaintingStyle.stroke;
+
+    final rect = Rect.fromLTWH(0, 0, size.width, size.height);
+
+    final rrect = RRect.fromRectAndRadius(rect, Radius.circular(radius));
+    final path = Path()..addRRect(rrect);
+
+    _drawDashedPath(canvas, path, paint);
+  }
+
+  void _drawDashedPath(Canvas canvas, Path path, Paint paint) {
+    for (final metric in path.computeMetrics()) {
+      double distance = 0.0;
+      while (distance < metric.length) {
+        final next = distance + dashWidth;
+        final extractPath = metric.extractPath(
+          distance,
+          next > metric.length ? metric.length : next,
+        );
+        canvas.drawPath(extractPath, paint);
+        distance = next + dashSpace;
+      }
+    }
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) => true;
+}
+

@@ -113,6 +113,7 @@ class _MatchSwipeSwitchStart extends StatelessWidget {
             children: [
               Center(
                 child: AppText(
+                  fontSize: AppSize.width(value: 20),
                   data: isActive ? 'DISCONNECT' : 'CONNECT',
                   color: isActive
                       ? AppColors.instance.black

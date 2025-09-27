@@ -79,8 +79,8 @@ class MessageScreen extends StatelessWidget {
                                 ),
                                 padding: EdgeInsets.all(3),
                                 child: AppImageCircular(
-                                  width: 100,
-                                  height: 100,
+                                  width: 88,
+                                  height: 88,
                                   path: AssetsIconsPath.instance.profileIcon,
                                 ),
                               ),

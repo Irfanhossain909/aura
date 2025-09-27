@@ -54,18 +54,19 @@ class ReportOptionScreen extends StatelessWidget {
                     ),
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: AppColors.instance.black,
+                      border: Border.all(color: AppColors.instance.blue),
+                      color: AppColors.instance.black.withValues(alpha: 0.5),
                       borderRadius: BorderRadius.circular(16),
                       boxShadow: [
-                        BoxShadow(
-                          color: Colors.blue,
-                          blurRadius: 5,
-                          spreadRadius: 0.5,
-                          offset: Offset(
-                            0,
-                            0,
-                          ), // (0,0) দিলে সব দিকেই সমান শেডো হবে
-                        ),
+                        // BoxShadow(
+                        //   color: Colors.blue,
+                        //   blurRadius: 1,
+                        //   // spreadRadius: 0.5,
+                        //   offset: Offset(
+                        //     0,
+                        //     0,
+                        //   ), // (0,0) দিলে সব দিকেই সমান শেডো হবে
+                        // ),
                       ],
                     ),
                     child: Column(

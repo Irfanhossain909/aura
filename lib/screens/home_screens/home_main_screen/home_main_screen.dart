@@ -27,10 +27,14 @@ class HomeMainScreen extends StatelessWidget {
             builder: (controller) {
               return Column(
                 children: [
+                  Gap(height: AppSize.size.height * 0.1),
                   AppImage(width: 160, path: AssetsIconsPath.instance.auraIcon),
 
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 16.0),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16.0,
+                      vertical: 16,
+                    ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
