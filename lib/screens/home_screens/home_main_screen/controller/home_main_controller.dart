@@ -3,6 +3,13 @@ import 'package:get/get.dart';
 
 class HomeMainController extends GetxController {
   RxBool isNAvigate = false.obs;
+  RxInt selectedMenuIndex = 0.obs; // 0: LOCAL, 1: SELECT CITY, 2: EXPLORE
+
+  List<String> menuItems = ["LOCAL", "SELECT CITY", "EXPLORE"];
+
+  void selectMenuItem(int index) {
+    selectedMenuIndex.value = index;
+  }
 
   void delayedFunction() {
     isNAvigate.value = true;

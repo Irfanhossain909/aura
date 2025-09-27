@@ -35,73 +35,40 @@ class HomeMainScreen extends StatelessWidget {
                       horizontal: 16.0,
                       vertical: 16,
                     ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        InkWell(
-                          onTap: () {
-                            AppPrint.apiResponse("Clicked Local");
-
-                            showDialogForLocal(context);
-                          },
-                          child: Row(
-                            children: [
-                              AppText(
-                                data: "LOCAL",
-                                fontSize: AppSize.width(value: 18),
-                                fontWeight: FontWeight.w600,
-                                color: AppColors.instance.white,
-                              ),
-                              Icon(
-                                Icons.arrow_drop_down,
-                                size: 50,
-                                color: AppColors.instance.white,
-                              ),
-                            ],
+                    child: Obx(() {
+                      return Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          // Left item
+                          _buildMenuItem(
+                            controller,
+                            controller.selectedMenuIndex.value == 0
+                                ? 1
+                                : controller.selectedMenuIndex.value == 1
+                                ? 0
+                                : 2,
+                            context,
                           ),
-                        ),
-                        InkWell(
-                          onTap: () {
-                            showDialogForSelectCity(context);
-                          },
-                          child: Row(
-                            children: [
-                              AppText(
-                                data: "SELECT CITY",
-                                fontSize: AppSize.width(value: 18),
-                                fontWeight: FontWeight.w600,
-                                color: AppColors.instance.white,
-                              ),
-                              Icon(
-                                Icons.arrow_drop_down,
-                                size: 50,
-                                color: AppColors.instance.white,
-                              ),
-                            ],
+                          // Center item (selected)
+                          _buildMenuItem(
+                            controller,
+                            controller.selectedMenuIndex.value,
+                            context,
+                            isCenter: true,
                           ),
-                        ),
-                        InkWell(
-                          onTap: () {
-                            AppPrint.apiResponse("Clicked Explore");
-                          },
-                          child: Row(
-                            children: [
-                              AppText(
-                                data: "EXPLORE",
-                                fontSize: AppSize.width(value: 18),
-                                fontWeight: FontWeight.w600,
-                                color: AppColors.instance.white,
-                              ),
-                              Icon(
-                                Icons.arrow_drop_down,
-                                size: 50,
-                                color: AppColors.instance.white,
-                              ),
-                            ],
+                          // Right item
+                          _buildMenuItem(
+                            controller,
+                            controller.selectedMenuIndex.value == 0
+                                ? 2
+                                : controller.selectedMenuIndex.value == 1
+                                ? 2
+                                : 0,
+                            context,
                           ),
-                        ),
-                      ],
-                    ),
+                        ],
+                      );
+                    }),
                   ),
                   Gap(height: AppSize.size.height * 0.4),
                   GestureDetector(
@@ -311,6 +278,55 @@ class HomeMainScreen extends StatelessWidget {
           ], // Centered button
         );
       },
+    );
+  }
+
+  Widget _buildMenuItem(
+    HomeMainController controller,
+    int index,
+    BuildContext context, {
+    bool isCenter = false,
+  }) {
+    String menuText = controller.menuItems[index];
+    bool isSelected = isCenter;
+
+    return InkWell(
+      onTap: () {
+        controller.selectMenuItem(index);
+
+        // Handle specific actions based on menu item
+        switch (index) {
+          case 0: // LOCAL
+            AppPrint.apiResponse("Clicked Local");
+            showDialogForLocal(context);
+            break;
+          case 1: // SELECT CITY
+            showDialogForSelectCity(context);
+            break;
+          case 2: // EXPLORE
+            AppPrint.apiResponse("Clicked Explore");
+            break;
+        }
+      },
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          AppText(
+            data: menuText,
+            fontSize: AppSize.width(value: 24),
+            fontWeight: FontWeight.w600,
+            color: isSelected
+                ? AppColors.instance.white
+                : AppColors.instance.white.withValues(alpha: 0.5),
+          ),
+          if (isSelected)
+            Icon(
+              Icons.arrow_drop_down,
+              size: 50,
+              color: AppColors.instance.white,
+            ),
+        ],
+      ),
     );
   }
 }
