@@ -2,7 +2,6 @@ import 'package:aura/const/app_colors.dart';
 import 'package:aura/const/assets_icons_path.dart';
 import 'package:aura/routes/app_routes.dart';
 import 'package:aura/utils/applog/app_size.dart';
-import 'package:aura/utils/applog/gap.dart';
 import 'package:aura/widgets/app_button/app_button.dart';
 import 'package:aura/widgets/app_images/app_image.dart';
 import 'package:aura/widgets/app_images/scaffold_with_bg_image.dart';
@@ -42,7 +41,7 @@ class CommunityExpectionScreen extends StatelessWidget {
                 ),
                 child: SingleChildScrollView(
                   child: Column(
-                    spacing: AppSize.size.height * 0.02,
+                    spacing: AppSize.size.height * 0.01,
                     children: [
                       Padding(
                         padding: EdgeInsets.symmetric(
@@ -77,7 +76,7 @@ class CommunityExpectionScreen extends StatelessWidget {
                         height: AppSize.width(value: 34),
                         borderRadius: BorderRadius.circular(24),
                       ),
-                      Gap(height: AppSize.size.height * 0.1),
+                      // Gap(height: AppSize.size.height * 0.1),
                     ],
                   ),
                 ),

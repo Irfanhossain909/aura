@@ -1,6 +1,7 @@
 import 'package:aura/const/app_colors.dart';
 import 'package:aura/const/assets_icons_path.dart';
 import 'package:aura/routes/app_routes.dart';
+import 'package:aura/screens/chat_screens/chat_list_screen/chat_list_screen.dart';
 import 'package:aura/utils/applog/app_size.dart';
 import 'package:aura/utils/applog/gap.dart';
 import 'package:aura/widgets/app_bar/custom_appber.dart';
@@ -31,20 +32,42 @@ class MessageScreen extends StatelessWidget {
                 action: SizedBox(),
                 title: "TANVIR",
                 isDividerShow: false,
-                action2: Container(
-                  padding: EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    color: AppColors.instance.greyMedium.withValues(alpha: .9),
-                    border: Border.all(color: Colors.green, width: 2),
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: AppText(
-                    data: "23 H",
-                    fontSize: AppSize.width(value: 12),
-                    fontWeight: FontWeight.w500,
-                    color: AppColors.instance.white,
+                action2: Positioned(
+                  right: 25,
+                  top: 10,
+                  child: CustomPaint(
+                    painter: DashedBorderPainter(),
+                    child: Container(
+                      padding: EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                        color: AppColors.instance.greyMedium.withValues(
+                          alpha: .9,
+                        ),
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: AppText(
+                        data: "23 H",
+                        fontSize: AppSize.width(value: 12),
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.instance.white,
+                      ),
+                    ),
                   ),
                 ),
+                // action2: Container(
+                //   padding: EdgeInsets.all(8),
+                //   decoration: BoxDecoration(
+                //     color: AppColors.instance.greyMedium.withValues(alpha: .9),
+                //     border: Border.all(color: Colors.green, width: 2),
+                //     borderRadius: BorderRadius.circular(30),
+                //   ),
+                //   child: AppText(
+                //     data: "23 H",
+                //     fontSize: AppSize.width(value: 12),
+                //     fontWeight: FontWeight.w500,
+                //     color: AppColors.instance.white,
+                //   ),
+                // ),
               ),
               Expanded(
                 child: CustomScrollView(
