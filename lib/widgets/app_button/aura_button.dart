@@ -9,6 +9,7 @@ class AuraButton extends StatelessWidget {
   final Color? filColor;
   final Color? textColor;
   final double? fontSize;
+  final double? borderRadius;
   final double? weidth;
   final double? height;
   const AuraButton({
@@ -20,6 +21,7 @@ class AuraButton extends StatelessWidget {
     this.fontSize,
     this.weidth,
     this.height,
+    this.borderRadius,
   });
 
   @override
@@ -34,7 +36,7 @@ class AuraButton extends StatelessWidget {
           vertical: AppSize.width(value: 8),
         ),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(borderRadius ?? 20),
           color: filColor ?? Colors.white,
           boxShadow: [
             BoxShadow(

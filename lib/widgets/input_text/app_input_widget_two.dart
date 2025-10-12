@@ -149,6 +149,7 @@ class _AppInputWidgetTwoState extends State<AppInputWidgetTwo> {
                 decoration: InputDecoration(
                   hintText: widget.hintText,
                   hintStyle: Theme.of(context).textTheme.titleSmall?.copyWith(
+                    fontFamily: AppConst.fontFamily1,
                     color: AppColors.instance.white.withValues(alpha: .7),
                   ),
                   filled: widget.filled, // Use the filled property
@@ -156,7 +157,7 @@ class _AppInputWidgetTwoState extends State<AppInputWidgetTwo> {
                       widget.fillColor ?? Colors.white, // White fill color
                   contentPadding:
                       widget.contentPadding ??
-                      const EdgeInsets.symmetric(vertical: 12, horizontal: 12),
+                      const EdgeInsets.symmetric(vertical: 0, horizontal: 12),
                   prefixIcon: widget.prefix != null
                       ? Padding(
                           padding: const EdgeInsets.only(left: 8.0),
