@@ -23,33 +23,30 @@ class UserWaitingScreen extends StatelessWidget {
             spacing: AppSize.size.height * 0.01,
             children: [
               CustomAppBarAuth(logoUnderText: "SIGNUP", progressValue: 6),
-              Gap(height: AppSize.size.height * 0.18),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 100),
-                child: AppText(
-                  textAlign: TextAlign.center,
-                  data: "CONTINUE WHILE WE VERIFY YOUR ID",
-                  fontSize: AppSize.width(value: 30),
-                  color: AppColors.instance.white,
-                ),
+              AppText(
+                textAlign: TextAlign.center,
+                data: "CONTINUE WHILE WE VERIFY YOUR ID",
+                fontSize: AppSize.width(value: 32),
+                color: AppColors.instance.white,
               ),
-              Gap(height: AppSize.size.height * 0.02),
+              Gap(height: AppSize.size.height * 0.18),
+
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 70),
+                padding: const EdgeInsets.symmetric(horizontal: 50),
                 child: Container(
                   padding: EdgeInsets.all(16),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(16),
-                    color: AppColors.instance.black.withValues(alpha: 0.5),
+                    color: AppColors.instance.black.withValues(alpha: 0.8),
                     border: Border.all(
                       color: AppColors.instance.white,
                       width: 0.5,
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: AppColors.instance.blue.withValues(alpha: 0.3),
-                        spreadRadius: 2,
-                        blurRadius: 8,
+                        color: AppColors.instance.blue.withValues(alpha: 0.6),
+                        spreadRadius: 6,
+                        blurRadius: 20,
                         offset: Offset(0, 4),
                       ),
                     ],
@@ -58,24 +55,25 @@ class UserWaitingScreen extends StatelessWidget {
                     textAlign: TextAlign.center,
                     data:
                         "Your I.D should take about 5 minutes to get verified until then please continue to set up your account.",
-                    color: AppColors.instance.white,
+                    color: AppColors.instance.white.withValues(alpha: 0.8),
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16.0,
+                    letterSpacing: 0.7,
                     height: 1.4,
                   ),
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: AppSize.width(value: 120),
-                  vertical: AppSize.width(value: 12),
-                ),
-                child: AuraButton(
-                  onTap: () {
-                    Get.toNamed(AppRoutes.instance.enterPhoneScreen);
-                  },
-                  filColor: AppColors.instance.blue,
-                  textColor: AppColors.instance.white,
-                  text: "CONFIRM",
-                ),
+              Gap(height: AppSize.size.height * 0.3),
+              AuraButton(
+                height: AppSize.width(value: 42),
+                weidth: AppSize.width(value: 117),
+                borderRadius: 30,
+                onTap: () {
+                  Get.toNamed(AppRoutes.instance.selectProfileImgScreen);
+                },
+                filColor: AppColors.instance.blue,
+                textColor: AppColors.instance.white,
+                text: "CONFIRM",
               ),
             ],
           );

@@ -19,89 +19,73 @@ class SignupScreen extends StatelessWidget {
       body: Column(
         children: [
           CustomAppBarAuth(logoUnderText: "SIGNUP", progressValue: 2),
-          Gap(height: AppSize.size.height * 0.04),
+          Gap(height: AppSize.size.height * 0.00),
           AppText(
             data: "GET SETUP",
-            fontSize: AppSize.width(value: 34),
+            fontSize: AppSize.width(value: 36),
             color: AppColors.instance.white,
           ),
-          Gap(height: AppSize.size.height * 0.11),
+          Gap(height: AppSize.size.height * 0.13),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 60),
+            padding: const EdgeInsets.symmetric(horizontal: 50),
             child: Column(
               spacing: AppSize.size.height * 0.006,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 AppInputWidgetTwo(
-                  height: AppSize.width(value: 36),
-                  contentPadding: EdgeInsets.symmetric(
-                    vertical: 0,
-                    horizontal: AppSize.width(value: 12),
-                  ),
+                  height: AppSize.width(value: 40),
+
                   fillColor: Colors.transparent,
                   hintText: "First Name",
                 ),
                 AppInputWidgetTwo(
-                  height: AppSize.width(value: 36),
-                  contentPadding: EdgeInsets.symmetric(
-                    vertical: 0,
-                    horizontal: AppSize.width(value: 12),
-                  ),
+                  height: AppSize.width(value: 40),
+
                   fillColor: Colors.transparent,
                   hintText: "Last Name",
                 ),
                 AppInputWidgetTwo(
-                  height: AppSize.width(value: 36),
-                  contentPadding: EdgeInsets.symmetric(
-                    vertical: 0,
-                    horizontal: AppSize.width(value: 12),
-                  ),
+                  height: AppSize.width(value: 40),
+
                   fillColor: Colors.transparent,
                   hintText: "E-mail Address",
                   isEmail: true,
                 ),
                 AppInputWidgetTwo(
-                  height: AppSize.width(value: 36),
-                  contentPadding: EdgeInsets.symmetric(
-                    vertical: 0,
-                    horizontal: AppSize.width(value: 12),
-                  ),
+                  height: AppSize.width(value: 40),
+
                   fillColor: Colors.transparent,
                   hintText: "Password",
                   isPassWord: true,
                 ),
                 AppInputWidgetTwo(
-                  height: AppSize.width(value: 36),
-                  contentPadding: EdgeInsets.symmetric(
-                    vertical: 0,
-                    horizontal: AppSize.width(value: 12),
-                  ),
+                  height: AppSize.width(value: 40),
+
                   fillColor: Colors.transparent,
                   hintText: "Confirm Password",
 
                   isPassWord: true,
                 ),
-                Gap(height: AppSize.size.height * 0.08),
+                Gap(height: AppSize.size.height * 0.12),
                 // Continue button
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: AppSize.width(value: 72),
-                    vertical: AppSize.width(value: 12),
-                  ),
-                  child: AuraButton(
-                    onTap: () {
-                      Get.toNamed(AppRoutes.instance.verifyCodeScreen);
-                    },
-                    filColor: AppColors.instance.blue,
-                    textColor: AppColors.instance.white,
-                    text: "CONFIRM",
-                  ),
+                AuraButton(
+                  height: AppSize.width(value: 42),
+                  weidth: AppSize.width(value: 117),
+                  borderRadius: 30,
+                  onTap: () {
+                    Get.toNamed(AppRoutes.instance.verifyCodeScreen);
+                  },
+                  filColor: AppColors.instance.blue,
+                  textColor: AppColors.instance.white,
+                  text: "CONFIRM",
                 ),
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: AppSize.width(value: 90),
-                  ),
-                  child: AuraButton(height: 28, fontSize: 12, text: "Back"),
+                Gap(height: AppSize.size.height * 0.001),
+                AuraButton(
+                  weidth: AppSize.width(value: 60),
+                  height: AppSize.width(value: 32),
+                  borderRadius: 30,
+                  fontSize: 12,
+                  text: "Back",
                 ),
 
                 // Back button

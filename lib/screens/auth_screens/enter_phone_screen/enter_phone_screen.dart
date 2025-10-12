@@ -19,22 +19,19 @@ class EnterPhoneScreen extends StatelessWidget {
       body: Column(
         children: [
           CustomAppBarAuth(logoUnderText: "VERIFY", progressValue: 7),
-          Gap(height: AppSize.size.height * 0.17),
+          AppText(
+            textAlign: TextAlign.center,
+            data: "verify your  number",
+            fontSize: AppSize.width(value: 32),
+            color: AppColors.instance.white,
+          ),
+          Gap(height: AppSize.size.height * 0.24),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 60),
             child: Column(
               spacing: AppSize.size.height * 0.02,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 40),
-                  child: AppText(
-                    textAlign: TextAlign.center,
-                    data: "Let’s verify your phone number",
-                    fontSize: AppSize.width(value: 24),
-                    color: AppColors.instance.white,
-                  ),
-                ),
                 AppInputWidgetTwo(
                   // height: AppSize.width(value: 36),
                   contentPadding: EdgeInsets.symmetric(
@@ -50,38 +47,29 @@ class EnterPhoneScreen extends StatelessWidget {
                     textAlign: TextAlign.center,
                     data:
                         "we will send a text to your phone to verify your number. Please make sure it’s correct. message and data rates may apply",
-                    fontSize: AppSize.width(value: 18),
-                    color: AppColors.instance.white,
+                    fontSize: AppSize.width(value: 16),
+                    color: AppColors.instance.white.withValues(alpha: 0.6),
                   ),
                 ),
-
+                Gap(height: AppSize.size.height * 0.2),
                 // Continue button
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: AppSize.width(value: 40),
-                  ),
-                  child: AuraButton(
-                    onTap: () {
-                      Get.toNamed(AppRoutes.instance.verifyPhoneScreen);
-                    },
-                    filColor: AppColors.instance.blue,
-                    textColor: AppColors.instance.white,
-                    text: "CONFIRM",
-                  ),
+                AuraButton(
+                  height: AppSize.width(value: 42),
+                  weidth: AppSize.width(value: 117),
+                  borderRadius: 30,
+                  onTap: () {
+                    Get.toNamed(AppRoutes.instance.verifyPhoneScreen);
+                  },
+                  filColor: AppColors.instance.blue,
+                  textColor: AppColors.instance.white,
+                  text: "CONFIRM",
                 ),
-
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: AppSize.width(value: 90),
-                  ),
-                  child: AuraButton(
-                    onTap: () {
-                      Get.back();
-                    },
-                    height: 28,
-                    fontSize: 12,
-                    text: "Back",
-                  ),
+                AuraButton(
+                  weidth: AppSize.width(value: 60),
+                  height: AppSize.width(value: 32),
+                  borderRadius: 30,
+                  fontSize: 12,
+                  text: "Back",
                 ),
 
                 // Back button

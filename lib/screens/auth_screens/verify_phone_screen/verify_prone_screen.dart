@@ -9,6 +9,7 @@ import 'package:aura/widgets/input_text/app_input_widget_two.dart';
 import 'package:aura/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class VerifyProneScreen extends StatelessWidget {
   const VerifyProneScreen({super.key});
@@ -18,47 +19,59 @@ class VerifyProneScreen extends StatelessWidget {
     return ScaffoldWithBgImageForAuth(
       body: Column(
         children: [
-          CustomAppBarAuth(logoUnderText: "VERIFY", progressValue: 8),
-          Gap(height: AppSize.size.height * 0.17),
+          CustomAppBarAuth(logoUnderText: "VERIFY", progressValue: 3),
+          AppText(
+            textAlign: TextAlign.center,
+            data: "VERIFICATION CODE",
+            fontSize: AppSize.width(value: 36),
+            color: AppColors.instance.white,
+          ),
+          Gap(height: AppSize.size.height * 0.13),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 60),
+            padding: const EdgeInsets.symmetric(horizontal: 50),
             child: Column(
               spacing: AppSize.size.height * 0.02,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 30),
+                  child: AppText(
+                    style: GoogleFonts.poppins(
+                      fontSize: AppSize.width(value: 16),
+                      color: AppColors.instance.white,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    textAlign: TextAlign.center,
+                    data: "Enter the verification code sent to your Phone",
+                  ),
+                ),
                 AppText(
-                  textAlign: TextAlign.center,
-                  data: "VERIFICATION CODE",
-                  fontSize: AppSize.width(value: 24),
-                  color: AppColors.instance.white,
+                  style: GoogleFonts.poppins(
+                    fontSize: 16,
+                    color: AppColors.instance.white,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  data: "We've Sent a Code to 6984554846",
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: AppText(
-                    textAlign: TextAlign.center,
-                    data: "ENTER THE VERIFICATION CODE SENT TO YOUR PHONE",
-                    fontSize: AppSize.width(value: 18),
-                    color: AppColors.instance.white,
+                  padding: EdgeInsets.symmetric(horizontal: 25),
+                  child: AppInputWidgetTwo(
+                    height: AppSize.width(value: 56),
+                    fillColor: Colors.transparent,
+                    hintText: "Enter Code",
                   ),
-                ),
-                AppInputWidgetTwo(
-                  // height: AppSize.width(value: 36),
-                  contentPadding: EdgeInsets.symmetric(
-                    vertical: 0,
-                    horizontal: AppSize.width(value: 12),
-                  ),
-                  fillColor: Colors.transparent,
-                  hintText: "Enter Code",
                 ),
 
                 // Continue button
                 Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: AppSize.width(value: 20),
+                    horizontal: AppSize.width(value: 16),
                   ),
                   child: AuraButton(
+                    height: 44,
+                    borderRadius: 12,
                     onTap: () {
-                      Get.toNamed(AppRoutes.instance.communityExpectionScreen);
+                      Get.toNamed(AppRoutes.instance.idTypeSelectScreen);
                     },
                     filColor: AppColors.instance.blue,
                     textColor: AppColors.instance.white,
@@ -70,8 +83,8 @@ class VerifyProneScreen extends StatelessWidget {
                   child: RichText(
                     textAlign: TextAlign.center,
                     text: TextSpan(
-                      style: TextStyle(
-                        fontSize: AppSize.width(value: 16),
+                      style: GoogleFonts.poppins(
+                        fontSize: AppSize.width(value: 12),
                         color: AppColors.instance.white.withValues(alpha: 0.5),
                       ),
                       children: [
@@ -87,6 +100,7 @@ class VerifyProneScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+                Gap(height: AppSize.size.height * 0.2),
                 Padding(
                   padding: EdgeInsets.symmetric(
                     horizontal: AppSize.width(value: 90),
@@ -95,7 +109,8 @@ class VerifyProneScreen extends StatelessWidget {
                     onTap: () {
                       Get.back();
                     },
-                    height: 28,
+                    weidth: 60,
+                    height: 32,
                     fontSize: 12,
                     text: "Back",
                   ),

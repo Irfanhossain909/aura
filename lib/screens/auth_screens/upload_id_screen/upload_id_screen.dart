@@ -1,7 +1,7 @@
 import 'package:aura/const/app_colors.dart';
 import 'package:aura/routes/app_routes.dart';
-import 'package:aura/screens/auth_screens/id_type_select_screen/id_type_select_screen.dart';
 import 'package:aura/screens/auth_screens/upload_id_screen/controller/upload_id_controller.dart';
+import 'package:aura/screens/auth_screens/upload_id_screen/widget/upload_id_button.dart';
 import 'package:aura/utils/applog/app_size.dart';
 import 'package:aura/utils/applog/gap.dart';
 import 'package:aura/widgets/app_bar/custom_appbar_auth.dart';
@@ -24,63 +24,47 @@ class UploadIdScreen extends StatelessWidget {
             spacing: AppSize.size.height * 0.01,
             children: [
               CustomAppBarAuth(logoUnderText: "SIGNUP", progressValue: 5),
-              Gap(height: AppSize.size.height * 0.02),
               AppText(
                 data: "VERIFY ID",
-                fontSize: AppSize.width(value: 24),
+                fontSize: AppSize.width(value: 32),
                 color: AppColors.instance.white,
               ),
-              Gap(height: AppSize.size.height * 0.15),
-              // AppImageCircular(
-              //   path: AssetsIconsPath.instance.idImg,
-              //   width: 100,
-              //   height: 100,
-              // ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 70.0),
-                child: Column(
-                  spacing: AppSize.size.height * 0.01,
-                  children: controller.educationLevelOptions.map((
-                    educationLevel,
-                  ) {
-                    return RowItemContainer(
-                      text: educationLevel,
-                      isChecked: controller.isSelected(educationLevel),
-                      onTap: () =>
-                          controller.selectEducationLevel(educationLevel),
-                      onRadioChanged: (value) =>
-                          controller.selectEducationLevel(educationLevel),
-                    );
-                  }).toList(),
-                ),
+              Gap(height: AppSize.size.height * 0.2),
+              Column(
+                spacing: AppSize.size.height * 0.02,
+                children: controller.educationLevelOptions.map((uploadOption) {
+                  return UploadIdButton(
+                    width: AppSize.width(value: 300),
+                    height: AppSize.height(value: 44),
+                    text: uploadOption,
+                    isSelected: controller.isSelected(uploadOption),
+                    onTap: () => controller.selectEducationLevel(uploadOption),
+                  );
+                }).toList(),
               ),
+              Gap(height: AppSize.size.height * 0.23),
 
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: AppSize.width(value: 120),
-                  vertical: AppSize.width(value: 12),
-                ),
-                child: AuraButton(
-                  onTap: () {
-                    Get.toNamed(AppRoutes.instance.userWaitingScreen);
-                  },
-                  filColor: AppColors.instance.blue,
-                  textColor: AppColors.instance.white,
-                  text: "CONFIRM",
-                ),
+              AuraButton(
+                height: AppSize.width(value: 42),
+                weidth: AppSize.width(value: 117),
+                borderRadius: 30,
+                onTap: () {
+                Get.toNamed(AppRoutes.instance.userWaitingScreen);
+                },
+                filColor: AppColors.instance.blue,
+                textColor: AppColors.instance.white,
+                text: "CONFIRM",
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: AppSize.width(value: 150),
-                ),
-                child: AuraButton(
-                  onTap: () {
-                    Get.back();
-                  },
-                  height: 28,
-                  fontSize: 12,
-                  text: "Back",
-                ),
+              Gap(height: AppSize.size.height * 0.001),
+              AuraButton(
+                onTap: () {
+                  Get.back();
+                },
+                weidth: AppSize.width(value: 60),
+                height: AppSize.width(value: 32),
+                borderRadius: 30,
+                fontSize: 12,
+                text: "Back",
               ),
             ],
           );

@@ -1,6 +1,7 @@
 import 'package:aura/const/app_colors.dart';
 import 'package:aura/routes/app_routes.dart';
 import 'package:aura/screens/auth_screens/id_type_select_screen/controller/id_type_select_controller.dart';
+import 'package:aura/screens/auth_screens/id_type_select_screen/widget/id_type_button.dart';
 import 'package:aura/utils/applog/app_size.dart';
 import 'package:aura/utils/applog/gap.dart';
 import 'package:aura/widgets/app_bar/custom_appbar_auth.dart';
@@ -23,57 +24,50 @@ class IdTypeSelectScreen extends StatelessWidget {
             spacing: AppSize.size.height * 0.01,
             children: [
               CustomAppBarAuth(logoUnderText: "SIGNUP", progressValue: 4),
-              Gap(height: AppSize.size.height * 0.16),
               AppText(
                 data: "SELECT VERIFICATION METHOD",
-                fontSize: AppSize.width(value: 24),
+                fontSize: AppSize.width(value: 32),
                 color: AppColors.instance.white,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 50.0),
-                child: Column(
-                  spacing: AppSize.size.height * 0.02,
-                  children: controller.educationLevelOptions.map((
-                    educationLevel,
-                  ) {
-                    return RowItemContainer(
-                      text: educationLevel,
-                      isChecked: controller.isSelected(educationLevel),
-                      onTap: () =>
-                          controller.selectEducationLevel(educationLevel),
-                      onRadioChanged: (value) =>
-                          controller.selectEducationLevel(educationLevel),
-                    );
-                  }).toList(),
-                ),
-              ),
+              Gap(height: AppSize.size.height * 0.14),
 
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: AppSize.width(value: 120),
-                  vertical: AppSize.width(value: 12),
-                ),
-                child: AuraButton(
-                  onTap: () {
-                    Get.toNamed(AppRoutes.instance.uploadIdScreen);
-                  },
-                  filColor: AppColors.instance.blue,
-                  textColor: AppColors.instance.white,
-                  text: "CONFIRM",
-                ),
+              Column(
+                spacing: AppSize.size.height * 0.02,
+                children: controller.educationLevelOptions.map((
+                  educationLevel,
+                ) {
+                  return IdTypeButton(
+                    width: AppSize.width(value: 300),
+                    height: AppSize.height(value: 44),
+                    text: educationLevel,
+                    isSelected: controller.isSelected(educationLevel),
+                    onTap: () =>
+                        controller.selectEducationLevel(educationLevel),
+                  );
+                }).toList(),
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: AppSize.width(value: 150),
-                ),
-                child: AuraButton(
-                  onTap: () {
-                    Get.back();
-                  },
-                  height: 28,
-                  fontSize: 12,
-                  text: "Back",
-                ),
+              Gap(height: AppSize.size.height * 0.2),
+              AuraButton(
+                height: AppSize.width(value: 42),
+                weidth: AppSize.width(value: 117),
+                borderRadius: 30,
+                onTap: () {
+                  Get.toNamed(AppRoutes.instance.uploadIdScreen);
+                },
+                filColor: AppColors.instance.blue,
+                textColor: AppColors.instance.white,
+                text: "CONFIRM",
+              ),
+              Gap(height: AppSize.size.height * 0.001),
+              AuraButton(
+                onTap: () {
+                  Get.back();
+                },
+                weidth: AppSize.width(value: 60),
+                height: AppSize.width(value: 32),
+                borderRadius: 30,
+                fontSize: 12,
+                text: "Back",
               ),
             ],
           );

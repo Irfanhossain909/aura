@@ -1,4 +1,3 @@
-
 import 'package:aura/const/app_const.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +13,9 @@ class AppText extends StatelessWidget {
     this.overflow,
     this.textAlign,
     this.height,
-    this.softWrap, this.letterSpacing,
+    this.softWrap,
+    this.letterSpacing,
+    this.style,
   });
   final String data;
   final double? fontSize;
@@ -24,9 +25,10 @@ class AppText extends StatelessWidget {
   final int? maxLines;
   final TextOverflow? overflow;
   final TextAlign? textAlign;
-  final double? height;           
-  final double? letterSpacing;           
+  final double? height;
+  final double? letterSpacing;
   final bool? softWrap;
+  final TextStyle? style;
   @override
   Widget build(BuildContext context) {
     return Text(
@@ -35,7 +37,9 @@ class AppText extends StatelessWidget {
       overflow: overflow,
       textAlign: textAlign,
       softWrap: softWrap,
-      style: Theme.of(context).textTheme.displaySmall?.copyWith(
+      style:
+          style ??
+          Theme.of(context).textTheme.displaySmall?.copyWith(
             height: height,
             fontSize: fontSize,
             color: color,
