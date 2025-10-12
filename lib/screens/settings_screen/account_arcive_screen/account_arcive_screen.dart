@@ -7,7 +7,7 @@ import 'package:aura/widgets/app_images/scaffold_with_bg_image_for_auth.dart';
 import 'package:aura/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/utils.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AccountArciveScreen extends StatelessWidget {
   const AccountArciveScreen({super.key});
@@ -23,32 +23,34 @@ class AccountArciveScreen extends StatelessWidget {
             logoUnderText: "",
             title: "",
           ),
-          Gap(height: AppSize.size.height * 0.27),
+          Gap(height: AppSize.size.height * 0.22),
 
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
-              color: AppColors.instance.white,
+              border: Border.all(color: AppColors.instance.white),
             ),
             padding: EdgeInsets.all(20),
-            width: AppSize.size.width * 0.7,
+            width: AppSize.size.width * 0.8,
             child: Column(
-              spacing: AppSize.size.height * 0.01,
+              spacing: AppSize.size.height * 0.016,
               children: [
                 AppText(
                   data: "ARCHIVE YOUR ACCOUNT",
                   fontSize: AppSize.width(value: 24),
                   fontWeight: FontWeight.w600,
-                  color: AppColors.instance.black,
+                  color: AppColors.instance.white,
                 ),
                 AppText(
                   height: 1.5,
                   textAlign: TextAlign.center,
                   data:
                       """once you archive your account, all information and data will be temporarily remove you from the us. Please make sure this is what you want to do before processed""",
-                  fontSize: AppSize.width(value: 12),
-                  fontWeight: FontWeight.w400,
-                  color: AppColors.instance.black,
+                  style: GoogleFonts.poppins(
+                    fontSize: AppSize.width(value: 12),
+                    fontWeight: FontWeight.w400,
+                    color: AppColors.instance.white,
+                  ),
                 ),
                 AppButton(
                   onTap: () {

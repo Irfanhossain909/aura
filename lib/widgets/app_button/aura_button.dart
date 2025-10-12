@@ -36,6 +36,7 @@ class AuraButton extends StatelessWidget {
           vertical: AppSize.width(value: 8),
         ),
         decoration: BoxDecoration(
+          border: Border.all(color: AppColors.instance.white),
           borderRadius: BorderRadius.circular(borderRadius ?? 20),
           color: filColor ?? Colors.white,
           boxShadow: [

@@ -8,6 +8,7 @@ import 'package:aura/widgets/app_row_item_with_checkbox/app_row_item_with_divide
 import 'package:aura/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class PrefrenceScreen extends StatelessWidget {
   const PrefrenceScreen({super.key});
@@ -211,9 +212,11 @@ class PrefrenceScreen extends StatelessWidget {
                       children: [
                         AppText(
                           data: "LANGUAGE",
-                          fontSize: AppSize.width(value: 20),
-                          fontWeight: FontWeight.w500,
-                          color: AppColors.instance.white,
+                          style: GoogleFonts.poppins(
+                            fontSize: AppSize.width(value: 16),
+                            fontWeight: FontWeight.w500,
+                            color: AppColors.instance.white,
+                          ),
                         ),
                         AppText(
                           data: "EDIT",
@@ -230,9 +233,11 @@ class PrefrenceScreen extends StatelessWidget {
                       children: [
                         AppText(
                           data: "MEASUREMENT UNIT",
-                          fontSize: AppSize.width(value: 20),
-                          fontWeight: FontWeight.w500,
-                          color: AppColors.instance.white,
+                          style: GoogleFonts.poppins(
+                            fontSize: AppSize.width(value: 16),
+                            fontWeight: FontWeight.w500,
+                            color: AppColors.instance.white,
+                          ),
                         ),
                         AppText(
                           data: "EDIT",
@@ -292,15 +297,21 @@ class PrefrenceScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: AppSize.size.height * 0.01),
-                    AppButton(
-                      onTap: () {
-                        Get.offAllNamed(AppRoutes.instance.selectionScreen);
-                      },
-                      height: AppSize.height(value: 40),
-                      title: "LOGOUT",
-                      filColor: AppColors.instance.white,
-                      titleColor: AppColors.instance.blue,
-                      width: AppSize.size.width * 0.5,
+                    Container(
+                      width: AppSize.width(value: 160),
+                      height: AppSize.width(value: 40),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(24),
+                        border: Border.all(color: AppColors.instance.white),
+                      ),
+                      child: Center(
+                        child: AppText(
+                          data: "Logout",
+                          fontSize: AppSize.width(value: 20),
+                          fontWeight: FontWeight.w500,
+                          color: AppColors.instance.white,
+                        ),
+                      ),
                     ),
                     SizedBox(height: AppSize.size.height * 0.01),
                     InkWell(
@@ -315,8 +326,8 @@ class PrefrenceScreen extends StatelessWidget {
                           vertical: AppSize.width(value: 12),
                         ),
                         decoration: BoxDecoration(
-                          color: AppColors.instance.btnBg,
-                          borderRadius: BorderRadius.circular(16),
+                          color: AppColors.instance.red1,
+                          borderRadius: BorderRadius.circular(24),
                           border: Border.all(color: AppColors.instance.white),
                         ),
                         child: AppText(

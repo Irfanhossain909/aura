@@ -1,10 +1,10 @@
 import 'package:aura/const/app_colors.dart';
 import 'package:aura/screens/extentions_screens/about_me_screen/controller/about_me_controller.dart';
+import 'package:aura/screens/extentions_screens/about_me_screen/widget/height_selector_widget.dart';
 import 'package:aura/utils/applog/app_size.dart';
 import 'package:aura/widgets/app_bar/custom_appber.dart';
 import 'package:aura/widgets/app_button/aura_button.dart';
 import 'package:aura/widgets/app_images/scaffold_with_bg_image.dart';
-import 'package:aura/widgets/app_row_item_with_checkbox/app_row_item_with_popup.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -31,24 +31,20 @@ class AboutMeScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(16.0),
                     child: Column(
                       children: [
-                        RowItemWithDividerWithHeightSelector(
-                          text: "Min Height",
+                        HeightSelectorWidget(
+                          label: "Min Height",
                           selectedValue: controller.selectedMinHeight.value,
-                          heightOptions: controller.heightOptions,
-                          onValueChanged: (String value) {
-                            controller.selectMinHeight(value);
-                          },
+                          onIncrement: () => controller.incrementMinHeight(),
+                          onDecrement: () => controller.decrementMinHeight(),
                         ),
 
                         SizedBox(height: 16),
 
-                        RowItemWithDividerWithHeightSelector(
-                          text: "Max Height",
+                        HeightSelectorWidget(
+                          label: "Max Height",
                           selectedValue: controller.selectedMaxHeight.value,
-                          heightOptions: controller.heightOptions,
-                          onValueChanged: (String value) {
-                            controller.selectMaxHeight(value);
-                          },
+                          onIncrement: () => controller.incrementMaxHeight(),
+                          onDecrement: () => controller.decrementMaxHeight(),
                         ),
 
                         Padding(

@@ -61,6 +61,9 @@ class MemberPrefferenceScreen extends StatelessWidget {
                                 children: [
                                   Expanded(
                                     child: AuraButton(
+                                      filColor: Colors.blueGrey,
+                                      borderRadius: 12,
+                                      textColor: AppColors.instance.white,
                                       fontSize: 16,
                                       onTap: () {
                                         Get.toNamed(
@@ -74,6 +77,9 @@ class MemberPrefferenceScreen extends StatelessWidget {
                                   ),
                                   Expanded(
                                     child: AuraButton(
+                                      filColor: Colors.blueGrey,
+                                      borderRadius: 12,
+                                      textColor: AppColors.instance.white,
                                       fontSize: 16,
                                       onTap: () {
                                         Get.toNamed(
@@ -92,6 +98,9 @@ class MemberPrefferenceScreen extends StatelessWidget {
                                   horizontal: 90,
                                 ),
                                 child: AuraButton(
+                                  filColor: Colors.blueGrey,
+                                  borderRadius: 12,
+                                  textColor: AppColors.instance.white,
                                   fontSize: 16,
                                   text: "LANGUAGE",
                                 ),
@@ -116,32 +125,32 @@ class MemberPrefferenceScreen extends StatelessWidget {
                                 onTap: () {
                                   Get.toNamed(AppRoutes.instance.aboutMeScreen);
                                 },
-                                text: "HEIGHT",
+                                text: "Height",
                               ),
 
                               RowItemWithDividerWithCheckBox(
-                                text: "DRINKING",
+                                text: "Drinking",
                                 isChecked: controller.drinkingChecked.value,
                                 onCheckboxChanged: (value) {
                                   controller.toggleDrinking();
                                 },
                               ),
                               RowItemWithDividerWithCheckBox(
-                                text: "MARIJUANA",
+                                text: "Marijuana",
                                 isChecked: controller.marijuanaChecked.value,
                                 onCheckboxChanged: (value) {
                                   controller.toggleMarijuana();
                                 },
                               ),
                               RowItemWithDividerWithCheckBox(
-                                text: "SMOKING",
+                                text: "Smoking",
                                 isChecked: controller.smokingChecked.value,
                                 onCheckboxChanged: (value) {
                                   controller.toggleSmoking();
                                 },
                               ),
                               RowItemWithDividerWithCheckBox(
-                                text: "DOES NOT MATTER",
+                                text: "Does Not Matter",
                                 isChecked:
                                     controller.doesNotMatterChecked.value,
                                 onCheckboxChanged: (value) {
@@ -149,7 +158,7 @@ class MemberPrefferenceScreen extends StatelessWidget {
                                 },
                               ),
                               RowItemWithDividerWithCheckBox(
-                                text: "CHILDREN",
+                                text: "Children",
                                 isChecked: controller.chilredChecked.value,
                                 onCheckboxChanged: (value) {
                                   controller.toggleChildren();
@@ -161,7 +170,7 @@ class MemberPrefferenceScreen extends StatelessWidget {
                                     AppRoutes.instance.politicsScreen,
                                   );
                                 },
-                                text: "POLITICS",
+                                text: "Politics",
                               ),
                               RowItemWithDivider(
                                 onTap: () {
@@ -169,7 +178,7 @@ class MemberPrefferenceScreen extends StatelessWidget {
                                     AppRoutes.instance.educationLevelScreen,
                                   );
                                 },
-                                text: "EDUCATION LEVEL",
+                                text: "Education Level",
                               ),
                               RowItemWithDivider(
                                 onTap: () {
@@ -177,7 +186,7 @@ class MemberPrefferenceScreen extends StatelessWidget {
                                     AppRoutes.instance.genderSelectionScreen,
                                   );
                                 },
-                                text: "GENDER",
+                                text: "Gender",
                               ),
                               RowItemWithDivider(
                                 onTap: () {
@@ -185,7 +194,7 @@ class MemberPrefferenceScreen extends StatelessWidget {
                                     AppRoutes.instance.ethnicityScreen,
                                   );
                                 },
-                                text: "ETHNICITY",
+                                text: "Ethnicity",
                               ),
                               RowItemWithDivider(
                                 onTap: () {
@@ -193,7 +202,7 @@ class MemberPrefferenceScreen extends StatelessWidget {
                                     AppRoutes.instance.zoodiacPrefereanceScreen,
                                   );
                                 },
-                                text: "ZODIAC PREFERENCE",
+                                text: "Zodiac Preference",
                               ),
                             ],
                           );

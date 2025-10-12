@@ -110,7 +110,7 @@ class CustomAppBar extends StatelessWidget {
                           )
                         : AppText(
                             data: title ?? "MEMBER PREFERENCE",
-                            fontSize: AppSize.width(value: fontSize ?? 24.0),
+                            fontSize: AppSize.width(value: fontSize ?? 28.0),
                             fontWeight: FontWeight.w400,
                             color: AppColors.instance.white,
                           ),

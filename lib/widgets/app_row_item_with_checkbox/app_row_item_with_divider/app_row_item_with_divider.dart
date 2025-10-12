@@ -5,6 +5,7 @@ import 'package:aura/utils/applog/gap.dart';
 import 'package:aura/widgets/app_images/app_image.dart';
 import 'package:aura/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class RowItemWithDivider extends StatelessWidget {
   final VoidCallback? onTap;
@@ -28,8 +29,10 @@ class RowItemWithDivider extends StatelessWidget {
             children: [
               AppText(
                 data: text ?? "No Text",
-                fontSize: AppSize.width(value: 20),
-                color: AppColors.instance.white,
+                style: GoogleFonts.poppins(
+                  fontSize: AppSize.width(value: 16),
+                  color: AppColors.instance.white,
+                ),
               ),
               AppImage(
                 path: AssetsIconsPath.instance.icArrowRight,
