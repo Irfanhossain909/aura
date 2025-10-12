@@ -15,226 +15,218 @@ class VedioCallingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final VedioCallController controller = Get.put(VedioCallController());
+
     return ScaffoldWithHomeBgImage(
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(16),
-          child: GetBuilder<VedioCallController>(
-            init: VedioCallController(),
-            builder: (controller) {
-              return Column(
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  Column(
                     children: [
-                      Column(
-                        children: [
-                          AppImage(
-                            path: AssetsIconsPath.instance.warningIc,
-                            width: AppSize.width(value: 30),
-                          ),
-                          Gap(height: AppSize.width(value: 16)),
-                          InkWell(
-                            onTap: () {
-                              callCancelDialog(context);
-                            },
-                            child: Container(
-                              padding: EdgeInsets.all(2),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(16),
-                                color: AppColors.instance.red1,
-                              ),
-                              child: Icon(
-                                Icons.close,
-                                color: AppColors.instance.white,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
                       AppImage(
-                        height: AppSize.size.height * 0.15,
-                        path: AssetsIconsPath.instance.personImage,
+                        path: AssetsIconsPath.instance.warningIc,
+                        width: AppSize.width(value: 30),
+                      ),
+                      Gap(height: AppSize.width(value: 16)),
+                      InkWell(
+                        onTap: () {
+                          callCancelDialog(context);
+                        },
+                        child: Container(
+                          padding: EdgeInsets.all(2),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(16),
+                            color: AppColors.instance.red1,
+                          ),
+                          child: Icon(
+                            Icons.close,
+                            color: AppColors.instance.white,
+                          ),
+                        ),
                       ),
                     ],
                   ),
-                  Gap(height: AppSize.width(value: 16)),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SizedBox(),
-                      Obx(() {
-                        return Column(
-                          children: [
-                            InkWell(
-                              onTap: () {
-                                controller.toggleIceBrekar();
-                              },
-                              child: AppImage(
-                                path: AssetsIconsPath.instance.loveCard,
-                                width: AppSize.width(value: 52),
-                              ),
-                              // child: controller.isIceBrekarShow.value
-                              //     ? Icon(Icons.ice_skating)
-                              // : AppImage(
-                              //     path: AssetsIconsPath.instance.loveCard,
-                              //     width: AppSize.width(value: 52),
-                              //   ),
-                            ),
-                            InkWell(
-                              onTap: () {
-                                controller.toggleAuraCard();
-                              },
-                              child: AppImage(
-                                path: AssetsIconsPath.instance.auraCard,
-                                width: AppSize.width(value: 52),
-                              ),
-                            ),
-                          ],
-                        );
-                      }),
-                    ],
+                  AppImage(
+                    height: AppSize.size.height * 0.15,
+                    path: AssetsIconsPath.instance.personImage,
                   ),
-                  Spacer(),
-
-                  Obx(() {
-                    // Check both conditions
-                    if (controller.isIceBrekarShow.value) {
-                      return Container(
-                        padding: EdgeInsets.all(16),
-                        decoration: BoxDecoration(
-                          color: AppColors.instance.black.withValues(
-                            alpha: 0.5,
-                          ),
-                          borderRadius: BorderRadius.circular(16),
-                          border: Border.all(color: AppColors.instance.blue),
-                        ),
-                        child: AppText(
-                          data: "WHAT IS YOUR DREAM DATE LOCATION?",
-                          fontSize: AppSize.width(value: 18),
-                          color: AppColors.instance.white,
-                        ),
-                      );
-                    } else if (controller.isAuraCardShow.value) {
-                      return Container(
-                        decoration: BoxDecoration(
-                          color: AppColors.instance.black.withValues(
-                            alpha: 0.1,
-                          ),
-                          border: Border.all(color: AppColors.instance.blue),
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                        padding: EdgeInsets.all(20),
-                        child: Column(
-                          spacing: AppSize.size.height * 0.01,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Container(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 12,
-                                    vertical: 8,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(24),
-                                    border: Border.all(
-                                      color: AppColors.instance.white,
-                                    ),
-                                  ),
-                                  child: AppText(
-                                    data: "1200 AP",
-                                    fontSize: AppSize.width(value: 16),
-                                    fontWeight: FontWeight.w600,
-                                    color: AppColors.instance.white,
-                                  ),
-                                ),
-                                InkWell(
-                                  onTap: () {
-                                    controller.removeAuraCard();
-                                  },
-                                  child: Container(
-                                    padding: EdgeInsets.all(2),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(16),
-                                      color: AppColors.instance.red1,
-                                    ),
-                                    child: Icon(
-                                      size: AppSize.width(value: 16),
-                                      Icons.close,
-                                      color: AppColors.instance.white,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            AppText(
-                              data: "PLAY A GAME",
-                              fontSize: AppSize.width(value: 18),
-                              fontWeight: FontWeight.w600,
-                              color: AppColors.instance.white,
-                            ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: AppSize.width(value: 100),
-                              ),
-                              child: Divider(
-                                color: AppColors.instance.blue,
-                                height: 2,
-                              ),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                AppImage(
-                                  path: AssetsIconsPath.instance.game1,
-                                  width: AppSize.width(value: 68),
-                                ),
-                                AppImage(
-                                  path: AssetsIconsPath.instance.game2,
-                                  width: AppSize.width(value: 68),
-                                ),
-                                AppImage(
-                                  path: AssetsIconsPath.instance.game3,
-                                  width: AppSize.width(value: 68),
-                                ),
-                              ],
-                            ),
-                            AppButton(
-                              width: 100,
-                              title: "BUY A GAME 100 AP",
-                              height: 28,
-                              titleSize: 14,
-                              borderRadius: BorderRadius.circular(16),
-                              filColor: AppColors.instance.blue,
-                            ),
-                          ],
-                        ),
-                      );
-                    } else {
-                      return SizedBox(); // Default empty widget if neither condition is true
-                    }
-                  }),
-
-                  Gap(height: AppSize.size.height * 0.04),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                ],
+              ),
+              Gap(height: AppSize.width(value: 16)),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SizedBox(),
+                  Column(
                     children: [
-                      SizedBox(),
-                      _MatchSwipeSwitch(),
-                      Container(
-                        padding: EdgeInsets.all(4),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(16),
-                          color: AppColors.instance.white,
+                      InkWell(
+                        onTap: () {
+                          controller.toggleIceBrekar();
+                        },
+                        child: AppImage(
+                          path: AssetsIconsPath.instance.loveCard,
+                          width: AppSize.width(value: 52),
                         ),
-                        child: AppText(data: "60+"),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          controller.toggleAuraCard();
+                        },
+                        child: AppImage(
+                          path: AssetsIconsPath.instance.auraCard,
+                          width: AppSize.width(value: 52),
+                        ),
                       ),
                     ],
                   ),
                 ],
-              );
-            },
+              ),
+              Spacer(),
+
+              Obx(() {
+                // Check both conditions
+                if (controller.isIceBrekarShow.value) {
+                  return Container(
+                    padding: EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      color: AppColors.instance.black.withValues(alpha: 0.5),
+                      borderRadius: BorderRadius.circular(16),
+                      border: Border.all(color: AppColors.instance.blue),
+                    ),
+                    child: AppText(
+                      data: "WHAT IS YOUR DREAM DATE LOCATION?",
+                      fontSize: AppSize.width(value: 18),
+                      color: AppColors.instance.white,
+                    ),
+                  );
+                } else if (controller.isAuraCardShow.value) {
+                  return Container(
+                    decoration: BoxDecoration(
+                      color: AppColors.instance.black.withValues(alpha: 0.1),
+                      border: Border.all(color: AppColors.instance.blue),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    padding: EdgeInsets.all(20),
+                    child: Column(
+                      spacing: AppSize.size.height * 0.01,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 12,
+                                vertical: 8,
+                              ),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(24),
+                                border: Border.all(
+                                  color: AppColors.instance.white,
+                                ),
+                              ),
+                              child: AppText(
+                                data: "1200 AP",
+                                fontSize: AppSize.width(value: 16),
+                                fontWeight: FontWeight.w600,
+                                color: AppColors.instance.white,
+                              ),
+                            ),
+                            InkWell(
+                              onTap: () {
+                                controller.removeAuraCard();
+                              },
+                              child: Container(
+                                padding: EdgeInsets.all(2),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(16),
+                                  color: AppColors.instance.red1,
+                                ),
+                                child: Icon(
+                                  size: AppSize.width(value: 16),
+                                  Icons.close,
+                                  color: AppColors.instance.white,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        AppText(
+                          data: "PLAY A GAME",
+                          fontSize: AppSize.width(value: 18),
+                          fontWeight: FontWeight.w600,
+                          color: AppColors.instance.white,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: AppSize.width(value: 100),
+                          ),
+                          child: Divider(
+                            color: AppColors.instance.blue,
+                            height: 2,
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            AppImage(
+                              path: AssetsIconsPath.instance.game1,
+                              width: AppSize.width(value: 68),
+                            ),
+                            AppImage(
+                              path: AssetsIconsPath.instance.game2,
+                              width: AppSize.width(value: 68),
+                            ),
+                            AppImage(
+                              path: AssetsIconsPath.instance.game3,
+                              width: AppSize.width(value: 68),
+                            ),
+                          ],
+                        ),
+                        AppButton(
+                          width: 100,
+                          title: "BUY A GAME 100 AP",
+                          height: 28,
+                          titleSize: 14,
+                          borderRadius: BorderRadius.circular(16),
+                          filColor: AppColors.instance.blue,
+                        ),
+                      ],
+                    ),
+                  );
+                } else {
+                  return SizedBox(); // Default empty widget if neither condition is true
+                }
+              }),
+
+              Gap(height: AppSize.size.height * 0.04),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  SizedBox(),
+                  _MatchSwipeSwitch(),
+                  Container(
+                    width: 44,
+                    height: 44,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      color: AppColors.instance.white,
+                    ),
+                    child: Center(
+                      child: AppText(
+                        data: "60",
+                        fontSize: AppSize.width(value: 24),
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
       ),

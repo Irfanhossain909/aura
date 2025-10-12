@@ -8,6 +8,7 @@ import 'package:aura/widgets/app_images/app_image.dart';
 import 'package:aura/widgets/app_images/scaffold_with_bg_image.dart';
 import 'package:aura/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class IceBreakScreen extends StatelessWidget {
   const IceBreakScreen({super.key});
@@ -48,8 +49,11 @@ class IceBreakScreen extends StatelessWidget {
                 spacing: AppSize.size.height * 0.03,
                 children: [
                   AppText(
-                    fontSize: AppSize.width(value: 18),
-                    color: AppColors.instance.white,
+                    style: GoogleFonts.poppins(
+                      fontSize: AppSize.width(value: 12),
+                      color: AppColors.instance.white,
+                      fontWeight: FontWeight.w400,
+                    ),
                     textAlign: TextAlign.center,
                     data:
                         "UNLOCK PREMIUM ICEBREAKER GAMES SUCH AS WOULD YOU RATHER, NEVER HAVE I EVER, AND 3 QUESTIONS. BECAUSE BETTER QUESTIONS LEAD TO BETTER CONNECTIONS. ALL ICE BREAKER GAMES ADD 90 SECONDS TO YOUR CALL.",

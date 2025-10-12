@@ -47,7 +47,7 @@ class GetTimeScreen extends StatelessWidget {
               ),
               child: SingleChildScrollView(
                 child: Column(
-                  spacing: AppSize.size.height * 0.02,
+                  // spacing: AppSize.size.height * 0.02,
                   children: [
                     Padding(
                       padding: EdgeInsets.symmetric(
@@ -57,7 +57,7 @@ class GetTimeScreen extends StatelessWidget {
                         textAlign: TextAlign.center,
                         data:
                             "BUY MORE TIME SO YOU CAN EXTEND YOUR CALLS LONGER. (CALL MAX OUT AT 5 MINUTES LONG)",
-                        fontSize: AppSize.width(value: 18),
+                        fontSize: 16,
                         color: AppColors.instance.white,
                       ),
                     ),
@@ -119,7 +119,7 @@ class GetTimeCard extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: AppColors.instance.white),
+        // border: Border.all(color: AppColors.instance.white),
       ),
       padding: EdgeInsets.all(AppSize.width(value: 16)),
       child: Column(
@@ -127,7 +127,7 @@ class GetTimeCard extends StatelessWidget {
           Stack(
             children: [
               AppImage(
-                path: AssetsIconsPath.instance.circleBg,
+                path: AssetsIconsPath.instance.circlePro,
 
                 width: AppSize.size.width * 0.35,
               ),
@@ -147,7 +147,7 @@ class GetTimeCard extends StatelessWidget {
               ),
             ],
           ),
-          Gap(height: AppSize.size.height * 0.025),
+          Gap(height: AppSize.size.height * 0.01),
           InkWell(
             onTap: onTap,
             child: Container(

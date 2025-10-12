@@ -47,4 +47,9 @@ class AssetsIconsPath {
   final String comExpectionImg = "assets/images/com_expectionImg.png";
   final String person2 = "assets/images/person2.webp";
   final String menuText = "assets/images/menu_text.png";
+  final String circlePro = "assets/images/circle_pro.png";
+  final String offerCard = "assets/images/offer_card.png";
+  final String starterBundle = "assets/images/starter_bundle.png";
+  final String bestDeal = "assets/images/best_deal.png";
+  final String appBarImg = "assets/images/app_bar_img.png";
 }

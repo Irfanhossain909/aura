@@ -11,6 +11,7 @@ import 'package:aura/widgets/input_text/app_input_widget_two.dart';
 import 'package:aura/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomeMainScreen extends StatelessWidget {
   const HomeMainScreen({super.key});
@@ -253,8 +254,8 @@ class HomeMainScreen extends StatelessWidget {
           ),
           title: Center(
             child: AppText(
-              data: "Night Out",
-              fontSize: AppSize.width(value: 34),
+              data: "Local",
+              fontSize: AppSize.width(value: 24),
               fontWeight: FontWeight.w600,
               color: AppColors.instance.white,
             ),
@@ -263,10 +264,12 @@ class HomeMainScreen extends StatelessWidget {
             padding: EdgeInsets.all(16.0), // Add padding to content if needed
             child: AppText(
               data:
-                  'THINKING ABOUT GOING OUT TONIGHT?? TALK TO PEOPLE GOING TO THE SAME PLACE TONIGHT OR GET A VIBE OF WHERE PEOPLE ARE GOING!',
+                  'Talk to people in your area... you might just find the one!',
               textAlign: TextAlign.center, // Ensure text is centered
-              fontSize: AppSize.width(value: 16),
-              color: AppColors.instance.white,
+              style: GoogleFonts.poppins(
+                fontSize: AppSize.width(value: 16),
+                color: AppColors.instance.white,
+              ),
             ),
           ), // Content centered and adjusted height
           actions: [
@@ -274,7 +277,7 @@ class HomeMainScreen extends StatelessWidget {
               child: AppButton(
                 title: "JOIN",
                 filColor: AppColors.instance.blue,
-                width: AppSize.width(value: 100),
+                width: AppSize.width(value: 200),
                 height: 30,
                 borderRadius: BorderRadius.circular(16),
                 onTap: () {
