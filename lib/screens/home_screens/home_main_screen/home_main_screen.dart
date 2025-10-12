@@ -27,13 +27,13 @@ class HomeMainScreen extends StatelessWidget {
             builder: (controller) {
               return Column(
                 children: [
-                  Gap(height: AppSize.size.height * 0.1),
+                  Gap(height: AppSize.size.height * 0.07),
                   AppImage(width: 160, path: AssetsIconsPath.instance.auraIcon),
 
                   Padding(
                     padding: EdgeInsets.symmetric(
                       horizontal: 16.0,
-                      vertical: 16,
+                      vertical: 18,
                     ),
                     child: Obx(() {
                       return Row(
@@ -70,7 +70,7 @@ class HomeMainScreen extends StatelessWidget {
                       );
                     }),
                   ),
-                  Gap(height: AppSize.size.height * 0.4),
+                  Gap(height: AppSize.size.height * 0.1),
                   GestureDetector(
                     onTap: () {
                       controller.delayedFunction();
@@ -87,23 +87,24 @@ class HomeMainScreen extends StatelessWidget {
                           : Container(
                               padding: EdgeInsets.all(AppSize.width(value: 4)),
                               decoration: BoxDecoration(
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.blue, // Shadow color
-                                    offset: Offset(
-                                      0,
-                                      0,
-                                    ), // Horizontal and vertical offset
-                                    blurRadius: 8, // Blur radius
-                                    spreadRadius:
-                                        2, // Spread radius (expands the shadow)
-                                  ),
-                                ],
-                                color: AppColors.instance.greyMedium,
+                                color: Colors.black87.withValues(alpha: 0.7),
                                 borderRadius: BorderRadius.circular(40),
                                 border: Border.all(
                                   color: AppColors.instance.white,
                                 ),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: AppColors.instance.blue.withValues(
+                                      alpha: 0.3,
+                                    ), // নরম ব্লু শ্যাডো
+                                    offset: const Offset(
+                                      0,
+                                      4,
+                                    ), // নিচের দিকে shadow
+                                    blurRadius: 20, // ছড়ানো effect
+                                    spreadRadius: 10, // হালকা করে সীমাবদ্ধ রাখে
+                                  ),
+                                ],
                               ),
                               child: AppImage(
                                 width: AppSize.width(value: 88),
@@ -230,7 +231,10 @@ class HomeMainScreen extends StatelessWidget {
     );
   }
 
-  Future<dynamic> showDialogForLocal(BuildContext context) {
+  Future<dynamic> showDialogForLocal(
+    BuildContext context,
+    HomeMainController controller,
+  ) {
     return showDialog(
       context: context,
       builder: (context) {
@@ -273,6 +277,9 @@ class HomeMainScreen extends StatelessWidget {
                 width: AppSize.width(value: 100),
                 height: 30,
                 borderRadius: BorderRadius.circular(16),
+                onTap: () {
+                  controller.joinLocal();
+                },
               ),
             ),
           ], // Centered button
@@ -298,7 +305,7 @@ class HomeMainScreen extends StatelessWidget {
         switch (index) {
           case 0: // LOCAL
             AppPrint.apiResponse("Clicked Local");
-            showDialogForLocal(context);
+            showDialogForLocal(context, controller);
             break;
           case 1: // SELECT CITY
             showDialogForSelectCity(context);
@@ -311,14 +318,22 @@ class HomeMainScreen extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          AppText(
-            data: menuText,
-            fontSize: AppSize.width(value: 24),
-            fontWeight: FontWeight.w600,
-            color: isSelected
-                ? AppColors.instance.white
-                : AppColors.instance.white.withValues(alpha: 0.5),
-          ),
+          // Show image for LOCAL when joined, otherwise show text
+          if (index == 0 && controller.isLocalJoined.value)
+            AppImage(
+              width: 100,
+              height: 70,
+              path: AssetsIconsPath.instance.menuText, // Using menuText image
+            )
+          else
+            AppText(
+              data: menuText,
+              fontSize: AppSize.width(value: isSelected ? 34 : 18),
+              fontWeight: FontWeight.w500,
+              color: isSelected
+                  ? AppColors.instance.white
+                  : AppColors.instance.white.withValues(alpha: 0.7),
+            ),
           if (isSelected)
             Icon(
               Icons.arrow_drop_down,
