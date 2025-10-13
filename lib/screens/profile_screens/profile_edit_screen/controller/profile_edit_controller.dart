@@ -40,14 +40,21 @@ class ProfileEditController extends GetxController {
 
   @override
   void onInit() {
-    minAge = 18.0.obs;
-    maxAge = 99.0.obs;
-
-    // Current age value
-    currentAge = 23.0.obs;
-
-    // Name value
-    userName = "SARAH".obs;
+    // Initialize default values if needed
+    minAge.value = 18.0;
+    maxAge.value = 99.0;
+    currentAge.value = 23.0;
+    userName.value = "SARAH";
     super.onInit();
+  }
+
+  @override
+  void onReady() {
+    super.onReady();
+  }
+
+  @override
+  void onClose() {
+    super.onClose();
   }
 }

@@ -23,6 +23,7 @@ class ProfileEditScreen extends StatelessWidget {
     double adjustedChildAspectRatio = (screenWidth / 1) / (screenHeight / 6);
 
     return GetBuilder<ProfileEditController>(
+      init: Get.find<ProfileEditController>(),
       builder: (controller) => ScaffoldWithBgImage(
         gradient: const LinearGradient(
           begin: Alignment(0.00, 0.00),

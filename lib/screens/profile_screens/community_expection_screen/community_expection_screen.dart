@@ -21,68 +21,50 @@ class CommunityExpectionScreen extends StatelessWidget {
         colors: [Color(0xFF6D8590), Color(0xFF2D373E)],
       ),
       body: SafeArea(
-        child: Column(
-          children: [
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: const EdgeInsets.all(16),
-                child: AppImage(
-                  path: AssetsIconsPath.instance.auraIcon,
-                  width: AppSize.size.width * 0.2,
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: AppSize.width(value: 20)),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              spacing: AppSize.size.height * 0.005,
+              children: [
+                AppImage(path: AssetsIconsPath.instance.comCard1),
+                AppText(
+                  data: "sTRIKE POLICY",
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                  color: AppColors.instance.white,
                 ),
-              ),
-            ),
-
-            Expanded(
-              child: Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: AppSize.width(value: 20),
+                AppImage(path: AssetsIconsPath.instance.comCard2),
+                AppImage(path: AssetsIconsPath.instance.comCard3),
+                AppImage(path: AssetsIconsPath.instance.comCard4),
+                AppImage(path: AssetsIconsPath.instance.comCard5),
+                AppText(
+                  data: "VIOLATION TIERSs",
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                  color: AppColors.instance.white,
                 ),
-                child: SingleChildScrollView(
-                  child: Column(
-                    spacing: AppSize.size.height * 0.01,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: AppSize.size.width * 0.2,
-                        ),
-                        child: AppText(
-                          textAlign: TextAlign.center,
-                          data: "cOMMUNITY EXPECTATIONs",
-                          fontSize: AppSize.width(value: 34),
-                          color: AppColors.instance.white,
-                        ),
-                      ),
-                      AppText(
-                        textAlign: TextAlign.center,
-                        data:
-                            "STRIKES ACCUMILATE OVER TIME BUT A STRIKE WILL EXPIRE AFTER 2 MONTHS IF A USER DOES NOT COLLECT ANY NEW STRIKES IN THAT TIME",
-                        fontSize: AppSize.width(value: 16),
-                        letterSpacing: 0.7,
-                        height: 1.4,
-                        color: AppColors.instance.white,
-                      ),
+                AppImage(path: AssetsIconsPath.instance.comCard6),
+                AppImage(path: AssetsIconsPath.instance.comCard7),
+                AppImage(path: AssetsIconsPath.instance.comCard8),
 
-                      AppImage(path: AssetsIconsPath.instance.comExpectionImg),
-
-                      AppButton(
-                        onTap: () {
-                          Get.toNamed(AppRoutes.instance.profileEditScreen);
-                        },
-                        title: "ACKNOWLEDGE",
-                        width: AppSize.size.width * 0.25,
-                        filColor: AppColors.instance.blue,
-                        height: AppSize.width(value: 34),
-                        borderRadius: BorderRadius.circular(24),
-                      ),
-                      // Gap(height: AppSize.size.height * 0.1),
-                    ],
+                Align(
+                  alignment: Alignment.center,
+                  child: AppButton(
+                    onTap: () {
+                      Get.toNamed(AppRoutes.instance.profileEditScreen);
+                    },
+                    title: "ACKNOWLEDGE",
+                    width: AppSize.size.width * 0.25,
+                    filColor: AppColors.instance.blue,
+                    height: AppSize.width(value: 34),
+                    borderRadius: BorderRadius.circular(24),
                   ),
                 ),
-              ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );

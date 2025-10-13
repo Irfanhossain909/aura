@@ -268,6 +268,7 @@ List<GetPage> appRootRoutesFile = <GetPage>[
   ),
   GetPage(
     name: AppRoutes.instance.profileEditScreen,
+    binding: AppBinding(),
     page: () => const ProfileEditScreen(),
   ),
   GetPage(name: AppRoutes.instance.shopScreen, page: () => const ShopScreen()),

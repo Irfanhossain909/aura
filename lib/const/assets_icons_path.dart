@@ -60,4 +60,12 @@ class AssetsIconsPath {
   final String auraShopImg1 = "assets/images/aura-shop-img.webp";
   final String auraPlusImg1 = "assets/images/aura-plus-img.webp";
   final String upgradeAuraBtn = "assets/images/upgrade_aura_btn.png";
+  final String comCard1 = "assets/images/com_card_1.webp";
+  final String comCard2 = "assets/images/com_card2.webp";
+  final String comCard3 = "assets/images/com_card3.webp";
+  final String comCard4 = "assets/images/com_card4.webp";
+  final String comCard5 = "assets/images/com_card5.webp";
+  final String comCard6 = "assets/images/com_card6.webp";
+  final String comCard7 = "assets/images/com_card7.webp";
+  final String comCard8 = "assets/images/com_card8.webp";
 }

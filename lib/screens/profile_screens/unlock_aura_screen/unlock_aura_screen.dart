@@ -116,7 +116,6 @@ class UnlockAuraScreen extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      Gap(height: AppSize.size.height * 0.02),
                       // Plan Selection Cards
                       GridView.builder(
                         shrinkWrap:
@@ -147,7 +146,7 @@ class UnlockAuraScreen extends StatelessWidget {
                         },
                       ),
 
-                      Gap(height: AppSize.size.height * 0.03),
+                      Gap(height: AppSize.size.height * 0.02),
 
                       GestureDetector(
                         onTap: () => controller.onUpgradePressed(),
@@ -156,7 +155,7 @@ class UnlockAuraScreen extends StatelessWidget {
                         ),
                       ),
 
-                      Gap(height: AppSize.size.height * 0.04),
+                      Gap(height: AppSize.size.height * 0.02),
 
                       // ENHANCE THE CONVERSATION Section
                       Container(
@@ -188,7 +187,7 @@ class UnlockAuraScreen extends StatelessWidget {
                         ),
                       ),
 
-                      Gap(height: AppSize.size.height * 0.04),
+                      Gap(height: AppSize.size.height * 0.02),
 
                       // PRIORITY MATCHMAKING Section
                       Container(
@@ -215,7 +214,7 @@ class UnlockAuraScreen extends StatelessWidget {
                         ),
                       ),
 
-                      Gap(height: AppSize.size.height * 0.04),
+                      Gap(height: AppSize.size.height * 0.02),
 
                       // EXPAND YOUR REACH Section
                       Container(
