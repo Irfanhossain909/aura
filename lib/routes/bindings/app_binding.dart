@@ -8,6 +8,7 @@ import 'package:aura/screens/extentions_screens/im_interested_in_screen/controll
 import 'package:aura/screens/extentions_screens/member_prefference_screen/controler/member_prefference_controller.dart';
 import 'package:aura/screens/extentions_screens/zoodiac_prefereance_screen/controller/zoodiac_prefereance_controller.dart';
 import 'package:aura/screens/home_screens/home_main_screen/controller/home_main_controller.dart';
+import 'package:aura/screens/profile_screens/unlock_aura_screen/controller/unlock_aura_controller.dart';
 import 'package:aura/screens/settings_screen/push_notification_screen/controller/push_notification_controller.dart';
 import 'package:aura/screens/settings_screen/contact_list_screen/controller/contact_list_controller.dart';
 import 'package:aura/screens/chat_screens/message_screen/controller/message_controller.dart';
@@ -39,5 +40,6 @@ class AppBinding extends Bindings {
     Get.lazyPut(() => HomeMainController());
     Get.lazyPut(() => VedioCallController());
     Get.lazyPut(() => StartCallingController());
+    Get.lazyPut(() => UnlockAuraController());
   }
 }

@@ -286,6 +286,7 @@ List<GetPage> appRootRoutesFile = <GetPage>[
   GetPage(name: AppRoutes.instance.giftScreen, page: () => const GiftScreen()),
   GetPage(
     name: AppRoutes.instance.unlockAuraScreen,
+    binding: AppBinding(),
     page: () => const UnlockAuraScreen(),
   ),
 
