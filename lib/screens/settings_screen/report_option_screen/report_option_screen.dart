@@ -10,6 +10,7 @@ import 'package:aura/widgets/app_images/scaffold_with_bg_image.dart';
 import 'package:aura/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ReportOptionScreen extends StatelessWidget {
   const ReportOptionScreen({super.key});
@@ -31,22 +32,8 @@ class ReportOptionScreen extends StatelessWidget {
                     width: AppSize.width(value: 28),
                     iconColor: AppColors.instance.red1,
                   ),
-                  Gap(height: AppSize.size.height * 0.05),
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: AppSize.size.width * 0.34,
-                    ),
-                    child: AppButton(
-                      onTap: () {
-                        Get.back();
-                      },
-                      filColor: AppColors.instance.black,
-                      height: AppSize.width(value: 34),
-                      borderRadius: BorderRadius.circular(16),
-                      title: "CANCEL",
-                    ),
-                  ),
-                  Gap(height: AppSize.size.height * 0.05),
+                  Gap(height: AppSize.size.height * 0.1),
+
                   Container(
                     padding: EdgeInsets.symmetric(
                       horizontal: AppSize.width(value: 30),
@@ -82,8 +69,10 @@ class ReportOptionScreen extends StatelessWidget {
                           textAlign: TextAlign.center,
                           data:
                               "Let us know if you encountered a problem or had a concerning experience.  ",
-                          fontSize: AppSize.width(value: 16),
-                          color: AppColors.instance.white,
+                          style: GoogleFonts.poppins(
+                            fontSize: AppSize.width(value: 16),
+                            color: AppColors.instance.white,
+                          ),
                         ),
 
                         Container(
@@ -136,6 +125,21 @@ class ReportOptionScreen extends StatelessWidget {
                       ],
                     ),
                   ), // ReportIssueDialog(controller: controller),
+                  Gap(height: AppSize.size.height * 0.12),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: AppSize.size.width * 0.34,
+                    ),
+                    child: AppButton(
+                      onTap: () {
+                        Get.back();
+                      },
+                      filColor: AppColors.instance.black,
+                      height: AppSize.width(value: 34),
+                      borderRadius: BorderRadius.circular(16),
+                      title: "CANCEL",
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -197,10 +201,12 @@ class RowItemWithRadio extends StatelessWidget {
                 child: AppText(
                   maxLines: 2,
                   data: text ?? "NO TEXT",
-                  fontSize: AppSize.width(value: 18),
-                  color: AppColors.instance.white,
 
-                  fontWeight: FontWeight.w400,
+                  style: GoogleFonts.poppins(
+                    fontSize: AppSize.width(value: 16),
+                    color: AppColors.instance.white,
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
               ),
             ],

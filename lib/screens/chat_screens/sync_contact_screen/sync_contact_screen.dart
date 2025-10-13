@@ -83,8 +83,8 @@ class SyncContactScreen extends StatelessWidget {
                       ),
                     ],
                     indicator: BoxDecoration(
-                      color: AppColors.instance.btnBg,
-                      border: Border.all(color: AppColors.instance.blue),
+                      color: Colors.transparent,
+                      border: Border.all(color: AppColors.instance.white),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     labelColor: Colors.white,

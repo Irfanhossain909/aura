@@ -7,6 +7,7 @@ class AssetsIconsPath {
   //=================Icon================================
 
   final String auraIcon = "assets/icons/auraImage.png";
+  final String worldIcon = "assets/icons/world.png";
   final String icSetting = "assets/icons/setting_icon.png";
   final String icArrowBAck = "assets/icons/arrow_back.png";
   final String icArrowRight = "assets/icons/arrow_right.png";
@@ -52,4 +53,7 @@ class AssetsIconsPath {
   final String starterBundle = "assets/images/starter_bundle.png";
   final String bestDeal = "assets/images/best_deal.png";
   final String appBarImg = "assets/images/app_bar_img.png";
+  final String preferenceImg1 = "assets/images/prefference_img.webp";
+  final String auraShopImg1 = "assets/images/aura-shop-img.webp";
+  final String auraPlusImg1 = "assets/images/aura-plus-img.webp";
 }

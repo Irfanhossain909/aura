@@ -57,7 +57,7 @@ class SelectProfileImg extends StatelessWidget {
                 weidth: AppSize.width(value: 117),
                 borderRadius: 30,
                 onTap: () {
-                  Get.offAllNamed(AppRoutes.instance.selectionScreen);
+                  Get.toNamed(AppRoutes.instance.communityExpectionScreen);
                 },
                 filColor: AppColors.instance.blue,
                 textColor: AppColors.instance.white,

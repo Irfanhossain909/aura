@@ -1,9 +1,10 @@
 import 'package:aura/const/app_colors.dart';
 import 'package:aura/const/assets_icons_path.dart';
 import 'package:aura/routes/app_routes.dart';
+import 'package:aura/screens/profile_screens/shop_screeen/shop_screen.dart';
 import 'package:aura/utils/applog/app_size.dart';
+import 'package:aura/utils/applog/gap.dart';
 import 'package:aura/widgets/app_bar/custom_appbar_auth.dart';
-import 'package:aura/widgets/app_button/aura_button.dart';
 import 'package:aura/widgets/app_images/app_image.dart';
 import 'package:aura/widgets/app_images/app_image_circular.dart';
 import 'package:aura/widgets/app_images/scaffold_with_bg_image.dart';
@@ -99,37 +100,118 @@ class ProfileScreen extends StatelessWidget {
             fontWeight: FontWeight.w600,
             color: AppColors.instance.white,
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: AppSize.size.width * 0.1,
-              vertical: AppSize.size.height * 0.15,
-            ),
-            child: Column(
-              spacing: AppSize.size.height * 0.03,
-              children: [
-                AuraButton(
-                  height: 44,
-                  onTap: () {
-                    Get.toNamed(AppRoutes.instance.memberPrefferenceScreen);
-                  },
-                  text: "MY PREFERENCES",
+          Gap(height: AppSize.size.height * 0.09),
+          Column(
+            spacing: AppSize.size.height * 0.03,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Get.toNamed(AppRoutes.instance.memberPrefferenceScreen);
+                },
+                child: AppImage(
+                  width: AppSize.size.width * 0.8,
+                  path: AssetsIconsPath.instance.preferenceImg1,
                 ),
-                AuraButton(
-                  height: 44,
-                  onTap: () {
-                    Get.toNamed(AppRoutes.instance.unlockAuraScreen);
-                  },
-                  text: "UNLOCK AURA+",
+              ),
+              GestureDetector(
+                onTap: () {
+                  Get.toNamed(AppRoutes.instance.unlockAuraScreen);
+                },
+                child: AppImage(
+                  width: AppSize.size.width * 0.8,
+                  path: AssetsIconsPath.instance.auraPlusImg1,
                 ),
-                AuraButton(
-                  height: 44,
-                  onTap: () {
-                    Get.toNamed(AppRoutes.instance.shopScreen);
-                  },
-                  text: "AURA SHOP",
-                ),
-              ],
-            ),
+              ),
+              Stack(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: AppSize.width(value: 8),
+                    ),
+                    child: AppImage(
+                      path: AssetsIconsPath.instance.auraShopImg1,
+                    ),
+                  ),
+                  Positioned.fill(
+                    top: 30,
+                    bottom: 0,
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 14),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+                        spacing: AppSize.width(value: 4),
+                        children: [
+                          ShowChad(
+                            iconPath: AssetsIconsPath.instance.worldIcon,
+                            icColor: AppColors.instance.blue,
+
+                            text2: "Relocation",
+                            text3: "GAME",
+                            onTap: () {
+                              Get.toNamed(
+                                AppRoutes.instance.unlimitedRelocationScreen,
+                              );
+                            },
+                          ),
+                          ShowChad(
+                            iconPath: AssetsIconsPath.instance.loveCard,
+                            icColor: AppColors.instance.blue,
+                            text1: "ICE",
+                            text2: "BREAKERS",
+                            text3: "BUNDLES",
+                            onTap: () {
+                              Get.toNamed(AppRoutes.instance.iceBreakScreen);
+                            },
+                          ),
+
+                          ShowChad(
+                            iconPath: AssetsIconsPath.instance.time,
+                            icColor: AppColors.instance.blue,
+                            // text1: "PROFILE",
+                            text2: "add time",
+                            text3: "BUNDLES",
+                            onTap: () {
+                              Get.toNamed(AppRoutes.instance.getTImeScreen);
+                            },
+                          ),
+                          ShowChad(
+                            iconPath: AssetsIconsPath.instance.currencyIc,
+                            // text1: "GET MORE",
+                            text2: "Get aura",
+                            text3: "Game",
+                            onTap: () {
+                              Get.toNamed(AppRoutes.instance.giftScreen);
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              // AuraButton(
+              //   height: 44,
+              //   onTap: () {
+              //     Get.toNamed(AppRoutes.instance.memberPrefferenceScreen);
+              //   },
+              //   text: "MY PREFERENCES",
+              // ),
+              // AuraButton(
+              //   height: 44,
+              //   onTap: () {
+              //     Get.toNamed(AppRoutes.instance.unlockAuraScreen);
+              //   },
+              //   text: "UNLOCK AURA+",
+              // ),
+              // AuraButton(
+              //   height: 44,
+              //   onTap: () {
+              //     Get.toNamed(AppRoutes.instance.shopScreen);
+              //   },
+              //   text: "AURA SHOP",
+              // ),
+            ],
           ),
         ],
       ),

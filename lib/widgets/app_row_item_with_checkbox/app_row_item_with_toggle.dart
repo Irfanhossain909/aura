@@ -3,6 +3,7 @@ import 'package:aura/utils/applog/app_size.dart';
 import 'package:aura/utils/applog/gap.dart';
 import 'package:aura/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class RowItemWithDividerWithToggle extends StatelessWidget {
   final VoidCallback? onTap;
@@ -30,21 +31,29 @@ class RowItemWithDividerWithToggle extends StatelessWidget {
               Expanded(
                 child: AppText(
                   data: text ?? "No Text",
-                  fontSize: AppSize.width(value: 22),
-                  color: AppColors.instance.white,
+                  style: GoogleFonts.poppins(
+                    fontSize: AppSize.width(value: 16),
+                    fontWeight: FontWeight.w500,
+                    color: AppColors.instance.white,
+                  ),
                 ),
               ),
 
-              Switch(
-                value: isEnabled,
-                onChanged: onToggleChanged,
-                activeColor: AppColors.instance.white,
-                activeTrackColor: AppColors.instance.blue,
-                inactiveThumbColor: AppColors.instance.white,
-                inactiveTrackColor: AppColors.instance.black.withValues(
-                  alpha: .7,
+              SizedBox(
+                height: 38, // height কমানো
+                child: FittedBox(
+                  fit: BoxFit.fill,
+                  child: Switch(
+                    value: isEnabled,
+                    onChanged: onToggleChanged,
+                    activeColor: AppColors.instance.white,
+                    activeTrackColor: AppColors.instance.blue,
+                    inactiveThumbColor: AppColors.instance.white,
+                    inactiveTrackColor: AppColors.instance.black.withValues(
+                      alpha: .7,
+                    ),
+                  ),
                 ),
-                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
               ),
             ],
           ),

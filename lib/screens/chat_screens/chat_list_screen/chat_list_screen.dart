@@ -28,7 +28,7 @@ class ChatListScreen extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
-                  color: AppColors.instance.btnBg,
+                  border: Border.all(color: AppColors.instance.white),
                 ),
                 padding: EdgeInsets.symmetric(
                   horizontal: AppSize.width(value: 16),
@@ -170,8 +170,6 @@ class _ChatListItemState extends State<ChatListItem> {
             ),
           ),
 
-          
-
           // close icon (show only if _showClose == true)
           if (_showClose)
             Positioned(
@@ -247,4 +245,3 @@ class DashedBorderPainter extends CustomPainter {
   @override
   bool shouldRepaint(CustomPainter oldDelegate) => true;
 }
-

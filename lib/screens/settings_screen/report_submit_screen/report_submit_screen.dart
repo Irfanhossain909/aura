@@ -9,6 +9,7 @@ import 'package:aura/widgets/input_text/app_input_widget_two.dart';
 import 'package:aura/widgets/text/app_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ReportSubmitScreen extends StatelessWidget {
   const ReportSubmitScreen({super.key});
@@ -27,22 +28,8 @@ class ReportSubmitScreen extends StatelessWidget {
                 width: AppSize.width(value: 28),
                 iconColor: AppColors.instance.red1,
               ),
-              Gap(height: AppSize.size.height * 0.05),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: AppSize.size.width * 0.34,
-                ),
-                child: AppButton(
-                  onTap: () {
-                    Get.back();
-                  },
-                  filColor: AppColors.instance.black,
-                  height: AppSize.width(value: 34),
-                  borderRadius: BorderRadius.circular(16),
-                  title: "CANCEL",
-                ),
-              ),
-              Gap(height: AppSize.size.height * 0.05),
+
+              Gap(height: AppSize.size.height * 0.1),
               Container(
                 padding: EdgeInsets.symmetric(
                   horizontal: AppSize.width(value: 50),
@@ -75,8 +62,10 @@ class ReportSubmitScreen extends StatelessWidget {
                       textAlign: TextAlign.center,
                       data:
                           "Please describe what happened in as much detail as possible  ",
-                      fontSize: AppSize.width(value: 16),
-                      color: AppColors.instance.white,
+                      style: GoogleFonts.poppins(
+                        fontSize: AppSize.width(value: 12),
+                        color: AppColors.instance.white,
+                      ),
                     ),
                     Container(
                       padding: EdgeInsets.all(12),
@@ -88,7 +77,7 @@ class ReportSubmitScreen extends StatelessWidget {
                         children: [
                           AppInputWidgetTwo(
                             contentPadding: EdgeInsets.symmetric(
-                              vertical: AppSize.size.height * 0.04,
+                              vertical: AppSize.size.height * 0.06,
                             ),
                             style: TextStyle(color: AppColors.instance.black),
                           ),
@@ -118,6 +107,21 @@ class ReportSubmitScreen extends StatelessWidget {
                   ],
                 ),
               ), // ReportIssueDialog(controller: controller),
+              Gap(height: AppSize.size.height * 0.12),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: AppSize.size.width * 0.36,
+                ),
+                child: AppButton(
+                  onTap: () {
+                    Get.back();
+                  },
+                  filColor: AppColors.instance.black,
+                  height: AppSize.width(value: 30),
+                  borderRadius: BorderRadius.circular(16),
+                  title: "Back",
+                ),
+              ),
             ],
           ),
         ),
