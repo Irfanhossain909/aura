@@ -1,0 +1,163 @@
+import 'package:aura/const/app_colors.dart';
+import 'package:aura/const/assets_icons_path.dart';
+import 'package:aura/routes/app_routes.dart';
+import 'package:aura/utils/applog/app_size.dart';
+import 'package:aura/utils/applog/gap.dart';
+import 'package:aura/widgets/app_bar/custom_appber.dart';
+import 'package:aura/widgets/app_button/app_button.dart';
+import 'package:aura/widgets/app_images/app_image.dart';
+import 'package:aura/widgets/app_images/scaffold_with_bg_image.dart';
+import 'package:aura/widgets/text/app_text.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+class ShopScreen extends StatelessWidget {
+  const ShopScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ScaffoldWithBgImage(
+      body: Column(
+        children: [
+          CustomAppBar(
+            isDividerShow: false,
+            logoUnderText: "",
+            title: "",
+            action: Row(
+              spacing: AppSize.width(value: 4),
+              children: [
+                AppImage(
+                  path: AssetsIconsPath.instance.appPlus,
+                  width: AppSize.width(value: 18),
+                ),
+                AppText(
+                  data: "1200",
+                  fontSize: AppSize.width(value: 22),
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.instance.white,
+                ),
+                AppImage(
+                  path: AssetsIconsPath.instance.currencyIc,
+                  width: AppSize.width(value: 18),
+                ),
+              ],
+            ),
+          ),
+          Gap(height: AppSize.size.height * 0.18),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ShowChad(
+                iconPath: AssetsIconsPath.instance.ice,
+                text1: "ICE",
+                text2: "BREAKERS",
+                text3: "GAME",
+                onTap: () {
+                  Get.toNamed(AppRoutes.instance.iceBreakScreen);
+                },
+              ),
+              ShowChad(
+                iconPath: AssetsIconsPath.instance.time,
+                text1: "ADD",
+                text2: "TIME",
+                text3: "BUNDLES",
+                onTap: () {
+                  Get.toNamed(AppRoutes.instance.getTImeScreen);
+                },
+              ),
+            ],
+          ),
+          Gap(height: AppSize.width(value: 16)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ShowChad(
+                iconPath: AssetsIconsPath.instance.groth,
+                text1: "PROFILE",
+                text2: "BOOSTS",
+                text3: "BUNDLES",
+                onTap: () {
+                  Get.toNamed(AppRoutes.instance.unlimitedRelocationScreen);
+                },
+              ),
+              ShowChad(
+                iconPath: AssetsIconsPath.instance.ap,
+                text1: "GET MORE",
+                text2: "AURA",
+                text3: "POINTS",
+                onTap: () {
+                  Get.toNamed(AppRoutes.instance.giftScreen);
+                },
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class ShowChad extends StatelessWidget {
+  final String? iconPath;
+  final String? text1;
+  final String? text2;
+  final String? text3;
+  final String? btnText;
+  final Color? icColor;
+  final Function()? onTap;
+  const ShowChad({
+    super.key,
+    this.iconPath,
+    this.text1,
+    this.text2,
+    this.text3,
+    this.btnText,
+    this.onTap,
+    this.icColor,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        width: AppSize.width(value: 80),
+        height: 100,
+        decoration: BoxDecoration(
+          border: Border.all(color: AppColors.instance.blue),
+          borderRadius: BorderRadius.circular(16),
+          color: AppColors.instance.black.withValues(alpha: 0.7),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            spacing: AppSize.size.height * 0.005,
+            children: [
+              AppImage(
+                path: iconPath ?? AssetsIconsPath.instance.ice,
+                iconColor: icColor ?? AppColors.instance.white,
+                width: AppSize.width(value: 24),
+              ),
+              if (text1 != null)
+                AppText(
+                  data: text1 ?? "no text",
+                  fontSize: AppSize.width(value: 14),
+                  color: AppColors.instance.white,
+                ),
+              AppText(
+                data: text2 ?? "BREAKERS",
+                fontSize: AppSize.width(value: 14),
+                color: AppColors.instance.white,
+              ),
+              AppText(
+                data: text3 ?? "GAMES",
+                fontSize: AppSize.width(value: 12),
+                color: Colors.blueAccent,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
