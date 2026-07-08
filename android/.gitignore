@@ -13,3 +13,9 @@ GRADLE_USER_HOME/
 key.properties
 **/*.keystore
 **/*.jks
+
+
+# .env protection restored by security cleanup
+.env
+.env.*
+.env.local
